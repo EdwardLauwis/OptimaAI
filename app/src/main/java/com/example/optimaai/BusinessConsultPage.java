@@ -1,8 +1,11 @@
 package com.example.optimaai;
 
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.transition.TransitionManager;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -26,7 +29,8 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 public class BusinessConsultPage extends AppCompatActivity {
-    TextView responseText;
+    TextView responseText, suggestionsTextView, readMoreButton;
+    boolean isExpanded = false;
     ProgressBar progressBar;
     EditText promptEditText;
     Button sendPromptButton;
@@ -48,6 +52,26 @@ public class BusinessConsultPage extends AppCompatActivity {
         });
 
         Log.d("MainActivity", "API_KEY: " + BuildConfig.API_KEY);
+
+        suggestionsTextView = findViewById(R.id.suggestionsTextView);
+        readMoreButton = findViewById(R.id.readMoreButton);
+
+        readMoreButton.setOnClickListener(v -> {
+            isExpanded = !isExpanded;
+            if (isExpanded) {
+                // Tampilkan semua teks
+                suggestionsTextView.setMaxLines(Integer.MAX_VALUE);
+                suggestionsTextView.setEllipsize(null);
+                readMoreButton.setText("Read Less");
+            } else {
+                // Sembunyikan lagi
+                suggestionsTextView.setMaxLines(4);
+                suggestionsTextView.setEllipsize(TextUtils.TruncateAt.END);
+                readMoreButton.setText("Read More");
+            }
+            // Memicu animasi
+            TransitionManager.beginDelayedTransition((ViewGroup) suggestionsTextView.getParent());
+        });
 
         // Ganti "gemini-pro" dengan model yang didukung, misalnya "gemini-1.5-pro"
         GenerativeModel gm = new GenerativeModel("gemini-2.5-flash", BuildConfig.API_KEY);

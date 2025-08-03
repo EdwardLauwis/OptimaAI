@@ -76,10 +76,11 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
 
     implementation(libs.generativeai)
-    // Tambahkan dependensi Guava
-    implementation("com.google.guava:guava:32.1.3-jre")
+    implementation(libs.guava)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation("com.google.cloud:google-cloud-vertexai:0.8.0")
+    implementation(libs.google.cloud.vertexai)
+    implementation(libs.transition)
+
 }

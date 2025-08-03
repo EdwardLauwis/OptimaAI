@@ -20,7 +20,45 @@
     <string name="idea_generator">Idea Generator</string>
     <string name="this_is_a_user_message">This is a user message</string>
     <string name="this_is_a_bot_response">This is a bot response</string>
-    <string name="ask_anything_about_business">Ask anything about business...</string>
-    <string name="response_will_appear_here">Response will appear here...</string>
+    <string name="ask_anything_about_business">Ask anything about business…</string>
+    <string name="response_will_appear_here">Response will appear here…</string>
     <string name="send_prompt">Send Prompt</string>
+    <string name="ai_response">AI Response</string>
+    <string name="Prompt_Suggestions">
+    Crafting the perfect prompt is key to unlocking the AI\'s full potential. Here is a comprehensive guide on how to structure your prompts to get the best possible business advice for an MSME.\n\n
+    <b>How to Craft the Perfect Prompt for Maximizing Your Business</b>\n\n
+    To get high-quality, actionable advice from the AI, your prompt needs to be more than just a simple question. Follow these principles to get maximum output.\n\n
+    <b>1. Be Specific and Provide Rich Context</b>\n
+    The AI needs details to give a tailored solution. The more context you provide, the less the AI has to guess.\n
+    <i>Instead of: "How do I increase sales?"</i>\n
+    <i>Try: "I run a small coffee shop in Makassar called \'Kopi Kita\'. My target customers are university students aged 18-25. My sales are high in the morning but very low in the afternoon. What are three creative, low-budget marketing strategies to increase my afternoon sales?"</i>\n\n
+    <b>2. Define a Clear Goal and Objective</b>\n
+    Tell the AI exactly what you want to achieve with its answer.\n
+    <i>Instead of: "Tell me about social media."</i>\n
+    <i>Try: "My goal is to gain 500 new, authentic Instagram followers for my handmade jewelry business. The objective is to increase brand awareness and drive traffic to my Shopee store."</i>\n\n
+    <b>3. Assign a Persona or Role</b>\n
+    This is a powerful technique. Instructing the AI to act as a specific expert frames its knowledge and tone.\n
+    <i>Instead of: "What should I post on Instagram?"</i>\n
+    <i>Try: "Act as a professional social media marketing consultant specializing in Indonesian fashion brands. You are an expert in visual branding and Gen Z marketing."</i>\n\n
+    <b>4. Specify the Output Format</b>\n
+    Requesting a specific format makes the information easier to digest and act upon.\n
+    <i>Instead of: "Give me some ideas."</i>\n
+    <i>Try:</i>\n
+    • "Provide the answer in a table format with columns for \'Strategy\', \'Estimated Cost\', \'Effort Level\', and \'Potential Impact\'."\n
+    • "Create a step-by-step guide on how to set up my first Facebook Ad campaign."\n
+    • "Generate five bullet points summarizing the key advantages of using WhatsApp Business for customer service."\n
+    • "Write a sample email to a potential B2B client."\n\n
+    <b>5. Use Constraints and Keywords</b>\n
+    Guide the AI\'s thinking by providing boundaries and key terms.\n
+    <i>Instead of: "How can I improve my packaging?"</i>\n
+    <i>Try: "Suggest packaging improvements for my \'Sambal Roa\' product. Constraints: The solution must be eco-friendly, keep the product fresh for at least one month, and the cost per unit must be under Rp 2,000. Keywords: sustainable, premium, local heritage."</i>\n\n
+    <b>6. Iterate and Refine (Have a Conversation)</b>\n
+    Don\'t expect the perfect answer on the first try. Use the AI\'s first response to ask follow-up questions.\n
+    <i>After the AI responds:</i>\n
+    • "That\'s a great start. For point number 3, can you elaborate further and give me a specific example for a food and beverage business?"\n
+    • "Can you rewrite that social media caption in a more casual and humorous tone?"\n
+    • "Which of those three options do you think has the highest ROI (Return on Investment)?"\n\n
+    By combining these principles, you move from simple questions to strategic conversations, forcing the AI to provide responses that are not just generic, but genuinely valuable and actionable for your business.
+</string>
+    <string name="consult">Consult</string>
 </resources>

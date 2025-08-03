@@ -5,5 +5,10 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+
+    <style name="Toolbar.Style" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="titleTextColor">#212121</item>
+    </style>
     <style name="Theme.OptimaAI" parent="Base.Theme.OptimaAI" />
 </resources>
