@@ -54,13 +54,11 @@ public class Login_Page extends AppCompatActivity implements View.OnClickListene
     @Override
     protected void onStart() {
         super.onStart();
-        // Periksa apakah pengguna sudah login
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
-            Toast.makeText(getApplicationContext(), "Already logged in.", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(Login_Page.this, MainActivity.class);
             startActivity(intent);
-            finish(); // Tutup Login_Page agar tidak kembali ke sini
+            finish();
         }
     }
 

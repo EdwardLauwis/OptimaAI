@@ -100,6 +100,7 @@
                         android:focusable="true">
 
                         <LinearLayout
+                            android:id="@+id/ideaGeneratorContainer"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -124,7 +125,6 @@
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
-                    <!-- Contoh Container Fitur 3: Code Assistant -->
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/feature_code_assistant"
                         android:layout_width="0dp"
@@ -138,6 +138,7 @@
                         android:focusable="true">
 
                         <LinearLayout
+                            android:id="@+id/copyWriterGenerator"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -161,114 +162,8 @@
                                 android:fontFamily="sans-serif-medium"/>
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
-
-<!--                    &lt;!&ndash; Contoh Container Fitur 4: Language Translator &ndash;&gt;-->
-<!--                    <com.google.android.material.card.MaterialCardView-->
-<!--                        android:id="@+id/feature_translator"-->
-<!--                        android:layout_width="0dp"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_columnWeight="1"-->
-<!--                        android:layout_rowWeight="1"-->
-<!--                        app:cardElevation="4dp"-->
-<!--                        app:cardCornerRadius="12dp"-->
-<!--                        android:layout_margin="8dp"-->
-<!--                        android:clickable="true"-->
-<!--                        android:focusable="true">-->
-
-<!--                        <LinearLayout-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:orientation="vertical"-->
-<!--                            android:padding="16dp"-->
-<!--                            android:gravity="center">-->
-
-<!--                            <ImageView-->
-<!--                                android:layout_width="64dp"-->
-<!--                                android:layout_height="64dp"-->
-<!--                                android:src="@drawable/ic_translate_feature"-->
-<!--                                app:tint="#0D47A1"-->
-<!--                                android:contentDescription="Language Translator Feature"/>-->
-
-<!--                            <TextView-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:text="Translator"-->
-<!--                                android:layout_marginTop="12dp"-->
-<!--                                android:textColor="#212121"-->
-<!--                                android:textStyle="bold"-->
-<!--                                android:fontFamily="sans-serif-medium"/>-->
-<!--                        </LinearLayout>-->
-<!--                    </com.google.android.material.card.MaterialCardView>-->
-
-                    <!-- Anda bisa menambahkan lebih banyak CardView di sini -->
-
                 </GridLayout>
-
             </androidx.core.widget.NestedScrollView>
-
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-        <!-- Tampilan untuk Navigation Drawer (menu yang muncul dari samping) -->
-<!--        <com.google.android.material.navigation.NavigationView-->
-<!--            android:id="@+id/nav_view"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_gravity="start"-->
-<!--            app:headerLayout="@layout/nav_header"-->
-<!--            app:menu="@menu/nav_menu" />-->
-
     </androidx.drawerlayout.widget.DrawerLayout>
-
 </RelativeLayout>
-
-<!--<TextView-->
-<!--android:id="@+id/textViewTitle"-->
-<!--android:layout_width="wrap_content"-->
-<!--android:layout_height="wrap_content"-->
-<!--android:text="@string/ask_gemini"-->
-<!--android:textSize="24sp"-->
-<!--android:textStyle="bold"-->
-<!--android:layout_centerHorizontal="true"-->
-<!--android:layout_marginBottom="24dp"/>-->
-
-<!--<EditText-->
-<!--android:id="@+id/promptEditText"-->
-<!--android:layout_width="match_parent"-->
-<!--android:layout_height="wrap_content"-->
-<!--android:layout_below="@id/textViewTitle"-->
-<!--android:autofillHints="Prompt"-->
-<!--android:hint="@string/type_your_question"-->
-<!--android:inputType="text"-->
-<!--android:minLines="3"-->
-<!--android:gravity="top"-->
-<!--android:background="@android:drawable/editbox_background"/>-->
-
-<!--<Button-->
-<!--android:id="@+id/sendPromptButton"-->
-<!--android:layout_width="wrap_content"-->
-<!--android:layout_height="wrap_content"-->
-<!--android:layout_below="@id/promptEditText"-->
-<!--android:layout_centerHorizontal="true"-->
-<!--android:layout_marginTop="16dp"-->
-<!--android:text="@string/send"/>-->
-
-<!--<ProgressBar-->
-<!--android:id="@+id/progressBar"-->
-<!--android:layout_width="wrap_content"-->
-<!--android:layout_height="wrap_content"-->
-<!--android:layout_centerInParent="true"-->
-<!--android:visibility="gone" />-->
-
-<!--<ScrollView-->
-<!--android:layout_width="match_parent"-->
-<!--android:layout_height="match_parent"-->
-<!--android:layout_below="@id/sendPromptButton"-->
-<!--android:layout_marginTop="24dp">-->
-
-<!--<TextView-->
-<!--    android:id="@+id/responseText"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="wrap_content"-->
-<!--    android:text="@string/response_from_gemini"-->
-<!--    android:textSize="16sp"/>-->
-<!--</ScrollView>-->
