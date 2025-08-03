@@ -82,5 +82,8 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     implementation(libs.google.cloud.vertexai)
     implementation(libs.transition)
+    implementation(libs.reactive.streams)
+    implementation(libs.lottie)
+
 
 }

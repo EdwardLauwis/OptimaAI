@@ -6,56 +6,60 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Locale;
 
-public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder> {
+class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
 
-    private final List<ChatMessage> messages;
     private static final int VIEW_TYPE_USER = 1;
-    private static final int VIEW_TYPE_BOT = 2;
+    private static final int VIEW_TYPE_AI = 2;
+    private List<ChatMessage> chatMessages;
 
-    public ChatAdapter(List<ChatMessage> messages) {
-        this.messages = messages;
+    public ChatAdapter(List<ChatMessage> chatMessages) {
+        this.chatMessages = chatMessages;
     }
 
     @Override
     public int getItemViewType(int position) {
-        if (messages.get(position).isUser()) {
-            return VIEW_TYPE_USER;
-        } else {
-            return VIEW_TYPE_BOT;
-        }
+        return chatMessages.get(position).isUser() ? VIEW_TYPE_USER : VIEW_TYPE_AI;
     }
 
     @NonNull
     @Override
-    public ChatViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
         if (viewType == VIEW_TYPE_USER) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_chat_user, parent, false);
         } else {
-            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_chat_bot, parent, false);
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_chat_ai, parent, false);
         }
-        return new ChatViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ChatViewHolder holder, int position) {
-        ChatMessage message = messages.get(position);
-        holder.chatTextView.setText(message.getMessage());
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        ChatMessage chatMessage = chatMessages.get(position);
+        holder.messageTextView.setText(chatMessage.getMessage());
+
+        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a", Locale.getDefault());
+        String formattedTime = sdf.format(chatMessage.getTimestamp());
+        holder.timestampTextView.setText(formattedTime);
     }
 
     @Override
     public int getItemCount() {
-        return messages.size();
+        return chatMessages.size();
     }
 
-    static class ChatViewHolder extends RecyclerView.ViewHolder {
-        TextView chatTextView;
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        TextView messageTextView;
+        TextView timestampTextView;
 
-        public ChatViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            chatTextView = itemView.findViewById(R.id.chat_text_view);
+            messageTextView = itemView.findViewById(R.id.chatMessageTextView);
+            timestampTextView = itemView.findViewById(R.id.timestampTextView);
         }
     }
 }

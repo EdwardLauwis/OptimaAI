@@ -1,119 +1,123 @@
 package com.example.optimaai;
 
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.transition.TransitionManager;
-import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.ai.client.generativeai.GenerativeModel;
+import com.google.ai.client.generativeai.java.ChatFutures;
 import com.google.ai.client.generativeai.java.GenerativeModelFutures;
 import com.google.ai.client.generativeai.type.Content;
 import com.google.ai.client.generativeai.type.GenerateContentResponse;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
+import com.google.android.material.button.MaterialButton;
 import com.google.common.util.concurrent.ListenableFuture;
 
-import java.util.concurrent.Executor;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.Executors;
 
 public class BusinessConsultPage extends AppCompatActivity {
-    TextView responseText, suggestionsTextView, readMoreButton;
-    boolean isExpanded = false;
-    ProgressBar progressBar;
-    EditText promptEditText;
-    Button sendPromptButton;
+
+    private RecyclerView chatRecyclerView;
+    private EditText promptEditText;
+    private MaterialButton sendPromptButton;
+    private LottieAnimationView loadingAnimationView; // Menggunakan Lottie
+    private ChatAdapter chatAdapter;
+    private List<ChatMessage> chatMessages;
+    private ChatFutures chat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_business_consult_page);
 
-        responseText = findViewById(R.id.responseText);
-        progressBar = findViewById(R.id.progressBar);
-        promptEditText = findViewById(R.id.promptEditText);
-        sendPromptButton = findViewById(R.id.sendPromptButton);
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+        // Mengatasi masalah keyboard menutupi input
+        View rootView = findViewById(R.id.main);
+        ViewCompat.setOnApplyWindowInsetsListener(rootView, (v, insets) -> {
+            int bottomInset = insets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom;
+            View inputLayout = findViewById(R.id.inputLayout);
+            inputLayout.setPadding(inputLayout.getPaddingLeft(), inputLayout.getPaddingTop(), inputLayout.getPaddingRight(), bottomInset);
             return insets;
         });
 
-        Log.d("MainActivity", "API_KEY: " + BuildConfig.API_KEY);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
-        suggestionsTextView = findViewById(R.id.suggestionsTextView);
-        readMoreButton = findViewById(R.id.readMoreButton);
+        chatRecyclerView = findViewById(R.id.chatRecyclerView);
+        promptEditText = findViewById(R.id.promptEditText);
+        sendPromptButton = findViewById(R.id.sendPromptButton);
+        loadingAnimationView = findViewById(R.id.loadingAnimationView); // Inisialisasi Lottie
 
-        readMoreButton.setOnClickListener(v -> {
-            isExpanded = !isExpanded;
-            if (isExpanded) {
-                // Tampilkan semua teks
-                suggestionsTextView.setMaxLines(Integer.MAX_VALUE);
-                suggestionsTextView.setEllipsize(null);
-                readMoreButton.setText("Read Less");
-            } else {
-                // Sembunyikan lagi
-                suggestionsTextView.setMaxLines(4);
-                suggestionsTextView.setEllipsize(TextUtils.TruncateAt.END);
-                readMoreButton.setText("Read More");
-            }
-            // Memicu animasi
-            TransitionManager.beginDelayedTransition((ViewGroup) suggestionsTextView.getParent());
-        });
+        chatMessages = new ArrayList<>();
+        chatAdapter = new ChatAdapter(chatMessages);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        chatRecyclerView.setLayoutManager(layoutManager);
+        chatRecyclerView.setAdapter(chatAdapter);
 
-        // Ganti "gemini-pro" dengan model yang didukung, misalnya "gemini-1.5-pro"
-        GenerativeModel gm = new GenerativeModel("gemini-2.5-flash", BuildConfig.API_KEY);
+        // Inisialisasi model Gemini untuk mode chat
+        GenerativeModel gm = new GenerativeModel("gemini-1.5-flash", BuildConfig.API_KEY);
         GenerativeModelFutures model = GenerativeModelFutures.from(gm);
+        chat = model.startChat();
 
-        Executor executor = Executors.newSingleThreadExecutor();
+        sendPromptButton.setOnClickListener(v -> sendMessage());
+    }
 
-        sendPromptButton.setOnClickListener(v -> {
-            String prompt = promptEditText.getText().toString().trim();
-            if (prompt.isEmpty()) {
-                Toast.makeText(getApplicationContext(), "Please enter a prompt.", Toast.LENGTH_SHORT).show();
-                return;
+    private void sendMessage() {
+        String prompt = promptEditText.getText().toString().trim();
+        if (prompt.isEmpty()) {
+            return;
+        }
+
+        addMessage(prompt, true);
+        promptEditText.setText("");
+        loadingAnimationView.setVisibility(View.VISIBLE); // Tampilkan animasi
+
+        Content userContent = new Content.Builder().addText(prompt).build();
+        ListenableFuture<GenerateContentResponse> response = chat.sendMessage(userContent);
+        Futures.addCallback(response, new FutureCallback<GenerateContentResponse>() {
+            @Override
+            public void onSuccess(GenerateContentResponse result) {
+                String aiResponse = result.getText();
+                runOnUiThread(() -> {
+                    addMessage(aiResponse, false);
+                    loadingAnimationView.setVisibility(View.GONE);
+                });
             }
 
-            progressBar.setVisibility(View.VISIBLE);
-            sendPromptButton.setEnabled(false);
-            responseText.setText("");
+            @Override
+            public void onFailure(@NonNull Throwable t) {
+                runOnUiThread(() -> {
+                    addMessage("Maaf, terjadi kesalahan. Coba lagi.", false);
+                    loadingAnimationView.setVisibility(View.GONE);
+                });
+            }
+        }, Executors.newSingleThreadExecutor());
+    }
 
-            Content content = new Content.Builder().addText(prompt).build();
-
-            ListenableFuture<GenerateContentResponse> response = model.generateContent(content);
-            Futures.addCallback(response, new FutureCallback<GenerateContentResponse>() {
-                @Override
-                public void onSuccess(GenerateContentResponse result) {
-                    String resultText = result.getText();
-                    runOnUiThread(() -> {
-                        responseText.setText(resultText);
-                        progressBar.setVisibility(View.GONE);
-                        sendPromptButton.setEnabled(true);
-                    });
-                }
-
-                @Override
-                public void onFailure(Throwable t) {
-                    t.printStackTrace();
-                    runOnUiThread(() -> {
-                        Toast.makeText(BusinessConsultPage.this, "Error: " + t.getMessage(), Toast.LENGTH_LONG).show();
-                        progressBar.setVisibility(View.GONE);
-                        sendPromptButton.setEnabled(true);
-                    });
-                }
-            }, executor);
-        });
+    private void addMessage(String message, boolean isUser) {
+        chatMessages.add(new ChatMessage(message, isUser));
+        chatAdapter.notifyItemInserted(chatMessages.size() - 1);
+        chatRecyclerView.scrollToPosition(chatMessages.size() - 1);
     }
 }
