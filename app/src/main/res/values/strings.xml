@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">OptimaAI</string>
+    <string name="ask_gemini">Ask Gemini</string>
+    <string name="type_your_question">Type Your Question</string>
+    <string name="send">Send</string>
+    <string name="response_from_gemini">Response from gemini</string>
+    <string name="image_logo">Image_Logo</string>
+    <string name="login">L o g i n</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login_page">LOGIN</string>
+    <string name="don_t_have_an_account_yet_register">Don\'t have an account yet? Register</string>
+    <string name="email">Email</string>
+    <string name="register">REGISTER</string>
+    <string name="already_have_an_account_login">Already have an account? Login</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="text_generation_feature">Text Generation Feature</string>
+    <string name="business_consult">Business Consult</string>
+    <string name="copywriter">Copywriter</string>
+    <string name="idea_generator">Idea Generator</string>
+    <string name="this_is_a_user_message">This is a user message</string>
+    <string name="this_is_a_bot_response">This is a bot response</string>
+    <string name="ask_anything_about_business">Ask anything about business...</string>
+    <string name="response_will_appear_here">Response will appear here...</string>
+    <string name="send_prompt">Send Prompt</string>
+</resources>
