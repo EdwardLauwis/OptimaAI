@@ -61,4 +61,10 @@
     By combining these principles, you move from simple questions to strategic conversations, forcing the AI to provide responses that are not just generic, but genuinely valuable and actionable for your business.
 </string>
     <string name="consult">Consult</string>
+    <string name="chat_title">Chat Title</string>
+    <string name="chat_date">3 Agustus 2025</string>
+    <string name="history">History</string>
+    <string name="consult_history">Consult History</string>
+    <string name="start_new_consult">Start new consult</string>
+    <string name="your_question">Your question...</string>
 </resources>

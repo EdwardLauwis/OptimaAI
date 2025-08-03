@@ -1,80 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0F4F8"
     tools:context=".BusinessConsultPage">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#FFFFFF"
-            app:title="@string/consult"
-            app:titleTextColor="#212121"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/chatRecyclerView"
+    <RelativeLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/appBarLayout"
-        android:layout_above="@+id/inputLayout"
-        android:padding="8dp"
-        android:clipToPadding="false"/>
+        android:background="#F0F4F8">
 
-    <!-- Layout untuk input di bagian bawah -->
-    <LinearLayout
-        android:id="@+id/inputLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:padding="8dp"
-        android:gravity="center_vertical"
-        android:background="@android:color/white">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#FFFFFF"
+                app:title="@string/consult"
+                app:titleTextColor="#212121"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+        </com.google.android.material.appbar.AppBarLayout>
 
-        <EditText
-            android:id="@+id/promptEditText"
-            android:layout_width="0dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chatRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/appBarLayout"
+            android:layout_above="@+id/inputLayout"
+            android:padding="8dp"
+            android:clipToPadding="false"/>
+
+        <LinearLayout
+            android:id="@+id/inputLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Ketik pertanyaan Anda..."
-            android:inputType="textMultiLine"
-            android:maxLines="5"
-            android:background="@drawable/chat_input_background"
-            android:padding="12dp"/>
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:gravity="center_vertical"
+            android:background="@android:color/white">
+            <EditText
+                android:id="@+id/promptEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:autofillHints=""
+                android:hint="@string/your_question"
+                android:inputType="textMultiLine"
+                android:maxLines="5"
+                android:background="@drawable/chat_input_background"
+                android:padding="12dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sendPromptButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:icon="@drawable/ic_send"
+                style="@style/Widget.Material3.Button.Icon"/>
+        </LinearLayout>
+
+        <!-- Loading Indicator -->
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loadingAnimationView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            app:lottie_rawRes="@raw/loading_animation"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:layout_gravity="end">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/consult_history"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="16dp"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/sendPromptButton"
-            android:layout_width="wrap_content"
+            android:id="@+id/drawerNewChatButton"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            app:icon="@drawable/ic_send"
-            style="@style/Widget.Material3.Button.Icon"/>
+            android:text="@string/start_new_consult"
+            app:icon="@android:drawable/ic_input_add"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            android:layout_marginTop="16dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/drawerHistoryRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_chat_history"/>
     </LinearLayout>
 
-    <!-- Loading Indicator Profesional (Lottie) di tengah layar -->
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/loadingAnimationView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_centerInParent="true"
-        app:lottie_rawRes="@raw/loading_animation"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        android:visibility="gone" />
-
-</RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

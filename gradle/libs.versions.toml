@@ -1,5 +1,6 @@
 [versions]
 agp = "8.11.1"
+firebaseBom = "34.0.0"
 generativeai = "0.9.0"
 googleCloudVertexai = "1.30.0"
 guava = "33.4.8-jre"
@@ -16,8 +17,11 @@ espressoWeb = "3.7.0"
 firebaseAuth = "24.0.0"
 reactiveStreams = "1.0.4"
 transition = "1.6.0"
+firebaseFirestore = "26.0.0"
 
 [libraries]
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+firebase-firestore = { module = "com.google.firebase:firebase-firestore" }
 generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "generativeai" }
 google-cloud-vertexai = { module = "com.google.cloud:google-cloud-vertexai", version.ref = "googleCloudVertexai" }
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
@@ -33,6 +37,7 @@ espresso-web = { group = "androidx.test.espresso", name = "espresso-web", versio
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
 reactive-streams = { module = "org.reactivestreams:reactive-streams", version.ref = "reactiveStreams" }
 transition = { module = "androidx.transition:transition", version.ref = "transition" }
+google-firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

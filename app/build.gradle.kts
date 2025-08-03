@@ -71,6 +71,7 @@ dependencies {
     implementation(libs.generativeai)
     implementation(libs.espresso.web)
     implementation(libs.firebase.auth)
+    implementation(libs.google.firebase.firestore)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -84,6 +85,6 @@ dependencies {
     implementation(libs.transition)
     implementation(libs.reactive.streams)
     implementation(libs.lottie)
-
-
+    implementation(libs.firebase.bom)
+    implementation(libs.firebase.firestore)
 }

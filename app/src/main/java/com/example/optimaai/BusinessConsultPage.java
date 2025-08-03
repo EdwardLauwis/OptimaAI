@@ -1,20 +1,18 @@
 package com.example.optimaai;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.ai.client.generativeai.GenerativeModel;
 import com.google.ai.client.generativeai.java.ChatFutures;
@@ -25,37 +23,40 @@ import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.android.material.button.MaterialButton;
 import com.google.common.util.concurrent.ListenableFuture;
-
-import java.text.SimpleDateFormat;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 import java.util.concurrent.Executors;
 
 public class BusinessConsultPage extends AppCompatActivity {
 
+    private DrawerLayout drawerLayout;
     private RecyclerView chatRecyclerView;
     private EditText promptEditText;
-    private MaterialButton sendPromptButton;
-    private LottieAnimationView loadingAnimationView; // Menggunakan Lottie
+    private LottieAnimationView loadingAnimationView;
     private ChatAdapter chatAdapter;
+    private ChatHistoryAdapter historyAdapter;
     private List<ChatMessage> chatMessages;
+    private List<ChatSession> chatSessionList;
     private ChatFutures chat;
+
+    private FirebaseFirestore db;
+    private FirebaseAuth mAuth;
+    private String currentChatId = null;
+    private CollectionReference messagesRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_business_consult_page);
 
-        // Mengatasi masalah keyboard menutupi input
-        View rootView = findViewById(R.id.main);
-        ViewCompat.setOnApplyWindowInsetsListener(rootView, (v, insets) -> {
-            int bottomInset = insets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom;
-            View inputLayout = findViewById(R.id.inputLayout);
-            inputLayout.setPadding(inputLayout.getPaddingLeft(), inputLayout.getPaddingTop(), inputLayout.getPaddingRight(), bottomInset);
-            return insets;
-        });
+        db = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -64,60 +65,183 @@ public class BusinessConsultPage extends AppCompatActivity {
         }
         toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
+        drawerLayout = findViewById(R.id.drawer_layout);
         chatRecyclerView = findViewById(R.id.chatRecyclerView);
         promptEditText = findViewById(R.id.promptEditText);
-        sendPromptButton = findViewById(R.id.sendPromptButton);
-        loadingAnimationView = findViewById(R.id.loadingAnimationView); // Inisialisasi Lottie
+        MaterialButton sendPromptButton = findViewById(R.id.sendPromptButton);
+        loadingAnimationView = findViewById(R.id.loadingAnimationView);
+        RecyclerView drawerHistoryRecyclerView = findViewById(R.id.drawerHistoryRecyclerView);
+        MaterialButton drawerNewChatButton = findViewById(R.id.drawerNewChatButton);
 
         chatMessages = new ArrayList<>();
         chatAdapter = new ChatAdapter(chatMessages);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        chatRecyclerView.setLayoutManager(layoutManager);
+        chatRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         chatRecyclerView.setAdapter(chatAdapter);
 
-        // Inisialisasi model Gemini untuk mode chat
-        GenerativeModel gm = new GenerativeModel("gemini-1.5-flash", BuildConfig.API_KEY);
+        chatSessionList = new ArrayList<>();
+        historyAdapter = new ChatHistoryAdapter(chatSessionList);
+        drawerHistoryRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        drawerHistoryRecyclerView.setAdapter(historyAdapter);
+
+        GenerativeModel gm = new GenerativeModel("gemini-2.5-flash", BuildConfig.API_KEY);
         GenerativeModelFutures model = GenerativeModelFutures.from(gm);
         chat = model.startChat();
 
         sendPromptButton.setOnClickListener(v -> sendMessage());
+        drawerNewChatButton.setOnClickListener(v -> startNewChat());
+
+        Intent intent = getIntent();
+        if (intent != null && intent.hasExtra("CHAT_ID")) {
+            currentChatId = intent.getStringExtra("CHAT_ID");
+            setupChatCollectionRef();
+            loadChatMessages();
+        }
+
+        loadChatHistoryForDrawer();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.consult_toolbar_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.action_history_menu) {
+            drawerLayout.openDrawer(GravityCompat.END);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void startNewChat() {
+        drawerLayout.closeDrawer(GravityCompat.END);
+        Intent intent = new Intent(this, BusinessConsultPage.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+
+    private void loadChatHistoryForDrawer() {
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser == null) return;
+
+        db.collection("users").document(currentUser.getUid()).collection("chats")
+                .orderBy("createdAt", Query.Direction.DESCENDING)
+                .addSnapshotListener((value, error) -> {
+                    if (error != null || value == null) return;
+                    chatSessionList.clear();
+                    for (QueryDocumentSnapshot doc : value) {
+                        ChatSession session = doc.toObject(ChatSession.class);
+                        session.setId(doc.getId());
+                        chatSessionList.add(session);
+                    }
+                    historyAdapter.notifyDataSetChanged();
+                });
+    }
+
+    private void setupChatCollectionRef() {
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null && currentChatId != null) {
+            messagesRef = db.collection("users").document(user.getUid())
+                    .collection("chats").document(currentChatId)
+                    .collection("messages");
+        }
+    }
+
+    private void loadChatMessages() {
+        if (messagesRef == null) return;
+        messagesRef.orderBy("timestamp", Query.Direction.ASCENDING)
+                .get().addOnSuccessListener(queryDocumentSnapshots -> {
+                    for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                        ChatMessage msg = doc.toObject(ChatMessage.class);
+                        chatMessages.add(msg);
+                    }
+                    chatAdapter.notifyDataSetChanged();
+                    if (!chatMessages.isEmpty()) {
+                        chatRecyclerView.scrollToPosition(chatMessages.size() - 1);
+                    }
+                });
     }
 
     private void sendMessage() {
         String prompt = promptEditText.getText().toString().trim();
-        if (prompt.isEmpty()) {
-            return;
-        }
+        if (prompt.isEmpty()) return;
 
-        addMessage(prompt, true);
+        ChatMessage userMessage = new ChatMessage(prompt, true);
+        addMessageToUI(userMessage);
         promptEditText.setText("");
-        loadingAnimationView.setVisibility(View.VISIBLE); // Tampilkan animasi
+        loadingAnimationView.setVisibility(View.VISIBLE);
+
+        if (currentChatId == null) {
+            createNewChatSession(userMessage);
+        } else {
+            saveMessageToFirestore(userMessage);
+        }
 
         Content userContent = new Content.Builder().addText(prompt).build();
         ListenableFuture<GenerateContentResponse> response = chat.sendMessage(userContent);
         Futures.addCallback(response, new FutureCallback<GenerateContentResponse>() {
             @Override
             public void onSuccess(GenerateContentResponse result) {
-                String aiResponse = result.getText();
+                String aiResponseText = result.getText();
+                ChatMessage aiMessage = new ChatMessage(aiResponseText, false);
+                saveMessageToFirestore(aiMessage);
                 runOnUiThread(() -> {
-                    addMessage(aiResponse, false);
+                    addMessageToUI(aiMessage);
                     loadingAnimationView.setVisibility(View.GONE);
                 });
             }
 
             @Override
             public void onFailure(@NonNull Throwable t) {
+                ChatMessage errorMessage = new ChatMessage("Sorry, there is a mistake, try again!",
+                        false);
                 runOnUiThread(() -> {
-                    addMessage("Maaf, terjadi kesalahan. Coba lagi.", false);
+                    addMessageToUI(errorMessage);
                     loadingAnimationView.setVisibility(View.GONE);
                 });
             }
         }, Executors.newSingleThreadExecutor());
     }
 
-    private void addMessage(String message, boolean isUser) {
-        chatMessages.add(new ChatMessage(message, isUser));
+    private void createNewChatSession(ChatMessage firstMessage) {
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user == null) return;
+
+        String title = firstMessage.getMessage();
+        if (title.length() > 30) {
+            title = title.substring(0, 30) + "...";
+        }
+
+        ChatSession newSession = new ChatSession(title);
+        db.collection("users").document(user.getUid()).collection("chats")
+                .add(newSession)
+                .addOnSuccessListener(documentReference -> {
+                    currentChatId = documentReference.getId();
+                    setupChatCollectionRef();
+                    saveMessageToFirestore(firstMessage);
+                });
+    }
+
+    private void saveMessageToFirestore(ChatMessage message) {
+        if (messagesRef != null) {
+            messagesRef.add(message);
+        }
+    }
+
+    private void addMessageToUI(ChatMessage message) {
+        chatMessages.add(message);
         chatAdapter.notifyItemInserted(chatMessages.size() - 1);
         chatRecyclerView.scrollToPosition(chatMessages.size() - 1);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.END)) {
+            drawerLayout.closeDrawer(GravityCompat.END);
+        } else {
+            super.onBackPressed();
+        }
     }
 }
