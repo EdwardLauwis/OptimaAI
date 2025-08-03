@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OptimaAI">
-
+        <meta-data
+            android:name="com.google.ai.client.generativeai.API_KEY"
+            android:value="${geminiApiKey}" />
         <activity
             android:name=".BusinessConsultPage"
             android:exported="false"

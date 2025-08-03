@@ -3,9 +3,11 @@ package com.example.optimaai;
 import java.util.Date;
 
 public class ChatMessage {
-    private final String message;
-    private final boolean isUser;
+    private String message;
+    private boolean isUser;
     private Date timestamp;
+
+    public ChatMessage() {}
 
     public ChatMessage(String message, boolean isUser) {
         this.message = message;
@@ -13,7 +15,6 @@ public class ChatMessage {
         this.timestamp = new Date();
     }
 
-    // Getter untuk semua variabel
     public String getMessage() {
         return message;
     }
@@ -24,5 +25,17 @@ public class ChatMessage {
 
     public Date getTimestamp() {
         return timestamp;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public void setUser(boolean user) {
+        isUser = user;
+    }
+
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
     }
 }

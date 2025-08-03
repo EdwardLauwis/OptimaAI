@@ -1,15 +1,23 @@
 package com.example.optimaai;
 
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.graphics.Insets;
 import androidx.core.view.GravityCompat;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,9 +27,9 @@ import com.google.ai.client.generativeai.java.ChatFutures;
 import com.google.ai.client.generativeai.java.GenerativeModelFutures;
 import com.google.ai.client.generativeai.type.Content;
 import com.google.ai.client.generativeai.type.GenerateContentResponse;
+import com.google.android.material.button.MaterialButton;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
-import com.google.android.material.button.MaterialButton;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -62,8 +70,27 @@ public class BusinessConsultPage extends AppCompatActivity {
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle(R.string.consult);
         }
-        toolbar.setNavigationOnClickListener(v -> onBackPressed());
+        toolbar.setNavigationOnClickListener(v -> getOnBackPressedDispatcher().onBackPressed());
+
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                if (drawerLayout.isDrawerOpen(GravityCompat.END)) {
+                    drawerLayout.closeDrawer(GravityCompat.END);
+                } else {
+                    setEnabled(false);
+                    BusinessConsultPage.super.onBackPressed();
+                }
+            }
+        });
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.drawer_layout), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
         drawerLayout = findViewById(R.id.drawer_layout);
         chatRecyclerView = findViewById(R.id.chatRecyclerView);
@@ -83,9 +110,7 @@ public class BusinessConsultPage extends AppCompatActivity {
         drawerHistoryRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         drawerHistoryRecyclerView.setAdapter(historyAdapter);
 
-        GenerativeModel gm = new GenerativeModel("gemini-2.5-flash", BuildConfig.API_KEY);
-        GenerativeModelFutures model = GenerativeModelFutures.from(gm);
-        chat = model.startChat();
+        initializeGenerativeModel();
 
         sendPromptButton.setOnClickListener(v -> sendMessage());
         drawerNewChatButton.setOnClickListener(v -> startNewChat());
@@ -98,6 +123,28 @@ public class BusinessConsultPage extends AppCompatActivity {
         }
 
         loadChatHistoryForDrawer();
+    }
+
+    private void initializeGenerativeModel() {
+        String apiKey;
+        try {
+            ApplicationInfo appInfo = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
+            apiKey = appInfo.metaData.getString("com.google.ai.client.generativeai.API_KEY");
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.e("BusinessConsultPage", "Failed to load meta-data", e);
+            Toast.makeText(this, "Error: API Key not found in manifest.", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if (apiKey == null || apiKey.isEmpty()) {
+            Log.e("BusinessConsultPage", "API Key is null or empty.");
+            Toast.makeText(this, "Error: API Key is missing.", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        GenerativeModel gm = new GenerativeModel("gemini-2.5-flash", apiKey);
+        GenerativeModelFutures model = GenerativeModelFutures.from(gm);
+        chat = model.startChat();
     }
 
     @Override
@@ -118,8 +165,9 @@ public class BusinessConsultPage extends AppCompatActivity {
     private void startNewChat() {
         drawerLayout.closeDrawer(GravityCompat.END);
         Intent intent = new Intent(this, BusinessConsultPage.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+        finish();
     }
 
     private void loadChatHistoryForDrawer() {
@@ -129,7 +177,13 @@ public class BusinessConsultPage extends AppCompatActivity {
         db.collection("users").document(currentUser.getUid()).collection("chats")
                 .orderBy("createdAt", Query.Direction.DESCENDING)
                 .addSnapshotListener((value, error) -> {
-                    if (error != null || value == null) return;
+                    if (error != null) {
+                        Log.w("BusinessConsultPage", "Listen failed.", error);
+                        return;
+                    }
+
+                    if (value == null) return;
+
                     chatSessionList.clear();
                     for (QueryDocumentSnapshot doc : value) {
                         ChatSession session = doc.toObject(ChatSession.class);
@@ -151,8 +205,10 @@ public class BusinessConsultPage extends AppCompatActivity {
 
     private void loadChatMessages() {
         if (messagesRef == null) return;
+
         messagesRef.orderBy("timestamp", Query.Direction.ASCENDING)
                 .get().addOnSuccessListener(queryDocumentSnapshots -> {
+                    chatMessages.clear();
                     for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
                         ChatMessage msg = doc.toObject(ChatMessage.class);
                         chatMessages.add(msg);
@@ -161,12 +217,15 @@ public class BusinessConsultPage extends AppCompatActivity {
                     if (!chatMessages.isEmpty()) {
                         chatRecyclerView.scrollToPosition(chatMessages.size() - 1);
                     }
-                });
+                }).addOnFailureListener(e -> Log.e("BusinessConsultPage", "Error loading messages", e));
     }
 
     private void sendMessage() {
         String prompt = promptEditText.getText().toString().trim();
-        if (prompt.isEmpty()) return;
+        if (prompt.isEmpty() || chat == null) {
+            if(chat == null) Toast.makeText(this, "AI Model is not initialized.", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         ChatMessage userMessage = new ChatMessage(prompt, true);
         addMessageToUI(userMessage);
@@ -195,8 +254,8 @@ public class BusinessConsultPage extends AppCompatActivity {
 
             @Override
             public void onFailure(@NonNull Throwable t) {
-                ChatMessage errorMessage = new ChatMessage("Sorry, there is a mistake, try again!",
-                        false);
+                Log.e("BusinessConsultPage", "Error sending message to AI", t);
+                ChatMessage errorMessage = new ChatMessage("Sorry, there was an error. Please try again!", false);
                 runOnUiThread(() -> {
                     addMessageToUI(errorMessage);
                     loadingAnimationView.setVisibility(View.GONE);
@@ -221,12 +280,12 @@ public class BusinessConsultPage extends AppCompatActivity {
                     currentChatId = documentReference.getId();
                     setupChatCollectionRef();
                     saveMessageToFirestore(firstMessage);
-                });
+                }).addOnFailureListener(e -> Log.e("BusinessConsultPage", "Error creating new chat session", e));
     }
 
     private void saveMessageToFirestore(ChatMessage message) {
         if (messagesRef != null) {
-            messagesRef.add(message);
+            messagesRef.add(message).addOnFailureListener(e -> Log.e("BusinessConsultPage", "Error saving message to Firestore", e));
         }
     }
 
@@ -234,14 +293,5 @@ public class BusinessConsultPage extends AppCompatActivity {
         chatMessages.add(message);
         chatAdapter.notifyItemInserted(chatMessages.size() - 1);
         chatRecyclerView.scrollToPosition(chatMessages.size() - 1);
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.END)) {
-            drawerLayout.closeDrawer(GravityCompat.END);
-        } else {
-            super.onBackPressed();
-        }
     }
 }

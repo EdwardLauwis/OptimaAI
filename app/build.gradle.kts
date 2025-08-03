@@ -10,19 +10,19 @@ val localPropertiesFile = rootProject.file("local.properties")
 if (localPropertiesFile.exists()) {
     properties.load(localPropertiesFile.inputStream())
 } else {
-    throw GradleException("File local.properties tidak ditemukan.")
+    throw GradleException("Berkas 'local.properties' tidak ditemukan di root proyek. Harap buat berkas tersebut dan tambahkan API_KEY=\"KUNCI_ANDA\".")
 }
 
 val geminiApiKey = properties.getProperty("API_KEY")
-    ?: throw GradleException("'API_KEY' tidak ditemukan di local.properties. Periksa ejaan dan nama variabel.")
+    ?: throw GradleException("'API_KEY' tidak ditemukan di local.properties. Periksa kembali nama variabelnya.")
 
 android {
     namespace = "com.example.optimaai"
     compileSdk = 36
 
-    buildFeatures {
-        buildConfig = true
-    }
+//    buildFeatures {
+//        buildConfig = true
+//    }
 
     defaultConfig {
         applicationId = "com.example.optimaai"
@@ -34,7 +34,10 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         // Menghasilkan API_KEY di BuildConfig
-        buildConfigField("String", "API_KEY", "\"$geminiApiKey\"")
+//        buildConfigField("String", "API_KEY", "\"$geminiApiKey\"")
+
+        manifestPlaceholders["geminiApiKey"] = geminiApiKey
+
     }
 
     buildTypes {
@@ -81,10 +84,21 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation(libs.google.cloud.vertexai)
+
+    implementation(libs.generativeai) {
+        exclude(group = "com.google.protobuf", module = "protobuf-java")
+        exclude(group = "io.grpc")
+    }
+
+    implementation(libs.google.cloud.vertexai) {
+        exclude(group = "com.google.api.grpc", module = "proto-google-common-protos")
+        exclude(group = "com.google.protobuf", module = "protobuf-java")
+        exclude(group = "io.grpc")
+    }
+
     implementation(libs.transition)
     implementation(libs.reactive.streams)
     implementation(libs.lottie)
-    implementation(libs.firebase.bom)
+    implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.firestore)
 }

@@ -14,7 +14,7 @@ class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
 
     private static final int VIEW_TYPE_USER = 1;
     private static final int VIEW_TYPE_AI = 2;
-    private List<ChatMessage> chatMessages;
+    private final List<ChatMessage> chatMessages;
 
     public ChatAdapter(List<ChatMessage> chatMessages) {
         this.chatMessages = chatMessages;

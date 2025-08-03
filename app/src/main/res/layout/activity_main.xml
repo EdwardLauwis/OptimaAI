@@ -13,7 +13,6 @@
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
         tools:openDrawer="start"
         tools:context=".MainActivity">
 
@@ -23,19 +22,17 @@
             android:background="#F5F5F5">
 
             <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
+                android:layout_height="wrap_content">
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:background="#FFFFFF"
-                    app:title="AI Feature Hub"
+                    app:title="Optima AI"
                     app:titleTextColor="#212121"
                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-
             </com.google.android.material.appbar.AppBarLayout>
 
             <androidx.core.widget.NestedScrollView

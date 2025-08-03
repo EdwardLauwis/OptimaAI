@@ -50,12 +50,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return insets;
         });
 
-        Log.d("MainActivity", "API_KEY: " + BuildConfig.API_KEY);
-
-        GenerativeModel gm = new GenerativeModel("gemini-2.5-flash", BuildConfig.API_KEY);
-        GenerativeModelFutures model = GenerativeModelFutures.from(gm);
-
-        Executor executor = Executors.newSingleThreadExecutor();
+//        GenerativeModel gm = new GenerativeModel("gemini-2.5-flash", BuildConfig.API_KEY);
+//        GenerativeModelFutures model = GenerativeModelFutures.from(gm);
+//
+//        Executor executor = Executors.newSingleThreadExecutor();
 //        sendPromptButton.setOnClickListener(v -> {
 //            String prompt = promptEditText.getText().toString().trim();
 //            if (prompt.isEmpty()) {
