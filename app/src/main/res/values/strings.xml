@@ -67,4 +67,8 @@
     <string name="consult_history">Consult History</string>
     <string name="start_new_consult">Start new consult</string>
     <string name="your_question">Your question...</string>
+    <string name="set_tone">Set Tone</string>
+    <string name="options">Options</string>
+    <string name="masukkan_gaya_sendiri_fitur_pro">Masukkan gaya sendiri (Fitur Pro)</string>
+    <string name="done">Done</string>
 </resources>

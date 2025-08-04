@@ -9,6 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
@@ -41,7 +43,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executors;
 
-public class BusinessConsultPage extends AppCompatActivity {
+public class BusinessConsultPage extends AppCompatActivity implements SetToneBottomSheetFragment.ToneSelectionListener {
 
     private DrawerLayout drawerLayout;
     private RecyclerView chatRecyclerView;
@@ -52,11 +54,11 @@ public class BusinessConsultPage extends AppCompatActivity {
     private List<ChatMessage> chatMessages;
     private List<ChatSession> chatSessionList;
     private ChatFutures chat;
-
     private FirebaseFirestore db;
     private FirebaseAuth mAuth;
     private String currentChatId = null;
     private CollectionReference messagesRef;
+    private String currentAiTone = "Professional";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +101,8 @@ public class BusinessConsultPage extends AppCompatActivity {
         loadingAnimationView = findViewById(R.id.loadingAnimationView);
         RecyclerView drawerHistoryRecyclerView = findViewById(R.id.drawerHistoryRecyclerView);
         MaterialButton drawerNewChatButton = findViewById(R.id.drawerNewChatButton);
+        ImageButton optionsMenuButton = findViewById(R.id.optionsMenuButton);
+
 
         chatMessages = new ArrayList<>();
         chatAdapter = new ChatAdapter(chatMessages);
@@ -112,6 +116,7 @@ public class BusinessConsultPage extends AppCompatActivity {
 
         initializeGenerativeModel();
 
+        optionsMenuButton.setOnClickListener(this::showOptionsMenu);
         sendPromptButton.setOnClickListener(v -> sendMessage());
         drawerNewChatButton.setOnClickListener(v -> startNewChat());
 
@@ -123,6 +128,31 @@ public class BusinessConsultPage extends AppCompatActivity {
         }
 
         loadChatHistoryForDrawer();
+    }
+
+    // Kode yang sudah diperbaiki
+    // Kode yang sudah diperbaiki
+    private void showOptionsMenu(View v) {
+        PopupMenu popup = new PopupMenu(this, v);
+        popup.getMenuInflater().inflate(R.menu.chat_options_menu, popup.getMenu());
+
+        popup.setOnMenuItemClickListener(item -> {
+            int itemId = item.getItemId();
+            if (itemId == R.id.option_set_tone) {
+                SetToneBottomSheetFragment bottomSheet = SetToneBottomSheetFragment.newInstance(currentAiTone);
+                // ▼▼▼ PERUBAHAN DI SINI ▼▼▼
+                bottomSheet.setToneSelectionListener(BusinessConsultPage.this);
+                // ▲▲▲ AKHIR PERUBAHAN ▲▲▲
+                bottomSheet.show(getSupportFragmentManager(), "SetToneBottomSheet");
+                return true;
+            } else if (itemId == R.id.option_ai_features) {
+                Toast.makeText(this, "Fitur AI diklik", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+            return false;
+        });
+
+        popup.show();
     }
 
     private void initializeGenerativeModel() {
@@ -293,5 +323,10 @@ public class BusinessConsultPage extends AppCompatActivity {
         chatMessages.add(message);
         chatAdapter.notifyItemInserted(chatMessages.size() - 1);
         chatRecyclerView.scrollToPosition(chatMessages.size() - 1);
+    }
+
+    @Override
+    public void onToneSelected(String tone) {
+        this.currentAiTone = tone;
     }
 }

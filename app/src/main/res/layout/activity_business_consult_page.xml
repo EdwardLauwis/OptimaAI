@@ -37,6 +37,35 @@
             android:padding="8dp"
             android:clipToPadding="false"/>
 
+<!--        <LinearLayout-->
+<!--            android:id="@+id/inputLayout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:padding="8dp"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:background="@android:color/white">-->
+<!--            <EditText-->
+<!--                android:id="@+id/promptEditText"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:autofillHints=""-->
+<!--                android:hint="@string/your_question"-->
+<!--                android:inputType="textMultiLine"-->
+<!--                android:maxLines="5"-->
+<!--                android:background="@drawable/chat_input_background"-->
+<!--                android:padding="12dp"/>-->
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/sendPromptButton"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="8dp"-->
+<!--                android:text="@string/send"-->
+<!--                style="@style/Widget.Material3.Button.Icon"/>-->
+<!--        </LinearLayout>-->
+
         <LinearLayout
             android:id="@+id/inputLayout"
             android:layout_width="match_parent"
@@ -46,6 +75,15 @@
             android:padding="8dp"
             android:gravity="center_vertical"
             android:background="@android:color/white">
+
+            <ImageButton
+                android:id="@+id/optionsMenuButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_more_vert"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/options"
+                android:padding="8dp"/>
             <EditText
                 android:id="@+id/promptEditText"
                 android:layout_width="0dp"
@@ -56,13 +94,14 @@
                 android:inputType="textMultiLine"
                 android:maxLines="5"
                 android:background="@drawable/chat_input_background"
-                android:padding="12dp"/>
+                android:padding="12dp"
+                android:layout_marginStart="8dp"/>
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/sendPromptButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                app:icon="@drawable/ic_send"
+                android:text="@string/send"
                 style="@style/Widget.Material3.Button.Icon"/>
         </LinearLayout>
 
