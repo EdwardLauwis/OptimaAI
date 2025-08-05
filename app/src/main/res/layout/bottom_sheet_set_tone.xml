@@ -33,51 +33,67 @@
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Profesional"/>
+            android:text="Professional"/>
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipRamah"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ramah &amp; Kasual"/>
+            android:text="Friendly &amp; Casual"/>
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipKreatif"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kreatif &amp; Inspiratif"/>
+            android:text="Creative &amp; Inspirational"/>
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipAnalitis"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Analitis &amp; Data"/>
+            android:text="Analytics &amp; Data"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipMentor"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Decisive Business Mentor"/>
+
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipFriendInArms"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confidential Friend in arms"/>
 
     </com.google.android.material.chip.ChipGroup>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:endIconDrawable="@drawable/ic_lock"
-        app:endIconMode="custom"
-        app:endIconTint="?attr/colorPrimary">
+        android:layout_marginTop="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/customToneEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/masukkan_gaya_sendiri_fitur_pro"
-            android:enabled="false"/>
+            android:hint="Custom tone..."
+            android:enabled="true"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 
+
     <Button
+        android:backgroundTint="?attr/colorPrimary"
         android:id="@+id/applyToneButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:text="@string/done"
         android:layout_marginTop="24dp"/>
 

@@ -3,13 +3,13 @@
     <item
         android:id="@+id/option_set_tone"
         android:title="@string/set_tone" />
-    <item
-        android:id="@+id/option_ai_features"
-        android:title="Fitur Lain Seputar AI" />
-    <item
-        android:id="@+id/option_dll_1"
-        android:title="Fitur Masa Depan 1" />
-    <item
-        android:id="@+id/option_dll_2"
-        android:title="Fitur Masa Depan 2" />
+<!--    <item-->
+<!--        android:id="@+id/option_set_rules"-->
+<!--        android:title="@string/set_rules" />-->
+<!--    <item-->
+<!--        android:id="@+id/option_dll_1"-->
+<!--        android:title="Fitur Masa Depan 1" />-->
+<!--    <item-->
+<!--        android:id="@+id/option_dll_2"-->
+<!--        android:title="Fitur Masa Depan 2" />-->
 </menu>

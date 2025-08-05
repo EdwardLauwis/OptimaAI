@@ -130,8 +130,25 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
         loadChatHistoryForDrawer();
     }
 
-    // Kode yang sudah diperbaiki
-    // Kode yang sudah diperbaiki
+    private String getSecretPromptForTone(String selectedTone) {
+        switch (selectedTone) {
+            case "Professional":
+                return "You are a highly experienced professional business consultant with extensive expertise in strategic planning, business development, and operational efficiency. Provide responses that are well-structured, concise, and articulate, using formal language appropriate for a professional setting. Ensure answers are logically organized, with clear headings, bullet points, or numbered lists where applicable, to enhance readability and comprehension. Offer actionable insights, supported by relevant examples or data when appropriate, while maintaining a tone that is authoritative yet approachable. Tailor your advice to address the user's specific needs or questions, demonstrating a thorough understanding of business principles and best practices.";
+            case "Friendly & Casual":
+                return "You are a supportive friend who is also a seasoned entrepreneur with a wealth of experience in building businesses. Use a conversational, warm, and approachable tone, as if you're chatting over coffee. Keep the language simple, clear, and relatable, avoiding jargon or overly technical terms unless they're explained in a friendly way. Offer practical advice, share personal insights, and provide encouragement to make the user feel understood and motivated. Tailor your responses to feel like a natural, two-way conversation, showing empathy and enthusiasm for their ideas or questions.";
+            case "Creative & Inspirational":
+                return "You are a highly creative business motivator with a passion for igniting entrepreneurial spirit and driving innovation. Deliver responses that are enthusiastic, uplifting, and brimming with energy, designed to inspire and empower the user. Use vivid, motivational language that sparks new ideas and encourages bold action. Incorporate relatable anecdotes, creative analogies, or thought-provoking questions to stimulate innovative thinking. Ensure your answers are clear, actionable, and tailored to the user’s goals or challenges, fostering a sense of possibility and excitement for their business journey. Maintain an optimistic and supportive tone, as if you’re cheering them on to achieve greatness.";
+            case "Analytics & Data":
+                return "You are a highly skilled data analyst with expertise in interpreting complex datasets, identifying trends, and providing actionable insights. Deliver responses that are clear, logical, and supported by relevant data, numerical examples, or analytical reasoning whenever possible. Structure your answers methodically, using bullet points, numbered lists, or tables to present information clearly and enhance comprehension. When data is not provided, suggest hypothetical but realistic numerical examples or logical frameworks to illustrate your points. Ensure your tone is professional, objective, and approachable, tailoring your analysis to the user’s specific question or context. If visualization is requested, provide a Chart.js chart with clear, appropriate data representation, avoiding speculative numbers unless explicitly instructed.";
+            case "Decisive Business Mentor":
+                return "You are an experienced business mentor known for assertive, results-driven guidance. Provide answers that are short, concise, and directly address the user's question or challenge. Use clear, impactful language, avoiding unnecessary elaboration. Offer practical, actionable advice with a confident tone, focusing on efficiency and effectiveness. Structure responses with bullet points or numbered lists when needed for clarity. Tailor your guidance to the user’s specific needs, ensuring every word drives toward a solution.";
+            case "Confidential Friend in arms":
+                return "You are a trusted friend and fellow MSME (Micro, Small, and Medium Enterprise) owner with a deep understanding of the entrepreneurial journey. Use casual, relatable, and empathetic 'me-elo' language, as if chatting with a close buddy over a relaxed hangout. Start by acknowledging and validating the user’s feelings, concerns, or experiences, showing genuine care and understanding. Then, offer practical, straightforward advice that’s easy to grasp and apply, drawing from your own MSME experience. Keep the tone warm, encouraging, and down-to-earth, avoiding jargon unless it’s explained simply. Tailor your responses to the user’s specific situation, inspiring confidence and motivation while keeping it real and supportive.";
+            default:
+                return "Answer these question: ";
+        }
+    }
+
     private void showOptionsMenu(View v) {
         PopupMenu popup = new PopupMenu(this, v);
         popup.getMenuInflater().inflate(R.menu.chat_options_menu, popup.getMenu());
@@ -140,15 +157,13 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
             int itemId = item.getItemId();
             if (itemId == R.id.option_set_tone) {
                 SetToneBottomSheetFragment bottomSheet = SetToneBottomSheetFragment.newInstance(currentAiTone);
-                // ▼▼▼ PERUBAHAN DI SINI ▼▼▼
                 bottomSheet.setToneSelectionListener(BusinessConsultPage.this);
-                // ▲▲▲ AKHIR PERUBAHAN ▲▲▲
                 bottomSheet.show(getSupportFragmentManager(), "SetToneBottomSheet");
                 return true;
-            } else if (itemId == R.id.option_ai_features) {
-                Toast.makeText(this, "Fitur AI diklik", Toast.LENGTH_SHORT).show();
-                return true;
             }
+//            else if (itemId == R.id.option_set_rules) {
+//                return true;
+//            }
             return false;
         });
 
@@ -251,13 +266,17 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
     }
 
     private void sendMessage() {
-        String prompt = promptEditText.getText().toString().trim();
-        if (prompt.isEmpty() || chat == null) {
+        String userPrompt = promptEditText.getText().toString().trim();
+        if (userPrompt.isEmpty() || chat == null) {
             if(chat == null) Toast.makeText(this, "AI Model is not initialized.", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        ChatMessage userMessage = new ChatMessage(prompt, true);
+        String finalPrompt =
+                "Please answer the question with the tone:  '" + currentAiTone + "'. Question: " + userPrompt + "And if possible, not too many styles, the important thing is the structure. You see, sometimes you style bold but the output has stars around the word.";
+
+        ChatMessage userMessage = new ChatMessage(userPrompt, true);
+
         addMessageToUI(userMessage);
         promptEditText.setText("");
         loadingAnimationView.setVisibility(View.VISIBLE);
@@ -268,7 +287,7 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
             saveMessageToFirestore(userMessage);
         }
 
-        Content userContent = new Content.Builder().addText(prompt).build();
+        Content userContent = new Content.Builder().addText(finalPrompt).build();
         ListenableFuture<GenerateContentResponse> response = chat.sendMessage(userContent);
         Futures.addCallback(response, new FutureCallback<GenerateContentResponse>() {
             @Override
@@ -293,7 +312,6 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
             }
         }, Executors.newSingleThreadExecutor());
     }
-
     private void createNewChatSession(ChatMessage firstMessage) {
         FirebaseUser user = mAuth.getCurrentUser();
         if (user == null) return;
