@@ -43,7 +43,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executors;
 
-public class BusinessConsultPage extends AppCompatActivity implements SetToneBottomSheetFragment.ToneSelectionListener {
+public class BusinessConsultPage extends AppCompatActivity implements SetToneBottomSheetFragment.ToneSelectionListener, ChatHistoryAdapter.ChatHistoryListener {
 
     private DrawerLayout drawerLayout;
     private RecyclerView chatRecyclerView;
@@ -382,5 +382,20 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
     @Override
     public void onCurrentChatDeleted() {
         startNewChat();
+    }
+
+    @Override
+    public void onChatSessionClicked(String chatId) {
+
+    }
+
+    @Override
+    public void onRenameChat(ChatSession session, int position) {
+
+    }
+
+    @Override
+    public void onDeleteChat(String chatId, int position) {
+
     }
 }
