@@ -2,13 +2,19 @@ package com.example.optimaai;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -24,11 +30,11 @@ import java.util.Objects;
 public class Register_Page extends AppCompatActivity implements View.OnClickListener{
 
     TextInputEditText UsernameEditText, EmailEditText, PasswordEditText, ConfPasswordEditText;
-
     TextView AlreadyHaveAnAccount;
     Button RegisterButton;
     ProgressBar progressBar;
     private FirebaseAuth mAuth;
+    CheckBox termsCheckBox;
 
 
     @Override
@@ -49,8 +55,22 @@ public class Register_Page extends AppCompatActivity implements View.OnClickList
         ConfPasswordEditText = findViewById(R.id.ConfPasswordEditText);
         RegisterButton = findViewById(R.id.RegisterButton);
         progressBar = findViewById(R.id.progressBar);
+        termsCheckBox = findViewById(R.id.termsCheckBox);
 
         mAuth = FirebaseAuth.getInstance();
+
+        makeTermsClickable();
+
+        RegisterButton.setEnabled(false);
+        RegisterButton.setAlpha(0.5f);
+
+        termsCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            RegisterButton.setEnabled(isChecked);
+            RegisterButton.setAlpha(isChecked ? 1.0f : 0.5f);
+        });
+
+        RegisterButton.setOnClickListener(this);
+        AlreadyHaveAnAccount.setOnClickListener(this);
 
         RegisterButton.setOnClickListener(this);
         AlreadyHaveAnAccount.setOnClickListener(this);
@@ -105,7 +125,9 @@ public class Register_Page extends AppCompatActivity implements View.OnClickList
                     });
 
         } else if (view == AlreadyHaveAnAccount){
-
+            Intent intent = new Intent(Register_Page.this, Login_Page.class);
+            startActivity(intent);
+            finish();
         }
     }
     private void updateUserProfile(FirebaseUser user, String username) {
@@ -123,5 +145,25 @@ public class Register_Page extends AppCompatActivity implements View.OnClickList
                         finish();
                     }
                 });
+    }
+
+    private void makeTermsClickable() {
+        String fullText = "I agree to the Terms & Conditions";
+        String clickableText = "Terms & Conditions";
+
+        SpannableString spannableString = new SpannableString(fullText);
+        ClickableSpan clickableSpan = new ClickableSpan() {
+            @Override
+            public void onClick(@NonNull View widget) {
+                startActivity(new Intent(Register_Page.this, TermsAndConditionsActivity.class));
+            }
+        };
+
+        int startIndex = fullText.indexOf(clickableText);
+        int endIndex = startIndex + clickableText.length();
+
+        spannableString.setSpan(clickableSpan, startIndex, endIndex, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        termsCheckBox.setText(spannableString);
+        termsCheckBox.setMovementMethod(LinkMovementMethod.getInstance());
     }
 }

@@ -52,16 +52,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         updateNavHeader();
 
-        // ▼▼▼ PERUBAHAN DI SINI ▼▼▼
-        // Terapkan padding ke DrawerLayout, bukan ke 'main' yang sudah dihapus
         ViewCompat.setOnApplyWindowInsetsListener(drawerLayout, (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, 0, systemBars.right, 0); // Hanya padding kiri & kanan
-            // Atur padding atas untuk Toolbar secara manual
             toolbar.setPadding(0, systemBars.top, 0, 0);
             return WindowInsetsCompat.CONSUMED; // Tandai bahwa kita sudah menangani insets
         });
-        // ▲▲▲ AKHIR PERUBAHAN ▲▲▲
 
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override
@@ -69,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (drawerLayout.isDrawerOpen(GravityCompat.END)) {
                     drawerLayout.closeDrawer(GravityCompat.END);
                 } else {
-                    finish(); // Keluar dari aplikasi jika drawer tertutup
+                    finish();
                 }
             }
         });

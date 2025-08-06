@@ -17,6 +17,9 @@
             android:name="com.google.ai.client.generativeai.API_KEY"
             android:value="${geminiApiKey}" />
         <activity
+            android:name=".TermsAndConditionsActivity"
+            android:exported="false" />
+        <activity
             android:name=".BusinessConsultPage"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />

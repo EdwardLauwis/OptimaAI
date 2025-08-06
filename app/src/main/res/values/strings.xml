@@ -72,4 +72,26 @@
     <string name="masukkan_gaya_sendiri_fitur_pro">Masukkan gaya sendiri (Fitur Pro)</string>
     <string name="done">Done</string>
     <string name="set_rules">Set Rules</string>
+    <string name="welcome">Welcome to OptimaAI!</string>
+    <string name="login_to_continue">Login to continue</string>
+    <string name="logo_apk">logo_apk</string>
+    <string name="make_a_new_account">Make a new account</string>
+    <string name="business_ai_assistant">Business AI Assistant.</string>
+    <string name="i_agree_to_the_terms_amp_conditions"><![CDATA[I agree to the Terms & Conditions]]></string>
+    <!-- res/values/strings.xml -->
+    <string name="terms_and_conditions_content">
+    "Selamat datang di OptimaAI!\n\n"
+    "Dengan menggunakan aplikasi ini, Anda setuju untuk terikat oleh Syarat dan Ketentuan berikut. Mohon baca dengan saksama.\n\n"
+    "1. Penggunaan Akun\n"
+    "Anda bertanggung jawab untuk menjaga kerahasiaan akun dan kata sandi Anda. Semua aktivitas yang terjadi di bawah akun Anda adalah tanggung jawab Anda.\n\n"
+    "2. Layanan AI\n"
+    "Saran yang diberikan oleh AI bersifat informatif dan tidak boleh dianggap sebagai nasihat profesional (hukum, keuangan, dll.). Keputusan bisnis tetap menjadi tanggung jawab penuh pengguna.\n\n"
+    "3. Konten Pengguna\n"
+    "Anda memiliki semua data dan konten yang Anda masukkan ke dalam aplikasi. Kami tidak akan menggunakan data Anda untuk tujuan apa pun tanpa persetujuan Anda.\n\n"
+    "4. Batasan Tanggung Jawab\n"
+    "OptimaAI tidak bertanggung jawab atas kerugian bisnis atau kerusakan apa pun yang timbul dari penggunaan atau ketidakmampuan untuk menggunakan layanan kami.\n\n"
+    "5. Perubahan Ketentuan\n"
+    "Kami berhak untuk mengubah Syarat dan Ketentuan ini kapan saja. Perubahan akan diinformasikan melalui aplikasi atau email.\n\n"
+    "Terima kasih telah menggunakan OptimaAI untuk membantu mengembangkan bisnis Anda."
+</string>
 </resources>

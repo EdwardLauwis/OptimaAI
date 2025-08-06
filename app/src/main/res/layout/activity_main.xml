@@ -17,7 +17,10 @@
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:elevation="0dp">
+
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
@@ -33,124 +36,172 @@
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <GridLayout
+            <!-- ▼▼▼ MODIFIKASI DIMULAI DARI SINI ▼▼▼ -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:columnCount="2"
-                android:rowCount="3"
-                android:alignmentMode="alignMargins"
-                android:columnOrderPreserved="false">
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="16dp">
 
-                <!-- CardView untuk Business Consult -->
+                <!-- Header Sambutan dalam bentuk Card -->
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    app:cardElevation="4dp"
-                    app:cardCornerRadius="12dp"
-                    android:layout_margin="8dp"
-                    android:clickable="true"
-                    android:focusable="true">
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="8dp"
+                    android:layout_marginBottom="24dp"
+                    app:cardBackgroundColor="@color/primaryBlue">
+
                     <LinearLayout
-                        android:id="@+id/businessConsultContainer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:padding="16dp"
-                        android:gravity="center">
-                        <ImageView
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:src="@drawable/business_consult_logo"
-                            app:tint="#0D47A1"
-                            android:contentDescription="@string/business_consult"/>
+                        android:padding="20dp">
+
                         <TextView
+                            android:id="@+id/welcome_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/business_consult"
-                            android:layout_marginTop="12dp"
-                            android:textColor="#212121"
+                            android:text="@string/welcome"
+                            android:textSize="22sp"
                             android:textStyle="bold"
-                            android:fontFamily="sans-serif-medium"/>
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/welcome_subtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/business_ai_assistant"
+                            android:textSize="16sp"
+                            android:textColor="@color/white"
+                            android:alpha="0.8"/>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- CardView untuk Idea Generator -->
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="0dp"
+                <!-- Judul Bagian Fitur -->
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    app:cardElevation="4dp"
-                    app:cardCornerRadius="12dp"
-                    android:layout_margin="8dp"
-                    android:clickable="true"
-                    android:focusable="true">
-                    <LinearLayout
-                        android:id="@+id/ideaGeneratorContainer"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:gravity="center">
-                        <ImageView
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:src="@drawable/idea_generator_logo"
-                            app:tint="#0D47A1"
-                            android:contentDescription="@string/idea_generator"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/idea_generator"
-                            android:layout_marginTop="12dp"
-                            android:textColor="#212121"
-                            android:textStyle="bold"
-                            android:fontFamily="sans-serif-medium"/>
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
+                    android:text="Pilih Fitur Unggulan"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"/>
 
-                <!-- CardView untuk Copywriter -->
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="0dp"
+                <GridLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    app:cardElevation="4dp"
-                    app:cardCornerRadius="12dp"
-                    android:layout_margin="8dp"
-                    android:clickable="true"
-                    android:focusable="true">
-                    <LinearLayout
-                        android:id="@+id/copyWriterGenerator"
-                        android:layout_width="match_parent"
+                    android:columnCount="2"
+                    android:alignmentMode="alignMargins"
+                    android:columnOrderPreserved="false">
+
+                    <!-- CardView untuk Business Consult -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:gravity="center">
-                        <ImageView
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:src="@drawable/copywriter_logo"
-                            app:tint="#0D47A1"
-                            android:contentDescription="@string/copywriter"/>
-                        <TextView
-                            android:layout_width="wrap_content"
+                        android:layout_columnWeight="1"
+                        app:cardElevation="4dp"
+                        app:cardCornerRadius="16dp"
+                        android:layout_margin="8dp"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <LinearLayout
+                            android:id="@+id/businessConsultContainer"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/copywriter"
-                            android:layout_marginTop="12dp"
-                            android:textColor="#212121"
-                            android:textStyle="bold"
-                            android:fontFamily="sans-serif-medium"/>
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-            </GridLayout>
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                android:src="@drawable/business_consult_logo"
+                                app:tint="@color/primaryBlue"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/business_consult"
+                                android:layout_marginTop="12dp"
+                                android:textColor="#212121"
+                                android:textStyle="bold"
+                                android:fontFamily="sans-serif-medium"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- CardView untuk Idea Generator -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        app:cardElevation="4dp"
+                        app:cardCornerRadius="16dp"
+                        android:layout_margin="8dp"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <LinearLayout
+                            android:id="@+id/ideaGeneratorContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                android:src="@drawable/idea_generator_logo"
+                                app:tint="@color/primaryBlue"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/idea_generator"
+                                android:layout_marginTop="12dp"
+                                android:textColor="#212121"
+                                android:textStyle="bold"
+                                android:fontFamily="sans-serif-medium"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- CardView untuk Copywriter -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        app:cardElevation="4dp"
+                        app:cardCornerRadius="16dp"
+                        android:layout_margin="8dp"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <LinearLayout
+                            android:id="@+id/copyWriterGenerator"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                android:src="@drawable/copywriter_logo"
+                                app:tint="@color/primaryBlue"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/copywriter"
+                                android:layout_marginTop="12dp"
+                                android:textColor="#212121"
+                                android:textStyle="bold"
+                                android:fontFamily="sans-serif-medium"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </GridLayout>
+            </LinearLayout>
+
         </androidx.core.widget.NestedScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <!-- Tampilan untuk Navigation Drawer -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
