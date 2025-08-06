@@ -19,7 +19,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -155,36 +157,38 @@ public class ChatHistoryAdapter extends RecyclerView.Adapter<ChatHistoryAdapter.
         }
     }
 
+    // ChatHistoryAdapter.java
+
     private void deleteChat(String chatId, int position) {
-        if (currentUser != null && position >= 0 && position < chatSessions.size()) {
-            db.collection("users").document(currentUser.getUid())
-                    .collection("chats").document(chatId)
-                    .delete()
-                    .addOnSuccessListener(aVoid -> {
-                        Log.d("ChatHistoryAdapter", "Chat deleted from Firestore, position: " + position);
-                        // Hanya update UI kalau posisi masih valid
-                        if (position >= 0 && position < chatSessions.size()) {
-                            chatSessions.remove(position);
-                            notifyItemRemoved(position);
-                            Log.d("ChatHistoryAdapter", "Chat removed from list successfully");
-                        } else {
-                            Log.w("ChatHistoryAdapter", "Position out of bounds, refreshing list");
-                            notifyDataSetChanged(); // Refresh full list
-                        }
-                        // Reload chat list dari Firestore
-                        ((BusinessConsultPage) context).loadChatHistoryForDrawer();
-                    })
-                    .addOnFailureListener(e -> {
-                        Log.e("ChatHistoryAdapter", "Error deleting chat: " + e.getMessage());
-                        Toast.makeText(context, "Failed to delete chat, please try again", Toast.LENGTH_SHORT).show();
-                        // Kembalikan UI kalau hapus gagal
-                        notifyDataSetChanged();
-                        ((BusinessConsultPage) context).loadChatHistoryForDrawer();
-                    });
-        } else {
-            Log.w("ChatHistoryAdapter", "Invalid position or user null, skipping delete: " + position);
-        }
+        if (currentUser == null) return;
+
+        CollectionReference messagesRef = db.collection("users").document(currentUser.getUid())
+                .collection("chats").document(chatId)
+                .collection("messages");
+
+        messagesRef.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                for (QueryDocumentSnapshot document : task.getResult()) {
+                    messagesRef.document(document.getId()).delete();
+                }
+
+                db.collection("users").document(currentUser.getUid())
+                        .collection("chats").document(chatId)
+                        .delete()
+                        .addOnSuccessListener(aVoid -> {
+                            Log.d("ChatHistoryAdapter", "Chat and its messages deleted successfully.");
+                        })
+                        .addOnFailureListener(e -> {
+                            Log.e("ChatHistoryAdapter", "Error deleting chat document", e);
+                            Toast.makeText(context, "Failed to delete chat.", Toast.LENGTH_SHORT).show();
+                        });
+            } else {
+                Log.e("ChatHistoryAdapter", "Error getting messages for deletion.", task.getException());
+                Toast.makeText(context, "Failed to delete chat messages.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
 
     @Override
     public int getItemCount() {

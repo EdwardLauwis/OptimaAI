@@ -19,6 +19,10 @@ public class    SetToneBottomSheetFragment extends BottomSheetDialogFragment {
 
     public interface ToneSelectionListener {
         void onToneSelected(String tone);
+
+        String getCurrentChatId();
+
+        void onCurrentChatDeleted();
     }
 
     private ToneSelectionListener listener;

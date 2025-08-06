@@ -214,23 +214,31 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
         finish();
     }
 
-    void loadChatHistoryForDrawer() {
-        FirebaseUser user = mAuth.getCurrentUser();
-        if (user != null) {
-            db.collection("users").document(user.getUid()).collection("chats")
-                    .orderBy("createdAt", Query.Direction.DESCENDING)
-                    .get()
-                    .addOnSuccessListener(queryDocumentSnapshots -> {
+    private void loadChatHistoryForDrawer() {
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser == null) return;
+
+        db.collection("users").document(currentUser.getUid()).collection("chats")
+                .orderBy("createdAt", Query.Direction.DESCENDING)
+                .addSnapshotListener((value, error) -> {
+                    if (error != null) {
+                        Log.w("BusinessConsultPage", "Listen failed.", error);
+                        return;
+                    }
+
+                    if (value != null) {
                         chatSessionList.clear();
-                        for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                        for (QueryDocumentSnapshot doc : value) {
                             ChatSession session = doc.toObject(ChatSession.class);
+                            session.setId(doc.getId());
                             chatSessionList.add(session);
                         }
                         historyAdapter.notifyDataSetChanged();
-                    })
-                    .addOnFailureListener(e -> Log.e("BusinessConsultPage", "Error loading chat history", e));
-        }
+                        Log.d("BusinessConsultPage", "Chat history updated in real-time.");
+                    }
+                });
     }
+
 
     private void setupChatCollectionRef() {
         FirebaseUser user = mAuth.getCurrentUser();
@@ -364,5 +372,15 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
     @Override
     public void onToneSelected(String tone) {
         this.currentAiTone = tone;
+    }
+
+    @Override
+    public String getCurrentChatId() {
+        return currentChatId;
+    }
+
+    @Override
+    public void onCurrentChatDeleted() {
+        startNewChat();
     }
 }
