@@ -94,4 +94,6 @@
     "Kami berhak untuk mengubah Syarat dan Ketentuan ini kapan saja. Perubahan akan diinformasikan melalui aplikasi atau email.\n\n"
     "Terima kasih telah menggunakan OptimaAI untuk membantu mengembangkan bisnis Anda."
 </string>
+    <string name="delete">Delete</string>
+    <string name="rename">Rename</string>
 </resources>

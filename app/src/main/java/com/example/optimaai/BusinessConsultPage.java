@@ -110,10 +110,9 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
         chatRecyclerView.setAdapter(chatAdapter);
 
         chatSessionList = new ArrayList<>();
-        historyAdapter = new ChatHistoryAdapter(chatSessionList);
+        historyAdapter = new ChatHistoryAdapter(chatSessionList, this);
         drawerHistoryRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         drawerHistoryRecyclerView.setAdapter(historyAdapter);
-
         initializeGenerativeModel();
 
         optionsMenuButton.setOnClickListener(this::showOptionsMenu);
@@ -215,28 +214,22 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
         finish();
     }
 
-    private void loadChatHistoryForDrawer() {
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser == null) return;
-
-        db.collection("users").document(currentUser.getUid()).collection("chats")
-                .orderBy("createdAt", Query.Direction.DESCENDING)
-                .addSnapshotListener((value, error) -> {
-                    if (error != null) {
-                        Log.w("BusinessConsultPage", "Listen failed.", error);
-                        return;
-                    }
-
-                    if (value == null) return;
-
-                    chatSessionList.clear();
-                    for (QueryDocumentSnapshot doc : value) {
-                        ChatSession session = doc.toObject(ChatSession.class);
-                        session.setId(doc.getId());
-                        chatSessionList.add(session);
-                    }
-                    historyAdapter.notifyDataSetChanged();
-                });
+    void loadChatHistoryForDrawer() {
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) {
+            db.collection("users").document(user.getUid()).collection("chats")
+                    .orderBy("createdAt", Query.Direction.DESCENDING)
+                    .get()
+                    .addOnSuccessListener(queryDocumentSnapshots -> {
+                        chatSessionList.clear();
+                        for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                            ChatSession session = doc.toObject(ChatSession.class);
+                            chatSessionList.add(session);
+                        }
+                        historyAdapter.notifyDataSetChanged();
+                    })
+                    .addOnFailureListener(e -> Log.e("BusinessConsultPage", "Error loading chat history", e));
+        }
     }
 
     private void setupChatCollectionRef() {
@@ -255,8 +248,15 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
                 .get().addOnSuccessListener(queryDocumentSnapshots -> {
                     chatMessages.clear();
                     for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
-                        ChatMessage msg = doc.toObject(ChatMessage.class);
-                        chatMessages.add(msg);
+                        ChatMessage encryptedMsg = doc.toObject(ChatMessage.class);
+
+                        String decryptedMessage = EncryptionHelper.decrypt(encryptedMsg.getMessage());
+                        if (decryptedMessage != null) {
+                            encryptedMsg.setMessage(decryptedMessage);
+                            chatMessages.add(encryptedMsg);
+                        } else {
+                            Log.w("BusinessConsultPage", "Decryption failed for a message.");
+                        }
                     }
                     chatAdapter.notifyDataSetChanged();
                     if (!chatMessages.isEmpty()) {
@@ -316,12 +316,19 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
         FirebaseUser user = mAuth.getCurrentUser();
         if (user == null) return;
 
-        String title = firstMessage.getMessage();
-        if (title.length() > 30) {
-            title = title.substring(0, 30) + "...";
+        String originalTitle = firstMessage.getMessage();
+        if (originalTitle.length() > 30) {
+            originalTitle = originalTitle.substring(0, 30) + "...";
         }
 
-        ChatSession newSession = new ChatSession(title);
+        String encryptedTitle = EncryptionHelper.encrypt(originalTitle);
+        if (encryptedTitle == null) {
+            Log.e("BusinessConsultPage", "Title encryption failed!");
+            encryptedTitle = EncryptionHelper.encrypt("New Chat");
+        }
+
+        ChatSession newSession = new ChatSession(encryptedTitle);
+
         db.collection("users").document(user.getUid()).collection("chats")
                 .add(newSession)
                 .addOnSuccessListener(documentReference -> {
@@ -333,7 +340,18 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
 
     private void saveMessageToFirestore(ChatMessage message) {
         if (messagesRef != null) {
-            messagesRef.add(message).addOnFailureListener(e -> Log.e("BusinessConsultPage", "Error saving message to Firestore", e));
+            ChatMessage messageToSave = new ChatMessage();
+            messageToSave.setUser(message.isUser());
+            messageToSave.setTimestamp(message.getTimestamp());
+
+            String encryptedText = EncryptionHelper.encrypt(message.getMessage());
+            if (encryptedText != null) {
+                messageToSave.setMessage(encryptedText);
+                messagesRef.add(messageToSave)
+                        .addOnFailureListener(e -> Log.e("BusinessConsultPage", "Error saving message", e));
+            } else {
+                Log.e("BusinessConsultPage", "Encryption failed. Message not saved.");
+            }
         }
     }
 
