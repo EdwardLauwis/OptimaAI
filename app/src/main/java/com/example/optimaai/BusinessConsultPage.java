@@ -60,6 +60,8 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
     private CollectionReference messagesRef;
     private String currentAiTone = "Professional";
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,8 +104,7 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
         RecyclerView drawerHistoryRecyclerView = findViewById(R.id.drawerHistoryRecyclerView);
         MaterialButton drawerNewChatButton = findViewById(R.id.drawerNewChatButton);
         ImageButton optionsMenuButton = findViewById(R.id.optionsMenuButton);
-
-
+        
         chatMessages = new ArrayList<>();
         chatAdapter = new ChatAdapter(chatMessages);
         chatRecyclerView.setLayoutManager(new LinearLayoutManager(this));

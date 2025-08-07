@@ -54,9 +54,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         ViewCompat.setOnApplyWindowInsetsListener(drawerLayout, (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, 0, systemBars.right, 0); // Hanya padding kiri & kanan
+            v.setPadding(systemBars.left, 0, systemBars.right, 0);
             toolbar.setPadding(0, systemBars.top, 0, 0);
-            return WindowInsetsCompat.CONSUMED; // Tandai bahwa kita sudah menangani insets
+            return WindowInsetsCompat.CONSUMED;
         });
 
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
@@ -94,6 +94,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(MainActivity.this, BusinessConsultPage.class));
         } else if (viewId == R.id.ideaGeneratorContainer || viewId == R.id.copyWriterGenerator) {
             Toast.makeText(this, "Coming Soon", Toast.LENGTH_SHORT).show();
+        } else if (viewId == R.id.copyWriterGenerator) {
+            Toast.makeText(this, "Coming Soon", Toast.LENGTH_SHORT).show();
+        } else if (viewId == R.id.reportContainer){
+            Toast.makeText(this, "Coming Soon", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -116,9 +120,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();
         if (itemId == R.id.nav_profile) {
-            Toast.makeText(this, "Menu Profil diklik", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.nav_settings) {
-            Toast.makeText(this, "Menu Pengaturan diklik", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.nav_logout) {
             mAuth.signOut();
             Intent intent = new Intent(MainActivity.this, Login_Page.class);
