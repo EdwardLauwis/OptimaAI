@@ -15,7 +15,7 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Objects;
 
-public class    SetToneBottomSheetFragment extends BottomSheetDialogFragment {
+public class SetToneBottomSheetFragment extends BottomSheetDialogFragment {
 
     public interface ToneSelectionListener {
         void onToneSelected(String tone);
@@ -44,7 +44,7 @@ public class    SetToneBottomSheetFragment extends BottomSheetDialogFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            currentTone = getArguments().getString("current_tone", "Professional");
+            currentTone = getArguments().getString("current_tone", "Normal");
         }
     }
 
