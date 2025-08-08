@@ -23,7 +23,7 @@ import java.util.Objects;
 public class Login_Page extends AppCompatActivity implements View.OnClickListener {
 
     TextInputEditText EmailEditText, PasswordEditText;
-    TextView ToRegisterPage;
+    TextView ToRegisterPage, forgotPasswordTextView;
     Button LoginButton;
     ProgressBar progressBar;
     private FirebaseAuth mAuth;
@@ -46,9 +46,11 @@ public class Login_Page extends AppCompatActivity implements View.OnClickListene
         ToRegisterPage = findViewById(R.id.DontHaveAnAccountRegister);
         LoginButton = findViewById(R.id.LoginButton);
         progressBar = findViewById(R.id.progressBar);
+        forgotPasswordTextView = findViewById(R.id.forgotPasswordTextView);
 
         LoginButton.setOnClickListener(this);
         ToRegisterPage.setOnClickListener(this);
+        forgotPasswordTextView.setOnClickListener(this);
     }
 
     @Override
@@ -102,6 +104,9 @@ public class Login_Page extends AppCompatActivity implements View.OnClickListene
             Intent intent = new Intent(Login_Page.this, Register_Page.class);
             startActivity(intent);
             finish();
+        } else if (view == forgotPasswordTextView) {
+            Intent intent = new Intent(Login_Page.this, ForgotPassword.class);
+            startActivity(intent);
         }
     }
 }

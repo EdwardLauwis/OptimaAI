@@ -89,7 +89,18 @@
                     android:layout_height="wrap_content"
                     android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/forgotPasswordTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="8dp"
+                android:text="@string/forget_password"
+                android:textColor="@color/primaryBlue"
+                android:textSize="14sp" />
         </LinearLayout>
+
 
         <!-- Tombol Login -->
         <com.google.android.material.button.MaterialButton
