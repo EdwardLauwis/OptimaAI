@@ -18,12 +18,15 @@ import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.appcheck.FirebaseAppCheck;
+import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderFactory;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
-
     private LinearLayout businessConsultContainer, ideaGeneratorContainer, copyWriterGenerator;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
@@ -34,13 +37,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mAuth = FirebaseAuth.getInstance();
+        initFirebase();
+        initUI();
+        updateNavHeader();
+        handleBackPress();
+    }
 
+    private void initFirebase() {
+        FirebaseApp.initializeApp(this);
+        FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.getInstance();
+        firebaseAppCheck.installAppCheckProviderFactory(
+                PlayIntegrityAppCheckProviderFactory.getInstance()
+        );
+
+        // Auth
+        mAuth = FirebaseAuth.getInstance();
+    }
+
+    private void initUI() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
+
         businessConsultContainer = findViewById(R.id.businessConsultContainer);
         ideaGeneratorContainer = findViewById(R.id.ideaGeneratorContainer);
         copyWriterGenerator = findViewById(R.id.copyWriterGenerator);
@@ -48,9 +68,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         businessConsultContainer.setOnClickListener(this);
         ideaGeneratorContainer.setOnClickListener(this);
         copyWriterGenerator.setOnClickListener(this);
-        navigationView.setNavigationItemSelectedListener(this);
 
-        updateNavHeader();
+        navigationView.setNavigationItemSelectedListener(this);
 
         ViewCompat.setOnApplyWindowInsetsListener(drawerLayout, (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -58,7 +77,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             toolbar.setPadding(0, systemBars.top, 0, 0);
             return WindowInsetsCompat.CONSUMED;
         });
+    }
 
+    private void handleBackPress() {
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
@@ -78,11 +99,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
-            if (currentUser.getDisplayName() != null && !currentUser.getDisplayName().isEmpty()) {
-                navHeaderName.setText(currentUser.getDisplayName());
-            } else {
-                navHeaderName.setText("User");
-            }
+            String displayName = currentUser.getDisplayName();
+            navHeaderName.setText(displayName != null && !displayName.isEmpty() ? displayName : "User");
             navHeaderEmail.setText(currentUser.getEmail());
         }
     }
@@ -90,13 +108,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         int viewId = view.getId();
+
         if (viewId == R.id.businessConsultContainer) {
             startActivity(new Intent(MainActivity.this, BusinessConsultPage.class));
-        } else if (viewId == R.id.ideaGeneratorContainer || viewId == R.id.copyWriterGenerator) {
-            Toast.makeText(this, "Coming Soon", Toast.LENGTH_SHORT).show();
-        } else if (viewId == R.id.copyWriterGenerator) {
-            Toast.makeText(this, "Coming Soon", Toast.LENGTH_SHORT).show();
-        } else if (viewId == R.id.reportContainer){
+        } else if (viewId == R.id.ideaGeneratorContainer || viewId == R.id.copyWriterGenerator || viewId == R.id.reportContainer) {
             Toast.makeText(this, "Coming Soon", Toast.LENGTH_SHORT).show();
         }
     }
@@ -119,6 +134,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();
+
         if (itemId == R.id.nav_profile) {
             Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.nav_settings) {
