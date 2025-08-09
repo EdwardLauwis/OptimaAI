@@ -5,6 +5,12 @@ plugins {
     alias(libs.plugins.google.gms.google.services)
 }
 
+buildscript {
+    dependencies {
+        classpath(libs.firebase.appcheck.debug) // Gunakan versi yang stabil
+    }
+}
+
 val properties = Properties()
 val localPropertiesFile = rootProject.file("local.properties")
 if (localPropertiesFile.exists()) {
@@ -20,9 +26,9 @@ android {
     namespace = "com.example.optimaai"
     compileSdk = 36
 
-//    buildFeatures {
-//        buildConfig = true
-//    }
+    buildFeatures {
+        buildConfig = true
+    }
 
     defaultConfig {
         applicationId = "com.example.optimaai"
@@ -71,7 +77,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-    implementation(libs.generativeai)
+//    implementation(libs.generativeai)
     implementation(libs.espresso.web)
     implementation(libs.firebase.auth)
     implementation(libs.google.firebase.firestore)
@@ -89,12 +95,13 @@ dependencies {
         exclude(group = "com.google.protobuf", module = "protobuf-java")
         exclude(group = "io.grpc")
     }
+    implementation("com.google.firebase:firebase-appcheck-debug")
 
-    implementation(libs.google.cloud.vertexai) {
-        exclude(group = "com.google.api.grpc", module = "proto-google-common-protos")
-        exclude(group = "com.google.protobuf", module = "protobuf-java")
-        exclude(group = "io.grpc")
-    }
+//    implementation(libs.google.cloud.vertexai) {
+//        exclude(group = "com.google.api.grpc", module = "proto-google-common-protos")
+//        exclude(group = "com.google.protobuf", module = "protobuf-java")
+//        exclude(group = "io.grpc")
+//    }
 
     implementation(libs.transition)
     implementation(libs.reactive.streams)
@@ -103,4 +110,8 @@ dependencies {
     implementation(libs.firebase.firestore)
     implementation(libs.firebase.appcheck.playintegrity)
 
+    implementation(libs.firebase.vertexai)
+
+    implementation(libs.okhttp)
+    implementation(libs.gson)
 }

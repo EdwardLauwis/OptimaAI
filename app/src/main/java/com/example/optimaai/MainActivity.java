@@ -44,12 +44,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initFirebase() {
-        FirebaseApp.initializeApp(this);
-        FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.getInstance();
-        firebaseAppCheck.installAppCheckProviderFactory(
-                PlayIntegrityAppCheckProviderFactory.getInstance()
-        );
-
         // Auth
         mAuth = FirebaseAuth.getInstance();
     }
