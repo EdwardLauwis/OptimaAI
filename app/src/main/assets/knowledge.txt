@@ -1,0 +1,586 @@
+1
+Analisis Fundamental UMKM Indonesia: Tinjauan Regulasi, Kontribusi Ekonomi, dan Panduan Praktis di Era Digital
+
+
+Pendahuluan - UMKM sebagai Tulang Punggung Perekonomian Nasional
+
+Usaha Mikro, Kecil, dan Menengah (UMKM) merupakan pilar fundamental dan jaring pengaman sosial-ekonomi yang tidak tergantikan bagi Indonesia. Jauh melampaui perannya sebagai entitas bisnis semata, UMKM adalah fondasi dari ketahanan ekonomi nasional, yang secara historis terbukti mampu bertahan dan bahkan menjadi penopang di tengah krisis ekonomi.1 Skala dan dampaknya yang masif menempatkan sektor ini sebagai pusat dari dinamika perekonomian domestik, menjadikannya fokus utama dalam setiap diskursus mengenai pertumbuhan ekonomi inklusif dan peningkatan kesejahteraan masyarakat.
+Untuk memberikan gambaran skala kontribusi UMKM, data agregat tahun 2023 menyajikan potret yang impresif. Jumlah unit usaha UMKM di Indonesia pada tahun tersebut diperkirakan mencapai 66 juta 3, yang secara proporsional merepresentasikan lebih dari 99% dari total unit usaha yang ada di seluruh negeri.4 Angka ini, meskipun terdapat sedikit variasi dari sumber lain yang mencatat 64,2 juta hingga 67 juta unit 5, secara konsisten menunjukkan dominasi absolut UMKM dalam lanskap bisnis nasional. Dari sisi kontribusi terhadap Produk Domestik Bruto (PDB), sektor ini menyumbang sekitar 61%, setara dengan nilai ekonomi yang diperkirakan mencapai Rp 9.580 triliun.3 Lebih lanjut, peran UMKM sebagai penyedia lapangan kerja sangatlah krusial, dengan kemampuan menyerap sekitar 97% dari total tenaga kerja nasional, atau setara dengan 117 juta hingga 119,6 juta pekerja.4
+Data historis menunjukkan bahwa jumlah unit UMKM mengalami fluktuasi yang sejalan dengan kondisi ekonomi makro, seperti penurunan pada tahun 2020 akibat dampak awal pandemi, yang kemudian diikuti oleh pemulihan dan pertumbuhan kembali pada tahun-tahun berikutnya.3 Fenomena ini bukanlah sekadar pergerakan statistik; ini adalah cerminan langsung dari resiliensi sektor UMKM dan perannya sebagai "bantalan" ekonomi. Kemampuan sektor ini untuk pulih lebih cepat dibandingkan sektor formal menjadikan data pertumbuhannya sebagai salah satu indikator utama (
+leading indicator) untuk mengukur kesehatan dan pemulihan ekonomi di tingkat akar rumput. Dengan demikian, setiap kebijakan yang dirancang untuk menstabilkan dan mendorong pertumbuhan UMKM pada hakikatnya adalah sebuah kebijakan stabilisasi ekonomi makro.
+Di tengah besarnya kontribusi tersebut, lanskap UMKM Indonesia saat ini sedang mengalami sebuah transformasi fundamental. Transformasi ini didorong oleh dua kekuatan utama: perubahan paradigma regulasi yang diinisiasi oleh Undang-Undang Cipta Kerja beserta peraturan turunannya, dan akselerasi digitalisasi yang mengubah cara bisnis beroperasi dan berinteraksi dengan pasar. Laporan ini bertujuan untuk membedah dinamika transformasi tersebut secara komprehensif. Analisis akan dimulai dari pembedahan kerangka hukum terbaru yang mendefinisikan UMKM, dilanjutkan dengan analisis kuantitatif terhadap skala kontribusi ekonominya, hingga penyajian panduan praktis bagi para pemangku kepentingan untuk dapat menavigasi ekosistem yang terus berkembang ini.
+
+Kerangka Regulasi dan Klasifikasi Resmi UMKM
+
+Pemahaman yang akurat mengenai definisi dan klasifikasi UMKM harus berlandaskan pada kerangka hukum yang berlaku. Regulasi tidak hanya menetapkan batasan kuantitatif, tetapi juga mencerminkan filosofi dan arah kebijakan pemerintah terhadap sektor ini.
+
+Pergeseran Paradigma Regulasi Pasca-UU Cipta Kerja
+
+Landasan hukum definitif yang mengatur UMKM saat ini adalah Peraturan Pemerintah (PP) Nomor 7 Tahun 2021 tentang Kemudahan, Pelindungan, dan Pemberdayaan Koperasi dan Usaha Mikro, Kecil, dan Menengah.8 Peraturan ini merupakan mandat pelaksana dari
+Undang-Undang Nomor 11 Tahun 2020 tentang Cipta Kerja, yang secara fundamental mengubah pendekatan pemerintah terhadap dunia usaha di Indonesia.11
+Semangat utama dari PP No. 7 Tahun 2021 adalah melakukan pergeseran paradigma dari sistem perizinan yang sebelumnya dianggap rumit dan berbelit menjadi sebuah pendekatan yang berbasis risiko (risk-based approach).11 Tujuan utamanya adalah memberikan kemudahan berusaha secara signifikan, terutama bagi pelaku usaha skala mikro dan kecil. Dengan menyederhanakan proses legalitas, pemerintah berupaya untuk mendorong lebih banyak usaha informal untuk bertransformasi menjadi usaha formal. Formalisasi ini dianggap sebagai langkah krusial untuk membuka akses UMKM terhadap berbagai fasilitas, seperti pembiayaan perbankan, program pendampingan, hingga akses ke rantai pasok yang lebih besar, yang pada akhirnya diharapkan dapat mengakselerasi pertumbuhan dan daya saing mereka.11
+
+Kriteria Klasifikasi UMKM Terbaru
+
+PP No. 7 Tahun 2021 menetapkan kriteria baru yang lebih jelas untuk mengklasifikasikan skala usaha. Terdapat dua metrik utama yang digunakan: Modal Usaha dan Hasil Penjualan Tahunan (Omzet).12 Kriteria Modal Usaha umumnya digunakan sebagai acuan bagi usaha yang baru akan didirikan, sedangkan kriteria Hasil Penjualan Tahunan digunakan untuk mengklasifikasikan usaha yang telah berjalan.14 Penting untuk dicatat bahwa perhitungan Modal Usaha tidak mencakup nilai tanah dan bangunan tempat usaha.12
+Untuk memberikan referensi yang jelas dan ringkas bagi para pelaku usaha dalam mengidentifikasi skala bisnis mereka, kriteria tersebut dapat dirangkum dalam tabel berikut.
+Tabel 1: Kriteria Klasifikasi UMKM Berdasarkan PP No. 7 Tahun 2021
+
+Kategori Usaha	Kriteria Modal Usaha (tidak termasuk tanah & bangunan)	Kriteria Hasil Penjualan Tahunan (Omzet)
+Usaha Mikro	Sampai dengan Rp1 Miliar	Sampai dengan Rp2 Miliar
+Usaha Kecil	Lebih dari Rp1 Miliar - Rp5 Miliar	Lebih dari Rp2 Miliar - Rp15 Miliar
+Usaha Menengah	Lebih dari Rp5 Miliar - Rp10 Miliar	Lebih dari Rp15 Miliar - Rp50 Miliar
+Sumber: Diolah dari Pasal 35 PP No. 7 Tahun 2021.12
+
+Analisis Komparatif dan Fleksibilitas Kriteria
+
+Perubahan paling signifikan dalam kriteria baru ini jika dibandingkan dengan regulasi sebelumnya (UU No. 20 Tahun 2008) adalah pergeseran basis penilaian dari "Kekayaan Bersih" menjadi "Modal Usaha".13 Kekayaan bersih merupakan metrik akuntansi yang bersifat historis, dihitung dari total aset dikurangi total kewajiban. Sebaliknya, modal usaha adalah metrik investasi yang lebih berorientasi ke depan, mencakup modal sendiri dan modal pinjaman yang dialokasikan untuk menjalankan dan mengembangkan kegiatan usaha.13
+Pergeseran ini menandakan perubahan filosofi ekonomi pemerintah. Penggunaan "kekayaan bersih" cenderung mengklasifikasikan usaha berdasarkan apa yang telah mereka akumulasikan di masa lalu. Sementara itu, penggunaan "modal usaha" mengklasifikasikan usaha berdasarkan komitmen sumber daya yang ditanamkan untuk pertumbuhan di masa depan. Pendekatan ini lebih pro-pertumbuhan dan pro-investasi, serta lebih akomodatif bagi usaha rintisan (startup) yang mungkin belum memiliki aset signifikan tetapi telah mengamankan modal awal yang besar untuk dieksekusi.
+Selain kriteria utama di atas, regulasi baru ini juga memberikan fleksibilitas. Berdasarkan Pasal 36 PP No. 7 Tahun 2021, untuk kepentingan tertentu seperti perancangan program insentif sektoral atau kebijakan afirmatif lainnya, kementerian atau lembaga terkait dapat menggunakan kriteria tambahan. Kriteria ini bisa mencakup jumlah tenaga kerja, nilai investasi, tingkat kandungan lokal dalam produk, atau penggunaan teknologi yang ramah lingkungan.12 Fleksibilitas ini memungkinkan pemerintah untuk merancang kebijakan yang lebih spesifik dan tepat sasaran sesuai dengan karakteristik unik setiap sektor industri.
+
+Lanskap Ekonomi UMKM: Data dan Analisis Sektoral
+
+Untuk memahami sepenuhnya peran UMKM, analisis perlu melampaui angka agregat dan menyelami distribusi sektoral serta konsistensi data yang tersedia. Gambaran ini memberikan wawasan tentang di mana UMKM paling banyak berkiprah dan tantangan struktural yang ada dalam ekosistem data.
+
+Distribusi Sektoral UMKM
+
+Data menunjukkan bahwa aktivitas UMKM di Indonesia sangat terkonsentrasi pada beberapa sektor kunci yang berinteraksi langsung dengan konsumen akhir. Dominasi ini mencerminkan karakteristik UMKM yang lincah dan mampu merespons kebutuhan pasar domestik dengan cepat.
+Berdasarkan data hingga akhir tahun 2024, sektor Perdagangan Besar dan Eceran, serta Reparasi Mobil dan Sepeda Motor menjadi yang paling dominan, menampung sekitar 14,4 juta unit usaha.4 Sektor ini sendiri menyumbang sekitar 40% dari total populasi UMKM di Indonesia.5 Posisi kedua ditempati oleh sektor
+Penyediaan Akomodasi dan Makanan/Minuman, dengan sekitar 6,4 juta unit usaha. Sektor Industri Pengolahan berada di urutan ketiga dengan 4,1 juta unit usaha.4
+Dominasi ketiga sektor ini, terutama perdagangan dan jasa makanan, mengindikasikan bahwa mayoritas UMKM beroperasi di bagian hilir dari rantai nilai ekonomi. Mereka adalah wajah dari ekonomi akar rumput yang melayani kebutuhan sehari-hari masyarakat, memiliki siklus perputaran kas yang relatif cepat, dan sangat padat karya. Sektor-sektor lain seperti Jasa Lainnya (1,9 juta unit) dan Pengangkutan (1,1 juta unit) juga menunjukkan kontribusi yang signifikan.4
+
+Analisis Data Statistik Lanjutan
+
+Meskipun terdapat sedikit variasi dalam angka absolut yang dilaporkan oleh berbagai lembaga pemerintah, gambaran besarnya tetap konsisten: UMKM adalah penopang utama perekonomian. Kompilasi data dari berbagai sumber terpercaya seperti Kementerian Koperasi dan UKM (KemenkopUKM), Kementerian Keuangan (Kemenkeu), dan Badan Pusat Statistik (BPS) menegaskan peran dominan ini.
+Tabel 2: Kompilasi Data Statistik Kunci UMKM Indonesia (Estimasi 2023)
+
+Indikator	Data Sumber 1 (KemenkopUKM/Liputan6)	Data Sumber 2 (KemenkopUKM/Kemenkeu)	Data Sumber 3 (GoodStats)
+Jumlah Unit Usaha	67 Juta 5	64,2 Juta 6	66 Juta 3
+Kontribusi PDB (%)	61% 5	61,07% 6	61% 3
+Nilai Kontribusi PDB	Rp 9.580 Triliun 4	Rp 8.573,89 Triliun 6	Rp 9.580 Triliun 3
+Penyerapan Tenaga Kerja	97% / 119,6 Juta 5	97% / ~117 Juta 6	97% / ~117 Juta 3
+Keberadaan variasi minor dalam data—misalnya, perbedaan jumlah unit usaha antara 64,2 juta hingga 67 juta—bukanlah indikasi kesalahan, melainkan cerminan dari tantangan struktural yang lebih dalam. Perbedaan ini kemungkinan besar timbul dari metodologi pengumpulan data yang berbeda, waktu pelaksanaan survei yang tidak serempak, serta cakupan definisi operasional yang bervariasi antar lembaga, misalnya terkait pencatatan usaha informal yang tidak permanen.
+Kondisi ini secara langsung menyoroti urgensi dari inisiatif pemerintah untuk mewujudkan "basis data tunggal" bagi UMKM.3 Upaya ini bukanlah sekadar proyek administratif, melainkan sebuah fondasi strategis yang mutlak diperlukan untuk perumusan kebijakan berbasis bukti (
+evidence-based policy). Tanpa data yang terintegrasi dan konsisten, pengukuran dampak dari program bantuan, alokasi sumber daya, dan perancangan intervensi menjadi kurang presisi. Oleh karena itu, bagi para analis dan pembuat kebijakan, melakukan triangulasi data dari berbagai sumber dan memahami metodologi di baliknya menjadi sebuah keharusan, sembari secara aktif mendukung upaya integrasi data nasional yang sedang berjalan.
+
+Panduan Praktis Memulai dan Mengoperasikan UMKM
+
+Memasuki dunia wirausaha memerlukan persiapan yang matang, mulai dari perencanaan strategis, pemenuhan aspek legalitas, hingga pengamanan sumber daya finansial. Bagian ini menyajikan panduan praktis yang terstruktur bagi para calon dan pelaku UMKM di Indonesia.
+
+Fondasi Usaha - Merancang Rencana Bisnis (Business Plan)
+
+Rencana bisnis adalah dokumen fundamental yang berfungsi sebagai peta jalan strategis bagi sebuah usaha. Fungsinya melampaui sekadar formalitas untuk mencari pendanaan; ia adalah alat vital untuk mengklarifikasi ide, mengidentifikasi target pasar, merencanakan alokasi sumber daya, dan menetapkan tujuan yang terukur.16 Bagi UMKM pemula, menyusun rencana bisnis sederhana adalah langkah pertama yang krusial untuk membangun fondasi yang kokoh.
+Unsur-unsur esensial yang harus termuat dalam sebuah rencana bisnis sederhana meliputi:
+1.Ringkasan Eksekutif & Deskripsi Usaha: Bagian ini menjelaskan secara singkat namun kuat mengenai konsep bisnis, termasuk visi, misi, latar belakang pendirian, dan struktur organisasi dasar.16
+2.Analisis Pasar dan Pesaing: Mengidentifikasi siapa target pelanggan secara spesifik, ukuran pasar potensial, serta melakukan analisis kompetitif. Kerangka analisis SWOT (Strengths, Weaknesses, Opportunities, Threats) sangat berguna pada tahap ini untuk memetakan posisi usaha di tengah lanskap persaingan.16
+3.Strategi Pemasaran dan Penjualan: Merinci bagaimana produk atau jasa akan diperkenalkan, dipromosikan, dan didistribusikan kepada target pasar. Ini mencakup pemilihan kanal pemasaran (misalnya, media sosial, e-commerce), strategi penetapan harga, dan taktik promosi.16
+4.Rencana Operasional dan Sumber Daya Manusia (SDM): Menjelaskan proses produksi barang atau penyediaan jasa secara garis besar. Bagian ini juga menguraikan kebutuhan SDM dan struktur tim yang akan menjalankan operasional sehari-hari.18
+5.Proyeksi Keuangan: Merupakan komponen kritis yang mencakup estimasi modal awal yang dibutuhkan (startup cost), proyeksi biaya operasional bulanan, analisis titik impas (break-even point), dan proyeksi pendapatan untuk periode 1-3 tahun ke depan.16
+
+Legalitas di Era Digital - Memperoleh NIB melalui OSS
+
+Sejalan dengan semangat PP No. 7 Tahun 2021, proses perizinan usaha telah disederhanakan secara signifikan melalui sistem Online Single Submission (OSS) Berbasis Risiko. Bagi sebagian besar UMKM yang masuk dalam kategori risiko rendah, Nomor Induk Berusaha (NIB) kini berfungsi sebagai izin tunggal yang mencakup legalitas dasar seperti Tanda Daftar Perusahaan (TDP) dan hak akses kepabeanan jika diperlukan.11
+Berikut adalah panduan langkah-demi-langkah untuk memperoleh NIB bagi usaha perorangan dengan tingkat risiko rendah:
+1.Persiapan Dokumen dan Data: Sebelum memulai, pastikan untuk menyiapkan data esensial seperti Nomor Induk Kependudukan (NIK), Nomor Pokok Wajib Pajak (NPWP) jika sudah ada, alamat email yang aktif, dan nomor telepon yang dapat dihubungi.22
+2.Akses dan Pembuatan Akun OSS: Kunjungi situs web resmi OSS di oss.go.id. Pilih opsi "Daftar" dan ikuti alur registrasi dengan memilih skala usaha "Usaha Mikro dan Kecil (UMK)" dan jenis pelaku usaha "Orang Perseorangan".23 Proses ini akan memerlukan verifikasi melalui kode OTP yang dikirimkan ke email atau nomor telepon.
+3.Pengajuan Permohonan Baru: Setelah berhasil membuat akun dan masuk ke dasbor OSS, navigasikan ke menu "Perizinan Berusaha" dan klik pada opsi "Permohonan Baru" untuk memulai proses pengisian data.22
+4.Pengisian Data Usaha: Sistem akan meminta pengisian data yang terbagi menjadi dua bagian utama: data pelaku usaha (yang sebagian besar akan terisi otomatis dari data kependudukan) dan data detail usaha. Pada data detail usaha, isilah informasi krusial seperti nama usaha, modal usaha, alamat lengkap, jumlah tenaga kerja, dan deskripsi kegiatan usaha. Pemilihan Klasifikasi Baku Lapangan Usaha Indonesia (KBLI) yang tepat sangat penting pada tahap ini.22
+5.Validasi Risiko dan Pernyataan Mandiri: Setelah data usaha diisi, sistem OSS akan secara otomatis melakukan validasi untuk menentukan tingkat risiko kegiatan usaha. Untuk usaha risiko rendah, pelaku usaha hanya perlu memeriksa kembali draf perizinan dan mencentang "Pernyataan Mandiri" yang relevan.22
+6.Penerbitan NIB: Setelah semua langkah selesai dan data terverifikasi, sistem akan menerbitkan NIB secara elektronik. Dokumen NIB ini dapat langsung diunduh dan menjadi bukti legalitas utama bagi usaha tersebut.24
+
+Akses Permodalan - Menjelajahi Ragam Sumber Pendanaan
+
+Keterbatasan akses terhadap modal merupakan salah satu tantangan paling klasik dan persisten yang dihadapi oleh UMKM di Indonesia.26 Namun, lanskap pembiayaan kini telah berkembang pesat, menawarkan berbagai alternatif di luar pinjaman bank konvensional. Memahami karakteristik, kelebihan, dan kekurangan dari setiap opsi pendanaan adalah kunci bagi wirausahawan untuk membuat keputusan finansial yang strategis.
+Setiap sumber modal memiliki trade-off yang berbeda, misalnya antara kecepatan perolehan dana dengan besarnya biaya, atau antara besarnya suntikan modal dengan tingkat kontrol atas kepemilikan usaha. Tabel berikut menyajikan perbandingan karakteristik dari berbagai sumber permodalan yang tersedia bagi UMKM.
+Tabel 3: Perbandingan Karakteristik Sumber Permodalan UMKM
+
+Sumber Modal	Kecepatan	Biaya/Bunga	Dampak pada Kepemilikan	Persyaratan Utama	Rujukan
+Modal Pribadi (Bootstrapping)	Sangat Cepat	Rendah (Biaya Peluang)	Kontrol Penuh	Dana Pribadi Tersedia	29
+Keluarga & Teman	Cepat	Fleksibel/Rendah	Tergantung Perjanjian	Kepercayaan Personal	31
+Pinjaman Bank (termasuk KUR)	Sedang-Lama	Rendah-Sedang	Tidak Ada	Legalitas, Laporan Keuangan	30
+Fintech P2P Lending	Sangat Cepat	Tinggi	Tidak Ada	Data Transaksi Digital	30
+Crowdfunding	Sedang-Lama	Biaya Platform	Tergantung Model (Ekuitas/Hadiah)	Proposal Proyek Menarik	29
+Angel Investor	Lama	- (Ekuitas)	Dilusi Kepemilikan	Potensi Pertumbuhan Tinggi	29
+Venture Capital (VC)	Sangat Lama	- (Ekuitas)	Dilusi Kepemilikan Signifikan	Skalabilitas & Inovasi Tinggi	29
+Hibah & Program Pemerintah	Lama	Tidak Ada	Tidak Ada	Proposal Kompetitif, Syarat Khusus	29
+
+Ekosistem Pendukung dan Inisiatif Pemerintah
+
+Keberhasilan UMKM tidak hanya ditentukan oleh faktor internal usaha, tetapi juga sangat dipengaruhi oleh kualitas ekosistem yang mendukungnya. Pemerintah Indonesia, melalui berbagai regulasi dan program, secara aktif berupaya membangun ekosistem yang kondusif bagi pertumbuhan UMKM, terutama dalam hal kemudahan, pelindungan, dan pemberdayaan.
+
+Implementasi Mandat "Kemudahan, Pelindungan, dan Pemberdayaan"
+
+Amanat yang terkandung dalam PP No. 7 Tahun 2021 melampaui sekadar penyederhanaan perizinan. Regulasi ini secara eksplisit mengamanatkan adanya tindakan afirmatif untuk melindungi dan memberdayakan UMKM.8 Salah satu manifestasi paling konkret dari mandat ini adalah kebijakan mengenai akses pasar fisik.
+Pasal 61 dari PP tersebut mewajibkan Kementerian/Lembaga, Pemerintah Daerah, BUMN, BUMD, dan bahkan badan usaha swasta besar untuk mengalokasikan paling sedikit 30% dari total luas lahan area komersial, pusat perbelanjaan, atau tempat promosi strategis lainnya untuk penyediaan tempat promosi dan pengembangan Usaha Mikro dan Usaha Kecil.35 Kebijakan ini merupakan bentuk intervensi pasar yang signifikan, dirancang untuk memastikan bahwa UMKM tidak terpinggirkan dalam persaingan memperebutkan lokasi usaha yang strategis dan memiliki visibilitas tinggi. Ini adalah langkah proaktif untuk menjamin akses pasar fisik dan mencegah monopoli ruang komersial oleh usaha skala besar.
+
+Program Akselerasi Digitalisasi
+
+Menyadari bahwa masa depan ekonomi berada di ranah digital, pemerintah telah meluncurkan berbagai inisiatif untuk mengakselerasi adopsi teknologi di kalangan UMKM. Terdapat target nasional yang ambisius untuk membawa 30 juta UMKM masuk ke dalam ekosistem digital pada tahun 2024.36 Untuk mencapai target ini, berbagai program telah dan sedang dijalankan:
+●Pelatihan dan Peningkatan Kapasitas: Kementerian Koperasi dan UKM secara berkelanjutan menyelenggarakan program pelatihan yang berfokus pada peningkatan kapasitas SDM usaha mikro. Pelatihan ini mencakup penguasaan platform digital, strategi pemasaran di e-commerce, dan pemanfaatan data untuk pengambilan keputusan bisnis. Tujuannya adalah agar pelaku usaha tidak hanya mampu "berjualan online", tetapi juga dapat bersaing secara efektif di pasar digital yang dinamis.39
+●Kolaborasi Antar-Lembaga: Sinergi antar kementerian menjadi kunci efektivitas program. Sebagai contoh, program "Pelatihan Digitalisasi UMKM Berbasis Syariah" merupakan hasil kolaborasi antara Kampus UKM di bawah KemenkopUKM dengan Digital Entrepreneurship Academy yang diinisiasi oleh Kementerian Komunikasi dan Informatika (Kominfo). Kolaborasi semacam ini memastikan bahwa materi pelatihan relevan baik dari sisi bisnis maupun teknologi.40
+●Dukungan di Tingkat Daerah: Pemerintah daerah juga memainkan peran penting dengan memfasilitasi berbagai lokakarya dan pendampingan untuk UMKM binaan di wilayahnya masing-masing, memastikan program digitalisasi dapat menjangkau hingga ke tingkat lokal.38
+
+Studi Kasus Inspiratif - Buah dari Ekosistem Digital
+
+Efektivitas dari ekosistem pendukung ini paling baik dilihat melalui kisah sukses nyata dari para pelaku UMKM yang berhasil memanfaatkan peluang digital untuk tumbuh secara eksponensial.
+●Kopi Kenangan (Sektor Kuliner): Berawal dari sebuah ide untuk menyajikan kopi berkualitas dengan harga terjangkau, Kopi Kenangan mencapai skala unicorn dalam waktu singkat. Kesuksesan ini sangat ditopang oleh strategi digital yang cerdas, termasuk penggunaan aplikasi mobile untuk program loyalitas dan pemesanan, branding yang kuat di media sosial yang menyasar generasi milenial, serta kolaborasi masif dengan para influencer.41
+●Buttonscarves & KHDJH (Sektor Fesyen): Kedua merek ini adalah contoh bagaimana media sosial dan platform e-commerce seperti Shopee dapat menjadi landasan peluncuran yang kuat. Buttonscarves, yang awalnya hanya UMKM produsen syal, berhasil membangun citra merek premium dan menembus pasar global melalui pemasaran digital yang konsisten.42 Demikian pula KHDJH, yang didirikan oleh seorang wirausahawan muda, berhasil memanfaatkan ekosistem digital untuk menjangkau pasar fesyen muslim yang luas di seluruh Indonesia.43
+●Craftote (Sektor Kerajinan): Kisah Craftote menunjukkan sinergi antara model bisnis fisik dan jangkauan digital global. Dengan konsep unik galeri kerajinan yang menyatu dengan kedai kopi, mereka berhasil menarik pasar lokal. Namun, titik balik pertumbuhan mereka terjadi setelah mengikuti program pembinaan dari Rumah BUMN BRI. Melalui program ini, mereka mendapatkan pengetahuan fundamental tentang business model canvas, manajemen keuangan, dan akses ke business matching.44 Pengetahuan ini menjadi modal intelektual yang memungkinkan mereka untuk secara percaya diri menembus pasar ekspor, dan kini produk kerajinan tangan mereka telah rutin dikirim ke Jepang dan Kanada.44
+Kisah Craftote secara khusus mengilustrasikan bagaimana ekosistem pendukung menciptakan sebuah "efek pengganda" (multiplier effect). Bantuan yang diberikan bukan sekadar bantuan finansial yang bersifat linear, melainkan transfer pengetahuan dan jaringan yang dapat mengubah lintasan bisnis secara fundamental dan berkelanjutan. Ini menunjukkan bahwa keberhasilan UMKM tidak hanya bergantung pada modal finansial, tetapi juga pada modal intelektual dan sosial yang dibangun melalui ekosistem yang suportif.
+
+Analisis Penutup - Tantangan, Peluang, dan Arah Masa Depan UMKM Indonesia
+
+Laporan ini telah membedah lanskap UMKM Indonesia dari berbagai sudut pandang, mulai dari kerangka regulasi yang berevolusi, kontribusi ekonomi yang masif, hingga panduan praktis dan ekosistem pendukungnya. Sintesis dari seluruh analisis ini mengarah pada serangkaian kesimpulan mengenai tantangan, peluang, dan arah strategis bagi masa depan UMKM di Indonesia.
+
+Sintesis Temuan Utama
+
+Empat pilar utama dapat ditarik sebagai kesimpulan dari analisis yang telah dilakukan. Pertama, UMKM secara tak terbantahkan merupakan pilar utama dan penopang ketahanan ekonomi Indonesia, dengan kontribusi yang dominan terhadap PDB dan penyerapan tenaga kerja. Kedua, kerangka regulasi telah mengalami pergeseran fundamental ke arah fasilitasi dan kemudahan berusaha, yang bertujuan untuk mendorong formalisasi dan pertumbuhan. Ketiga, digitalisasi telah menjadi kekuatan transformatif utama, yang berfungsi sebagai pedang bermata dua: ia membuka peluang pasar yang belum pernah ada sebelumnya bagi mereka yang siap, namun sekaligus menciptakan risiko ketertinggalan bagi mereka yang tidak mampu beradaptasi. Keempat, keberhasilan UMKM untuk naik kelas sangat bergantung pada eksistensi ekosistem pendukung yang solid, yang menyediakan tidak hanya modal finansial, tetapi juga modal intelektual dan sosial.
+
+Identifikasi Tantangan Utama
+
+Meskipun terdapat kemajuan signifikan dan optimisme yang besar, UMKM di Indonesia masih menghadapi serangkaian tantangan struktural yang krusial dan memerlukan perhatian berkelanjutan dari semua pemangku kepentingan:
+●Akses dan Literasi Keuangan: Walaupun berbagai skema pembiayaan telah tersedia, termasuk KUR dan fintech, tantangan utama tetap berada pada aksesibilitas riil dan tingkat literasi keuangan pelaku usaha. Banyak UMKM masih kesulitan memenuhi persyaratan administratif perbankan atau belum memahami cara mengelola dana pinjaman secara produktif, yang meningkatkan risiko kredit macet.26
+●Kesenjangan Digital (Digital Divide): Rendahnya tingkat literasi digital di kalangan sebagian pelaku UMKM, ditambah dengan keterbatasan infrastruktur internet yang belum merata di seluruh wilayah Indonesia, menjadi penghambat utama dalam adopsi teknologi. Kesenjangan ini berisiko memperlebar jurang antara UMKM yang "siap digital" dengan yang tertinggal.5
+●Kualitas, Standardisasi, dan Persaingan: Menjaga konsistensi kualitas produk agar dapat bersaing dengan produk impor yang seringkali lebih murah merupakan tantangan berkelanjutan. Selain itu, proses untuk memenuhi standar regulasi seperti Sertifikasi Halal atau Standar Nasional Indonesia (SNI) masih dianggap rumit dan memakan biaya bagi sebagian UMKM.47
+●Kapasitas Pemasaran dan Branding: Banyak UMKM memiliki produk yang berkualitas, namun lemah dalam membangun identitas merek (brand) yang kuat dan menjalankan strategi pemasaran yang efektif. Akibatnya, produk mereka sulit untuk menonjol dan mendapatkan pengakuan di pasar yang semakin ramai.47
+
+Arah Masa Depan dan Rekomendasi
+
+Menghadapi tantangan dan peluang yang ada, arah masa depan UMKM Indonesia akan ditentukan oleh kemampuan kolektif untuk beradaptasi, berinovasi, dan berkolaborasi. Berikut adalah rekomendasi strategis yang ditujukan bagi para pemangku kepentingan utama:
+●Bagi Pelaku Usaha UMKM:
+○Prioritaskan Peningkatan Kapasitas: Secara proaktif mengikuti program pelatihan dan pendampingan yang tersedia, terutama yang berfokus pada literasi digital, manajemen keuangan, dan strategi pemasaran.
+○Bangun Merek yang Otentik: Fokus pada penciptaan nilai unik dan cerita merek yang kuat untuk membedakan produk dari pesaing. Kualitas dan keunikan lokal dapat menjadi keunggulan kompetitif utama.
+○Manfaatkan Legalitas sebagai Alat Pertumbuhan: Segera urus legalitas usaha melalui OSS untuk mendapatkan NIB. Pandang legalitas bukan sebagai beban, melainkan sebagai kunci untuk membuka akses ke pembiayaan formal, pasar yang lebih luas, dan program pemerintah.
+●Bagi Pemerintah dan Pembuat Kebijakan:
+○Akselerasi Pembangunan Infrastruktur dan Literasi Digital: Mempercepat pemerataan akses internet berkualitas tinggi ke seluruh pelosok negeri, diiringi dengan program literasi digital yang masif dan berkelanjutan.
+○Sederhanakan dan Integrasikan Program Bantuan: Melanjutkan upaya penyederhanaan birokrasi untuk mengakses program bantuan dan pembiayaan. Mengintegrasikan berbagai program yang tersebar di kementerian/lembaga yang berbeda untuk menciptakan alur dukungan yang lebih koheren bagi UMKM.
+○Perkuat Basis Data Tunggal: Memprioritaskan penyelesaian dan implementasi basis data tunggal UMKM untuk memungkinkan perumusan kebijakan yang lebih akurat, tepat sasaran, dan terukur dampaknya.
+○Intensifkan Pendampingan Berkualitas: Mengalokasikan lebih banyak sumber daya untuk program pendampingan yang mendalam dan berkelanjutan, tidak hanya pelatihan satu kali. Kemitraan dengan universitas, asosiasi bisnis, dan praktisi industri dapat meningkatkan kualitas pendampingan.
+Sebagai kesimpulan akhir, masa depan UMKM Indonesia yang cerah terletak pada kemampuannya untuk bertransformasi menjadi entitas bisnis yang adaptif terhadap teknologi, inovatif secara berkelanjutan, dan terintegrasi dalam sebuah ekosistem kolaboratif. Dengan dukungan kebijakan yang tepat dan semangat kewirausahaan yang terus menyala, UMKM tidak hanya akan bertahan sebagai tulang punggung, tetapi akan berevolusi menjadi mesin pendorong utama yang membawa Indonesia menuju era ekonomi digital.
+Karya yang dikutip
+1.IS EKKUIN VI_FEB 2 2022 - DPR RI, diakses Agustus 8, 2025, https://berkas.dpr.go.id/pusaka/files/isu_sepekan/Isu%20Sepekan---II-PUSLIT-Februari-2022-2047.pdf
+2.Faktor-Faktor yang mempengaruhi Penyerapan Tenaga Kerja pada Sektor UMKM di Indonesia - E-Jurnal UNSAM, diakses Agustus 8, 2025, https://ejurnalunsam.id/index.php/jseb/article/download/2435/1802/
+3.Jumlah UMKM Indonesia Capai 66 Juta pada 2023 - GoodStats Data, diakses Agustus 8, 2025, https://data.goodstats.id/statistic/jumlah-umkm-indonesia-capai-66-juta-pada-2023-CN6TF
+4.UMKM Indonesia - Kadin Indonesia, diakses Agustus 8, 2025, https://kadin.id/data-dan-statistik/umkm-indonesia/
+5.Pertumbuhan UMKM Indonesia Semakin Meningkat, UMKM Menjadi Tulang Punggung Ekonomi Nasional - GPTN, diakses Agustus 8, 2025, https://info.gptn.or.id/pertumbuhan-umkm-indonesia-semakin-meningkat-umkm-menjadi-tulang-punggung-ekonomi-nasional/
+6.UMKM HEBAT, PEREKONOMIAN NASIONAL MENINGKAT - DJPb, diakses Agustus 8, 2025, https://djpb.kemenkeu.go.id/kppn/curup/id/data-publikasi/artikel/2885-umkm-hebat,-perekonomian-nasional-meningkat.html
+7.Kontribusi UMKM ke PDB Indonesia Tembus Rp 9.580 Triliun - Bisnis Liputan6.com, diakses Agustus 8, 2025, https://www.liputan6.com/bisnis/read/5665709/kontribusi-umkm-ke-pdb-indonesia-tembus-rp-9580-triliun
+8.SALINAN - Postel.go.id, diakses Agustus 8, 2025, https://www.postel.go.id/downloads/13/20210510153537-Salinan_PP_Nomor_7_Tahun_2021.pdf
+9.Peraturan Pemerintah NOMOR 7 TAHUN 2021 TENTANG KEMUDAHAN, PELINDUNGAN, DAN PEMBERDAYAAN KOPERASI DAN USAHA MIKRO, KECIL, DAN MENENGAH - JDIH Kota Tanjungpinang, diakses Agustus 8, 2025, https://jdih.tanjungpinangkota.go.id/cariprodukhukum/2379
+10.Peraturan Pemerintah Nomor 7 Tahun 2021 tentang Kemudahan, Pelindungan, dan Pemberdayaan Koperasi dan Usaha Mikro, Kecil, dan Menengah. - JDIH Surabaya, diakses Agustus 8, 2025, https://jdih.surabaya.go.id/peraturan/3796
+11.optimalisasi peraturan pemerintah nomor 7 tahun 2021 dalam peningkatan perekonomian daerah melalui - Jurnal Pengabdian UMKM - Universitas Bandar Lampung, diakses Agustus 8, 2025, https://jpu.ubl.ac.id/index.php/jpu/article/download/11/11/40
+12.Kriteria UMKM Terbaru PP No | PDF | Bisnis - Scribd, diakses Agustus 8, 2025, https://id.scribd.com/document/594668746/Kriteria-UMKM-Terbaru-PP-No
+13.UMKM: Apa Saja Kriteria Usahanya - Infiniti Office, diakses Agustus 8, 2025, https://infiniti.id/blog/bisnis/kriteria-umkm-di-indonesia
+14.UMKM, Ini Aturan dan Kriteria UMKM Terbaru 2021 | IREAP POS, diakses Agustus 8, 2025, https://www.ireappos.com/news/id/kriteria-umkm-terbaru-tahun-2021/
+15.Kriteria UMKM Terbaru Berdasarkan Peraturan Pemerintah | kumparan.com, diakses Agustus 8, 2025, https://kumparan.com/dunia-karier/kriteria-umkm-terbaru-berdasarkan-peraturan-pemerintah-25bRUXd3cwy
+16.Contoh Business Plan dan Langkah-langkah Membuatnya - BINUS UNIVERSITY, diakses Agustus 8, 2025, https://binus.ac.id/malang/2023/09/contoh-business-plan-dan-langkah-langkah-membuatnya/
+17.PERENCANAAN BISNIS PADA UMKM VEZARA COLLECTION - Lintar, diakses Agustus 8, 2025, https://lintar.untar.ac.id/repository/pengabdian/buktiabdi_10189056_9C140823123328.pdf
+18.9 Cara Membuat Business Plan untuk Usaha, Cocok Bagi Pemula! - OCBC, diakses Agustus 8, 2025, https://www.ocbc.id/id/article/2021/05/07/cara-membuat-business-plan
+19.Ini Dia Contoh Business Plan Sederhana Untuk Pelaku UMKM - Sobat Pajak, diakses Agustus 8, 2025, https://www.sobatpajak.com/article/63848885c6df9c22701df544/Ini%20Dia%20Contoh%20Business%20Plan%20Sederhana%20Untuk%20Pelaku%20UMKM
+20.Ini Cara Mudah Membuat Rencana Bisnis untuk Pemula! - Olsera.com, diakses Agustus 8, 2025, https://www.olsera.com/id/blog/ini-cara-mudah-membuat-rencana-bisnis-untuk-pemula/596
+21.pedoman-oss.pdf, diakses Agustus 8, 2025, http://sppk.kemendag.go.id/files/pedoman-oss.pdf
+22.Cara Daftar Nomor Induk Berusaha (NIB) untuk Orang Perseorangan, Panduan Lengkap dengan Gambar! - UKMINDONESIA.ID, diakses Agustus 8, 2025, https://ukmindonesia.id/baca-deskripsi-posts/cara-daftar-nomor-induk-berusaha-nib-untuk-orang-perseorangan-panduan-lengkap-dengan-gambar
+23.Panduan Membuat NIB Perorangan Secara Online untuk Pelaku UMKM - Dinas Koperasi dan Usaha Kecil Provinsi Jawa Barat, diakses Agustus 8, 2025, https://diskuk.jabarprov.go.id/berita-diskuk-jabar/panduan-membuat-nib-perorangan-secara-online-untuk-pelaku-umkm
+24.Cara Daftar OSS untuk UMKM: Panduan Lengkap dan Mudah - IZIN.co.id, diakses Agustus 8, 2025, https://izin.co.id/indonesia-business-tips/2024/10/11/cara-daftar-oss-umkm/
+25.detail panduan - OSS - Sistem Perizinan Berusaha Terintegrasi Secara Elektronik, diakses Agustus 8, 2025, https://oss.go.id/panduan/63a1f170acc5d4cf2fbdc139
+26.Mendorong Pertumbuhan Ekonomi lewat KUR dan Insentif UMKM, diakses Agustus 8, 2025, https://djpb.kemenkeu.go.id/kppn/watampone/id/profil/309-artikel/3796-mendorong-pertumbuhan-ekonomi-lewat-kur-dan-insentif-umkm.html
+27.5 Permasalahan UMKM yang Sering Terjadi dan Solusinya - OnlinePajak, diakses Agustus 8, 2025, https://www.online-pajak.com/seputar-pph-final/permasalahan-umkm
+28.Masalah UMKM dan Solusinya - OY! Indonesia, diakses Agustus 8, 2025, https://www.oyindonesia.com/id/blog/masalah-umkm-dan-solusinya
+29.Panduan Lengkap Pendanaan UMKM: Sumber Dana dan Cara Mendapatkannya, diakses Agustus 8, 2025, https://ekonomi.uma.ac.id/2024/07/31/panduan-lengkap-pendanaan-umkm-sumber-dana-dan-cara-mendapatkannya/
+30.8 Sumber Pendanaan Bisnis untuk Modal UMKM, Cek yang Mudah Diajukan! - Paper.id, diakses Agustus 8, 2025, https://www.paper.id/blog/smb/pendanaan-bisnis/
+31.Sumber Pendanaan Terbaik Untuk UMKM - Ezeelink, diakses Agustus 8, 2025, https://ezeelink.co.id/blog/sumber-pendanaan-terbaik-untuk-umkm/
+32.8 Sumber Modal Usaha Praktis untuk Wujudkan Bisnis Impian - ADIRA Finance, diakses Agustus 8, 2025, https://www.adira.co.id/detail_berita/metalink/8-sumber-modal-usaha-praktis-untuk-wujudkan-bisnis-impian
+33.Strategi Mendapatkan Modal Awal UMKM: Panduan dan Tips Praktis - IZIN.co.id, diakses Agustus 8, 2025, https://izin.co.id/indonesia-business-tips/2024/09/20/modal-umkm/
+34.5 Sumber Pendanaan untuk Modal Usaha UMKM - OY! Indonesia, diakses Agustus 8, 2025, https://www.oyindonesia.com/id/blog/sumber-pendanaan-untuk-modal-usaha-umkm
+35.PP No. 7 Tahun 2021 - Peraturan BPK, diakses Agustus 8, 2025, https://peraturan.bpk.go.id/Details/161837/pp-no-7-tahun-2021
+36.DIGITALISASI USAHA MIKRO KECIL DAN MENENGAH 16 - DPR RI, diakses Agustus 8, 2025, https://berkas.dpr.go.id/pusaka/files/info_singkat/Info%20Singkat-XV-24-II-P3DI-Desember-2023-241.pdf
+37.Kominfo Targetkan 30 Juta UMKM Adopsi Teknologi Digital pada 2024, diakses Agustus 8, 2025, https://menpan.go.id/site/berita-terkini/berita-daerah/kominfo-targetkan-30-juta-umkm-adopsi-teknologi-digital-pada-2024
+38.Pendampingan Digital Marketing Untuk Pemberdayaan UMKM, diakses Agustus 8, 2025, https://journal.lspr.edu/index.php/servite/article/download/454/203/1542
+39.Kemenkop UKM Dorong Usaha Mikro Naik Kelas ... - InfoPublik, diakses Agustus 8, 2025, https://infopublik.id/kategori/nasional-ekonomi-bisnis/874151/kemenkop-ukm-dorong-usaha-mikro-naik-kelas-melalui-pelatihan-digitalisasi-e-commerce
+40.Pelatihan Digitalisasi UMKM Berbasis Syariah Tanggal - EDUKUMKM, diakses Agustus 8, 2025, https://edu.kemenkopukm.go.id/sosialisasi/detail/369
+41.Contoh UMKM Sukses dan Inspiratif di Indonesia, diakses Agustus 8, 2025, https://izinin.id/article/contoh-umkm-sukses-dan-inspiratif-di-indonesia
+42.Buttonscarves: Dari UMKM Lokal hingga Merek Fashion Mendunia ..., diakses Agustus 8, 2025, https://sokoguru.id/soko%20bisnis/buttonscarves-dari-umkm-lokal-hingga-merek-fashion-mendunia-omzet-triliunan-rupiah
+43.Sukses Sebelum 30, Brand Lokal KHDJH Jadi Wujud Nyata Anak Muda Berdaya di Industri Fashion Muslim Lokal - Olenka, diakses Agustus 8, 2025, https://olenka.id/sukses-sebelum-30-brand-lokal-khdjh-jadi-wujud-nyata-anak-muda-berdaya-di-industri-fashion-muslim-lokal/all
+44.Dibina BRI, UMKM Kerajinan Ini Sukses Tembus Pasar Asia dan ..., diakses Agustus 8, 2025, https://finance.detik.com/berita-ekonomi-bisnis/d-8000130/dibina-bri-umkm-kerajinan-ini-sukses-tembus-pasar-asia-dan-amerika
+45.Kisah Sukses Couplepreneur: Dari Program BRI Sukses Ekspor Produk Craftote ke Asia dan Amerika - Riau Pos, diakses Agustus 8, 2025, https://riaupos.jawapos.com/ekonomi/2256236693/kisah-sukses-couplepreneur-dari-program-bri-sukses-ekspor-produk-craftote-ke-asia-dan-amerika
+46.Tingkatkan Inklusi Keuangan bagi UMKM melalui Pemanfaatan Teknologi Digital, Pemerintah Luncurkan Program PROMISE II Impact - Kementerian Koordinator Bidang Perekonomian Republik Indonesia, diakses Agustus 8, 2025, https://ekon.go.id/publikasi/detail/4980/tingkatkan-inklusi-keuangan-bagi-umkm-melalui-pemanfaatan-teknologi-digital-pemerintah-luncurkan-program-promise-ii-impact
+47.10 Permasalahan yang Sering Terjadi Pada UMKM dan Solusinya ..., diakses Agustus 8, 2025, https://smartlegal.id/galeri-hukum/lainnya/2024/12/11/10-permasalahan-yang-sering-terjadi-pada-umkm-sl/
+
+
+Navigasi Legalitas dan Perizinan: Panduan Komprehensif untuk UMKM Indonesia di Era Perizinan Berbasis Risiko
+
+
+Ringkasan Eksekutif
+
+Laporan ini menyajikan analisis mendalam mengenai lanskap legalitas dan perizinan bagi Usaha Mikro, Kecil, dan Menengah (UMKM) di Indonesia, dengan fokus pada reformasi signifikan yang diperkenalkan melalui Undang-Undang Cipta Kerja dan peraturan turunannya. Temuan utama menunjukkan bahwa transisi Indonesia ke sistem perizinan berusaha terintegrasi secara elektronik yang berbasis risiko, atau Online Single Submission Risk-Based Approach (OSS-RBA), telah secara fundamental mengubah kerangka legalitas bagi UMKM. Nomor Induk Berusaha (NIB) kini berfungsi sebagai gerbang utama dan, bagi mayoritas UMKM berisiko rendah, menjadi satu-satunya legalitas yang diperlukan untuk beroperasi.
+Penyederhanaan ini secara drastis memangkas waktu dan kerumitan birokrasi yang sebelumnya menjadi momok bagi pelaku usaha. Namun, analisis ini juga mengidentifikasi bahwa kemudahan prosedural ini memunculkan tantangan baru yang bersifat kapasitas. Hambatan utama kini bergeser dari kerumitan birokrasi menjadi kesenjangan literasi digital, minimnya kesadaran akan pentingnya legalitas, serta kesulitan dalam memenuhi standar teknis substantif untuk perizinan sektoral seperti PIRT dan sertifikasi halal.
+Ekosistem pendukung yang dibangun pemerintah, seperti Pusat Layanan Usaha Terpadu (PLUT) dan pendampingan pembuatan NIB, memegang peranan krusial sebagai jembatan antara kebijakan dan implementasi di lapangan. Namun, efektivitasnya masih menghadapi tantangan jangkauan dan pemerataan.
+Laporan ini merekomendasikan agar pelaku UMKM mengambil langkah proaktif untuk segera mengurus NIB dan memanfaatkan ekosistem pendukung yang tersedia. Bagi pemerintah, rekomendasi difokuskan pada intensifikasi sosialisasi "jemput bola" di tingkat akar rumput, penyederhanaan antarmuka digital, serta penguatan kapasitas dan jangkauan lembaga pendamping seperti PLUT untuk memastikan reformasi perizinan ini dapat dirasakan manfaatnya secara maksimal oleh seluruh lapisan UMKM di Indonesia.
+
+Bab 1: Lanskap UMKM dan Urgensi Legalitas di Indonesia
+
+
+1.1. Mendefinisikan Ulang UMKM: Analisis Kriteria Berdasarkan PP No. 7 Tahun 2021
+
+Kerangka regulasi yang mendefinisikan Usaha Mikro, Kecil, dan Menengah (UMKM) di Indonesia mengalami perubahan signifikan dengan diundangkannya Peraturan Pemerintah (PP) Nomor 7 Tahun 2021 tentang Kemudahan, Pelindungan, dan Pemberdayaan Koperasi dan Usaha Mikro, Kecil, dan Menengah.1 Peraturan ini, yang merupakan turunan dari Undang-Undang Nomor 11 Tahun 2020 tentang Cipta Kerja, menetapkan kriteria baru yang lebih relevan dengan kondisi ekonomi saat ini, menggantikan definisi yang termaktub dalam UU No. 20 Tahun 2008.
+Kriteria terbaru mengklasifikasikan UMKM berdasarkan salah satu dari dua metrik utama: Modal Usaha (tidak termasuk nilai tanah dan bangunan tempat usaha) atau Hasil Penjualan Tahunan (omzet).4 Penggunaan kata "atau" memberikan fleksibilitas penting, di mana kriteria modal usaha umumnya diterapkan untuk usaha yang baru didirikan, sementara kriteria hasil penjualan tahunan digunakan untuk usaha yang telah beroperasi dan memiliki rekam jejak pendapatan.5 Fleksibilitas ini bukan sekadar penyesuaian teknis, melainkan sebuah insentif strategis dari pemerintah. Ini menunjukkan pemahaman mendalam terhadap siklus hidup bisnis, menghilangkan hambatan bagi usaha rintisan untuk segera melegalkan diri tanpa harus menunggu catatan penjualan tahunan. Ini adalah langkah deregulasi pragmatis yang dirancang untuk mendorong lebih banyak usaha masuk ke ekosistem formal sejak dini.
+Kriteria spesifik berdasarkan PP No. 7 Tahun 2021 adalah sebagai berikut 8:
+●Usaha Mikro: Memiliki modal usaha hingga paling banyak Rp1 Miliar atau hasil penjualan tahunan hingga paling banyak Rp2 Miliar.
+●Usaha Kecil: Memiliki modal usaha lebih dari Rp1 Miliar hingga Rp5 Miliar atau hasil penjualan tahunan lebih dari Rp2 Miliar hingga Rp15 Miliar.
+●Usaha Menengah: Memiliki modal usaha lebih dari Rp5 Miliar hingga Rp10 Miliar atau hasil penjualan tahunan lebih dari Rp15 Miliar hingga Rp50 Miliar.
+Perubahan ini secara drastis menaikkan batas atas (plafon) modal dan omzet dibandingkan dengan regulasi sebelumnya, yang secara efektif memperluas cakupan usaha yang dapat dikategorikan sebagai UMKM dan berhak mengakses berbagai program kemudahan, perlindungan, dan pemberdayaan dari pemerintah.5
+Tabel 1.1: Perbandingan Kriteria UMKM (PP No. 7/2021 vs. UU No. 20/2008)
+Kategori Usaha	Kriteria (PP No. 7 Tahun 2021)	Kriteria (UU No. 20 Tahun 2008)
+Usaha Mikro	Modal Usaha: ≤ Rp1 Miliar Hasil Penjualan: ≤ Rp2 Miliar	Kekayaan Bersih: ≤ Rp50 Juta Hasil Penjualan: ≤ Rp300 Juta
+Usaha Kecil	Modal Usaha: > Rp1 Miliar - Rp5 Miliar Hasil Penjualan: > Rp2 Miliar - Rp15 Miliar	Kekayaan Bersih: > Rp50 Juta - Rp500 Juta Hasil Penjualan: > Rp300 Juta - Rp2,5 Miliar
+Usaha Menengah	Modal Usaha: > Rp5 Miliar - Rp10 Miliar Hasil Penjualan: > Rp15 Miliar - Rp50 Miliar	Kekayaan Bersih: > Rp500 Juta - Rp10 Miliar Hasil Penjualan: > Rp2,5 Miliar - Rp50 Miliar
+Sumber: Disarikan dari 4
+
+1.2. Peran Vital UMKM: Pilar Ekonomi Nasional
+
+Sektor UMKM secara konsisten membuktikan perannya sebagai tulang punggung dan mesin penggerak kritis (critical engine) perekonomian nasional Indonesia.9 Data statistik terbaru dari Kementerian Koperasi dan UKM (KemenkopUKM) dan Badan Pusat Statistik (BPS) mengonfirmasi dominasi sektor ini dalam struktur ekonomi. Pada tahun 2023, jumlah UMKM di Indonesia mencapai sekitar 66 juta unit, atau sekitar 99% dari total unit usaha yang ada di negara ini.11
+Kontribusi UMKM terhadap Produk Domestik Bruto (PDB) nasional sangat signifikan, mencapai sekitar 61% pada tahun 2023, setara dengan nilai Rp9.580 triliun.12 Lebih lanjut, sektor ini memiliki kapasitas penyerapan tenaga kerja yang luar biasa, menampung sekitar 97% dari total angkatan kerja nasional, yang berarti sekitar 117 juta hingga 119,6 juta pekerja menggantungkan hidupnya pada sektor ini.11
+Namun, analisis yang lebih dalam terhadap data ini mengungkapkan sebuah paradoks produktivitas. Meskipun UMKM mendominasi dari segi jumlah unit usaha (99%) dan penyerapan tenaga kerja (97%), kontribusinya terhadap PDB "hanya" sebesar 61%. Kesenjangan ini mengindikasikan adanya disparitas produktivitas yang signifikan antara UMKM dan usaha skala besar. Kesenjangan ini bukan sekadar masalah efisiensi operasional, melainkan cerminan dari tantangan struktural yang lebih dalam, di mana status informalitas menjadi salah satu akar masalah utamanya. Dengan demikian, legalitas usaha bukan lagi sekadar kewajiban administratif, melainkan sebuah instrumen strategis untuk membuka potensi produktivitas UMKM yang selama ini terpendam. Usaha yang legal dan formal dapat mengakses pembiayaan untuk adopsi teknologi, mengikuti program pelatihan untuk peningkatan kapasitas SDM, dan menembus pasar yang lebih luas—semua faktor ini merupakan pendorong utama produktivitas. Oleh karena itu, mendorong legalitas adalah langkah esensial untuk meningkatkan kontribusi PDB UMKM agar lebih proporsional dengan perannya dalam penyerapan tenaga kerja dan jumlah unit usaha.
+
+1.3. Mengapa Legalitas Penting? Fondasi untuk Pertumbuhan Berkelanjutan
+
+Bagi banyak pelaku UMKM, legalitas usaha seringkali dipandang sebagai beban administratif yang rumit dan tidak mendesak. Namun, pandangan ini mengabaikan peran fundamental legalitas sebagai fondasi untuk pertumbuhan bisnis yang berkelanjutan dan aman. Memiliki izin usaha yang sah memberikan serangkaian manfaat krusial yang secara langsung memengaruhi daya saing dan keberlangsungan usaha.17
+Manfaat utama dari legalitas usaha meliputi:
+●Perlindungan Hukum: Legalitas memberikan status hukum yang jelas, yang berfungsi sebagai perisai untuk melindungi aset-aset usaha, terutama kekayaan intelektual seperti merek dagang, dari penyalahgunaan atau klaim oleh pihak yang tidak bertanggung jawab.17 Usaha yang legal memiliki landasan untuk mengambil tindakan hukum jika terjadi sengketa.
+●Akses Permodalan: Ini adalah salah satu manfaat paling signifikan. Lembaga keuangan formal, seperti bank, menjadikan legalitas usaha sebagai syarat mutlak untuk pengajuan kredit, termasuk program populer seperti Kredit Usaha Rakyat (KUR). Tanpa legalitas, UMKM sering dianggap tidak layak mendapat pinjaman (unbankable).18 Legalitas juga meningkatkan kepercayaan investor untuk menanamkan modal.
+●Pengembangan dan Perluasan Pasar: Pintu menuju pasar yang lebih luas dan modern—seperti supermarket, hotel, dan restoran—seringkali tertutup bagi produk tanpa legalitas. Pasar-pasar ini mensyaratkan adanya izin edar (seperti PIRT atau BPOM) dan sertifikasi halal sebagai jaminan kualitas dan keamanan.18 Legalitas juga merupakan prasyarat untuk menembus pasar ekspor.
+●Peningkatan Kredibilitas dan Kepercayaan: Usaha yang terdaftar secara resmi dipandang lebih profesional dan dapat dipercaya oleh konsumen, pemasok, dan mitra bisnis potensial.17 Ini membangun citra merek yang positif dan dapat menjadi keunggulan kompetitif.
+●Akses ke Program Pemerintah: Berbagai program dukungan pemerintah, mulai dari pelatihan, pendampingan teknis, hingga bantuan hibah, hampir selalu mensyaratkan kepemilikan legalitas usaha sebagai kriteria utama partisipasi.17
+Ketidakpunyaan legalitas menciptakan sebuah "rantai stagnasi" yang menjebak banyak UMKM dalam skala mikro dan informal. Tanpa NIB, UMKM tidak dapat mengajukan PIRT atau Sertifikat Halal. Tanpa sertifikasi tersebut, produk mereka tidak dapat memasuki rantai pasok ritel modern. Tanpa akses ke pasar yang lebih luas, omzet mereka cenderung stagnan. Dengan omzet yang stagnan dan tanpa pencatatan keuangan yang baik (sebuah ciri khas usaha informal), mereka tidak dapat memenuhi syarat untuk mengakses kredit perbankan. Tanpa suntikan modal, mereka tidak dapat berinvestasi dalam peningkatan kapasitas produksi, kualitas, atau teknologi. Ini adalah lingkaran setan yang sulit dipatahkan. Oleh karena itu, NIB sebagai langkah awal legalitas berfungsi sebagai pemutus rantai yang paling fundamental, memungkinkan UMKM untuk mulai bergerak maju dalam setiap aspek bisnisnya.
+
+Bab 2: Revolusi Perizinan: Sistem Online Single Submission Berbasis Risiko (OSS-RBA)
+
+
+2.1. Paradigma Baru: Dari Beban Administratif ke Pendekatan Berbasis Risiko
+
+Pemerintah Indonesia, melalui UU Cipta Kerja dan peraturan pelaksananya seperti PP No. 5 Tahun 2021, telah melakukan reformasi fundamental dalam sistem perizinan berusaha.23 Paradigma lama yang mewajibkan semua jenis usaha untuk melewati serangkaian prosedur administratif yang seringkali panjang dan tumpang tindih untuk mendapatkan berbagai izin (seperti SIUP, TDP, dll.) telah digantikan oleh pendekatan berbasis risiko (
+risk-based approach).2
+Sistem baru yang diimplementasikan melalui platform Online Single Submission Risk-Based Approach (OSS-RBA) ini mengklasifikasikan setiap kegiatan usaha berdasarkan tingkat potensi dampaknya terhadap aspek kesehatan, keselamatan, lingkungan, dan pemanfaatan sumber daya alam.24 Perubahan ini bukan sekadar digitalisasi proses, melainkan pergeseran filosofi regulasi. Implikasi strategis dari pendekatan ini sangat signifikan. Pemerintah kini dapat mengalokasikan sumber daya pengawasan secara lebih efisien. Alih-alih menghabiskan waktu dan tenaga untuk memverifikasi dokumen administratif dari jutaan usaha berisiko rendah seperti warung kelontong atau kafe, regulator dapat memfokuskan pengawasan substantif pada segelintir usaha berisiko tinggi yang memiliki dampak signifikan, seperti pabrik pengolahan limbah atau pertambangan. Bagi UMKM, yang mayoritas berada di kategori risiko rendah, ini berarti kepercayaan dan keleluasaan yang lebih besar untuk beroperasi dan berinovasi. Bagi negara, ini berarti penggunaan sumber daya pengawasan yang lebih efektif untuk melindungi kepentingan publik yang paling vital.
+
+2.2. Klasifikasi Tingkat Risiko dan Implikasi Perizinannya
+
+Dalam sistem OSS-RBA, setiap kegiatan usaha yang terdaftar dalam Klasifikasi Baku Lapangan Usaha Indonesia (KBLI) dikategorikan ke dalam salah satu dari empat tingkatan risiko. Setiap tingkatan memiliki persyaratan perizinan yang berbeda, yang secara progresif menjadi lebih ketat seiring dengan meningkatnya tingkat risiko.2
+Berikut adalah klasifikasi tingkat risiko dan implikasi perizinannya:
+●Risiko Rendah: Kegiatan usaha yang tidak berdampak signifikan terhadap lingkungan, kesehatan, atau keselamatan. Pelaku usaha dalam kategori ini hanya memerlukan Nomor Induk Berusaha (NIB) sebagai legalitas untuk memulai dan menjalankan kegiatan operasionalnya.24
+●Risiko Menengah Rendah: Kegiatan usaha dengan potensi dampak yang dapat dikelola melalui penerapan standar. Pelaku usaha memerlukan NIB dan Sertifikat Standar. Sertifikat Standar untuk kategori ini berupa pernyataan mandiri (self-declaration) dari pelaku usaha yang menyatakan kesanggupan untuk memenuhi norma, standar, prosedur, dan kriteria (NSPK) yang telah ditetapkan.2
+●Risiko Menengah Tinggi: Kegiatan usaha dengan potensi dampak yang lebih signifikan dan memerlukan verifikasi dari otoritas. Pelaku usaha memerlukan NIB dan Sertifikat Standar yang harus diverifikasi pemenuhannya oleh Pemerintah Pusat atau Pemerintah Daerah sebelum dapat memulai kegiatan operasional.24
+●Risiko Tinggi: Kegiatan usaha dengan potensi dampak yang besar dan memerlukan pengawasan ketat. Pelaku usaha memerlukan NIB dan Izin. Izin ini harus disetujui oleh Pemerintah Pusat atau Pemerintah Daerah setelah pelaku usaha memenuhi serangkaian persyaratan ketat, yang seringkali mencakup Analisis Mengenai Dampak Lingkungan (AMDAL).2
+Tabel 2.1: Matriks Tingkatan Risiko dan Persyaratan Perizinan OSS-RBA
+Tingkat Risiko	Persyaratan Legalitas	Proses Verifikasi	Contoh Usaha (Ilustratif)
+Rendah	Nomor Induk Berusaha (NIB)	Otomatis oleh Sistem OSS	Warung Kopi, Toko Kelontong, Jasa Pengetikan
+Menengah Rendah	NIB + Sertifikat Standar	Pernyataan Mandiri (Self-declare) oleh Pelaku Usaha	Restoran Skala Kecil, Bengkel Motor
+Menengah Tinggi	NIB + Sertifikat Standar	Verifikasi oleh Pemerintah	Klinik Pratama, Hotel Non-Bintang
+Tinggi	NIB + Izin	Verifikasi dan Persetujuan oleh Pemerintah (seringkali memerlukan AMDAL)	Pabrik Kimia, Rumah Sakit, Pertambangan
+Sumber: Disarikan dari 2
+
+Bab 3: Nomor Induk Berusaha (NIB) sebagai Fondasi Legalitas Usaha
+
+
+3.1. Fungsi dan Peran NIB: KTP-nya Dunia Usaha
+
+Nomor Induk Berusaha (NIB) merupakan inovasi sentral dalam reformasi perizinan di Indonesia. NIB adalah identitas tunggal bagi pelaku usaha yang diterbitkan oleh Lembaga OSS setelah melakukan pendaftaran.23 Perannya jauh melampaui sekadar nomor registrasi; NIB berfungsi sebagai dokumen legalitas multifungsi yang menggantikan beberapa izin dasar yang sebelumnya harus diurus secara terpisah. Secara spesifik, NIB berlaku juga sebagai Tanda Daftar Perusahaan (TDP), Angka Pengenal Importir (API) bagi usaha yang melakukan kegiatan impor, serta hak akses kepabeanan.23
+Bagi mayoritas UMKM di Indonesia yang kegiatan usahanya masuk dalam kategori risiko rendah, NIB menjadi satu-satunya dokumen legalitas yang dibutuhkan untuk dapat beroperasi secara sah.24 Proses penerbitannya yang dirancang sangat cepat—dapat selesai dalam hitungan menit—dan tanpa biaya, merupakan strategi pemerintah untuk mendorong formalisasi usaha secara massal dan menghilangkan hambatan utama bagi UMKM untuk masuk ke dalam ekosistem ekonomi formal.30
+
+3.2. Panduan Praktis Pendaftaran NIB untuk Usaha Perseorangan Melalui OSS
+
+Proses pendaftaran NIB untuk pelaku usaha perseorangan dirancang agar dapat dilakukan secara mandiri dan sepenuhnya online melalui portal resmi OSS di oss.go.id.32 Berikut adalah alur pendaftarannya:
+●Tahap Persiapan:
+Sebelum memulai, pelaku usaha harus menyiapkan data esensial, yaitu Nomor Induk Kependudukan (NIK) yang tertera di KTP dan Nomor Pokok Wajib Pajak (NPWP) pribadi (jika sudah memiliki).34
+●Langkah 1: Membuat Akun OSS:
+1.Kunjungi situs oss.go.id.
+2.Klik tombol "Daftar" dan pilih skala usaha "UMK" (Usaha Mikro dan Kecil) serta jenis usaha "Orang Perseorangan".33
+3.Masukkan NIK, nomor telepon atau email aktif untuk verifikasi.
+4.Sistem akan mengirimkan kode verifikasi (OTP). Masukkan kode tersebut, buat kata sandi, dan lengkapi data profil yang sebagian besar akan terisi otomatis dari data Kependudukan dan Pencatatan Sipil (Dukcapil).32
+5.Aktivasi akun melalui tautan yang dikirimkan ke email terdaftar untuk mendapatkan username dan password.32
+●Langkah 2: Mengajukan Permohonan Baru:
+1.Login kembali ke sistem OSS menggunakan username dan password yang telah diterima.
+2.Pada dasbor utama, pilih menu "Perizinan Berusaha" dan klik "Permohonan Baru".34
+●Langkah 3: Melengkapi Data Usaha:
+1.Data Pelaku Usaha: Verifikasi kembali data diri yang ditampilkan oleh sistem.
+2.Data Usaha: Isi informasi detail mengenai usaha yang akan didaftarkan, meliputi:
+■Nama Usaha/Kegiatan: Nama brand atau nama usaha Anda.
+■Modal Usaha: Total investasi awal untuk usaha tersebut.
+■Alamat Usaha: Lokasi fisik tempat usaha dijalankan.
+■Kode KBLI: Pilih Klasifikasi Baku Lapangan Usaha Indonesia (KBLI) 5 digit yang paling sesuai dengan jenis kegiatan usaha Anda. Ini adalah langkah krusial karena penentuan tingkat risiko usaha bergantung pada kode KBLI yang dipilih.34
+■Deskripsi Kegiatan Usaha dan Jumlah Tenaga Kerja.34
+●Langkah 4: Validasi Risiko dan Penerbitan NIB:
+1.Setelah semua data usaha diisi, klik "Validasi Risiko". Sistem OSS akan secara otomatis menganalisis KBLI yang dipilih dan menampilkan tingkat risiko usaha Anda (Rendah, Menengah Rendah, Menengah Tinggi, atau Tinggi).34
+2.Untuk usaha berisiko rendah, Anda akan diminta untuk membaca dan menyetujui serangkaian Pernyataan Mandiri, yang mencakup komitmen untuk mematuhi peraturan tata ruang dan standar lingkungan (SPPL).36
+3.Setelah mencentang semua pernyataan persetujuan, klik "Proses Perizinan Berusaha". Sistem akan segera memproses dan menerbitkan NIB secara elektronik. Dokumen NIB dapat langsung diunduh dan dicetak.34
+Meskipun alur pendaftaran tampak sederhana dan terautomasi, terdapat satu titik kritis yang sering menjadi sumber kebingungan bagi pelaku UMKM, yaitu pemilihan Kode KBLI. Banyak UMKM memiliki model bisnis yang bersifat hibrida, misalnya sebuah kafe (KBLI 56303: Rumah Minum/Kafe) yang juga menjual biji kopi kemasan (KBLI 47244: Perdagangan Eceran Kopi, Gula, Coklat dan Sejenisnya) dan merchandise seperti kaos (KBLI 47711: Perdagangan Eceran Pakaian). Kesalahan dalam memilih KBLI utama atau tidak mendaftarkan semua KBLI yang relevan dapat berakibat pada penentuan tingkat risiko yang keliru. Hal ini, pada gilirannya, dapat memicu persyaratan perizinan tambahan yang sebenarnya tidak diperlukan, atau sebaliknya, menyebabkan pelaku usaha lalai memenuhi kewajiban yang semestinya. Ini menunjukkan bahwa di balik kemudahan sistem digital, kebutuhan akan pendampingan dan peningkatan literasi bisnis dasar justru menjadi semakin vital.
+
+Bab 4: Perizinan Sektoral Esensial bagi UMKM
+
+Setelah mengantongi NIB sebagai legalitas dasar, UMKM yang bergerak di sektor tertentu diwajibkan untuk memenuhi perizinan atau sertifikasi tambahan yang bersifat sektoral. Perizinan ini berfungsi sebagai jaminan bahwa produk atau jasa yang ditawarkan telah memenuhi standar keamanan, kualitas, dan ketentuan spesifik lainnya. Bagi UMKM, terutama di bidang pangan, pemenuhan izin sektoral ini adalah kunci untuk membangun kepercayaan konsumen dan memperluas jangkauan pasar.
+
+4.1. Izin Edar Pangan: Membedah Pangan Industri Rumah Tangga (PIRT) dan BPOM
+
+Bagi usaha di sektor makanan dan minuman, kepemilikan izin edar adalah sebuah keharusan untuk menjamin keamanan produk bagi konsumen. Terdapat dua jenis izin edar utama yang relevan bagi UMKM, yaitu Sertifikat Produksi Pangan Industri Rumah Tangga (SPP-IRT) dan Izin Edar dari Badan Pengawas Obat dan Makanan (BPOM).20 Pemilihan antara keduanya bergantung pada skala, lokasi, jenis produk, dan proses produksi usaha.
+●Sertifikat Produksi Pangan Industri Rumah Tangga (SPP-IRT): Izin ini diterbitkan oleh Dinas Kesehatan di tingkat Kabupaten/Kota dan ditujukan khusus untuk usaha pangan skala industri rumah tangga. Kriteria utama untuk PIRT adalah produk yang tergolong berisiko rendah, seperti pangan olahan kering dengan masa simpan lebih dari tujuh hari, yang diproduksi di lokasi yang menyatu dengan rumah tinggal menggunakan peralatan manual hingga semi-otomatis.40
+●Izin Edar BPOM: Izin ini dikeluarkan oleh BPOM pusat dan diwajibkan untuk produk pangan dengan skala produksi yang lebih besar, lokasi produksi yang terpisah dari rumah tinggal, atau produk yang memiliki risiko lebih tinggi. Ini mencakup produk seperti makanan beku, makanan kaleng, produk olahan susu, serta produk yang diwajibkan memiliki Standar Nasional Indonesia (SNI) seperti air minum dalam kemasan.40
+Alur Pendaftaran SPP-IRT Online: Sejak implementasi OSS-RBA, proses pengajuan SPP-IRT telah terintegrasi. Setelah memiliki NIB, pelaku usaha mengajukan Perizinan Berusaha Untuk Menunjang Kegiatan Usaha (PB-UMKU) untuk SPP-IRT melalui portal OSS. Sistem kemudian akan mengarahkan pelaku usaha ke aplikasi khusus sppirt.pom.go.id untuk melanjutkan proses pemenuhan komitmen.44 Komitmen utama yang harus dipenuhi adalah mengikuti Penyuluhan Keamanan Pangan (PKP) yang diselenggarakan oleh Dinas Kesehatan setempat dan memastikan sarana produksi memenuhi standar higiene dan sanitasi dasar.47
+Tabel 4.1: Perbandingan Komprehensif Izin Edar PIRT vs. BPOM
+Aspek	Sertifikat Produksi Pangan Industri Rumah Tangga (PIRT)	Izin Edar BPOM
+Pihak Penerbit	Dinas Kesehatan Kabupaten/Kota	Badan Pengawas Obat dan Makanan (BPOM) RI
+Skala Usaha	Industri Rumah Tangga (Mikro & Kecil)	Industri Skala Menengah dan Besar
+Lokasi Produksi	Diperbolehkan menyatu dengan rumah tinggal	Harus terpisah dari rumah tinggal
+Jenis Produk	Pangan olahan berisiko rendah (misal: keripik, kue kering, abon)	Semua jenis pangan olahan, termasuk yang berisiko tinggi (misal: makanan beku, susu UHT, makanan kaleng, suplemen)
+Proses Produksi	Manual hingga semi-otomatis	Semi-otomatis, otomatis, atau menggunakan teknologi khusus (misal: pasteurisasi, UHT)
+Cakupan Distribusi	Lokal hingga Nasional	Nasional hingga Internasional (Ekspor)
+Sumber: Disarikan dari 40
+
+4.2. Jaminan Produk Halal: Prosedur dan Fasilitasi Sertifikasi
+
+Seiring dengan meningkatnya kesadaran konsumen dan mandat regulasi, sertifikasi halal menjadi elemen krusial bagi UMKM, khususnya di sektor makanan, minuman, dan produk terkait lainnya. Pemerintah telah menetapkan kewajiban sertifikasi halal yang akan diberlakukan secara bertahap, dengan fase pertama untuk produk makanan, minuman, dan hasil sembelihan dimulai pada Oktober 2024.49
+Untuk meringankan beban Usaha Mikro dan Kecil (UMK), Badan Penyelenggara Jaminan Produk Halal (BPJPH) menyediakan program fasilitasi Sertifikasi Halal Gratis (SEHATI) melalui mekanisme pernyataan mandiri atau self-declare.51 Program ini memungkinkan UMK untuk mendapatkan sertifikat halal tanpa biaya, asalkan memenuhi kriteria tertentu, antara lain 51:
+●Memiliki NIB dengan tingkat risiko rendah.
+●Memiliki omzet penjualan tahunan maksimal Rp500 juta.
+●Produk tidak berisiko atau menggunakan bahan yang sudah dipastikan kehalalannya (dibuktikan dengan sertifikat halal dari pemasok atau termasuk dalam daftar bahan positif).
+●Proses produksi sederhana (usaha rumahan, bukan pabrikan) dan menggunakan peralatan yang bebas dari najis.
+●Lokasi, tempat, dan alat produksi terpisah dari proses produk tidak halal.
+Alur Pendaftaran Self-Declare: Proses pengajuan dilakukan secara online melalui sistem SIHALAL di portal ptsp.halal.go.id. Setelah pelaku usaha membuat akun dan mengajukan permohonan, proses akan dilanjutkan dengan verifikasi lapangan oleh seorang Pendamping Proses Produk Halal (P3H). P3H akan memastikan kesesuaian antara pernyataan pelaku usaha dengan kondisi faktual di lokasi produksi. Laporan hasil verifikasi kemudian diajukan ke Komite Fatwa Produk Halal untuk penetapan kehalalan produk, sebelum akhirnya BPJPH menerbitkan sertifikat halal.50
+Meskipun program SEHATI ini gratis dari segi biaya pendaftaran, terdapat "biaya kepatuhan" yang perlu diperhatikan oleh pelaku usaha. Persyaratan seperti "menggunakan bahan yang sudah dipastikan kehalalannya" menuntut UMKM untuk memiliki sistem penelusuran bahan baku yang baik dan hanya bekerja sama dengan pemasok yang bersertifikat halal. Demikian pula, syarat "proses produksi yang sederhana" dan "terpisah dari produk tidak halal" menuntut adanya disiplin operasional dan penerapan Standar Operasional Prosedur (SOP) yang ketat. Ini menunjukkan bahwa fasilitasi gratis dari pemerintah harus diimbangi dengan peningkatan kapasitas internal UMKM dalam hal manajemen rantai pasok dan standar produksi.
+
+4.3. Aspek Lingkungan: Pemenuhan Komitmen SPPL
+
+Bagi sebagian besar UMKM yang kegiatan usahanya tergolong berisiko rendah dan tidak memiliki dampak penting terhadap lingkungan—seperti warung kopi, toko kelontong, atau jasa penjahit—kewajiban pemenuhan aspek lingkungannya telah disederhanakan secara signifikan. Mereka diwajibkan untuk memiliki Surat Pernyataan Kesanggupan Pengelolaan dan Pemantauan Lingkungan Hidup (SPPL).55
+Berbeda dengan dokumen lingkungan yang lebih kompleks seperti UKL-UPL atau AMDAL, SPPL bukanlah izin yang memerlukan analisis mendalam, melainkan sebuah bentuk komitmen dari pelaku usaha untuk menjaga dan mengelola lingkungan di sekitar lokasi usahanya. Dalam sistem OSS-RBA, pemenuhan kewajiban SPPL ini telah diintegrasikan sepenuhnya ke dalam alur pendaftaran NIB. Pelaku usaha hanya perlu membaca dan menyetujui serangkaian Pernyataan Mandiri terkait kesanggupan pengelolaan lingkungan yang muncul di layar saat proses pengajuan.36 Dengan mencentang kotak persetujuan, kewajiban SPPL dianggap telah terpenuhi. Ini adalah contoh nyata bagaimana reformasi perizinan mengubah kewajiban yang sebelumnya memerlukan dokumen fisik terpisah menjadi komitmen digital yang efisien dan terintegrasi.
+
+Bab 5: Tantangan dan Hambatan dalam Pemenuhan Legalitas
+
+Meskipun reformasi melalui sistem OSS-RBA telah berhasil menyederhanakan proses perizinan secara signifikan, pelaku UMKM di Indonesia masih menghadapi serangkaian tantangan dan hambatan yang bersifat substantif dalam memenuhi kewajiban legalitas. Keberhasilan reformasi digital telah mengubah sifat hambatan dari yang sebelumnya dominan bersifat prosedural—seperti birokrasi yang berbelit, pungutan liar, dan waktu tunggu yang lama—menjadi hambatan yang lebih berakar pada kapasitas internal UMKM itu sendiri. Ini merupakan sebuah kemajuan, namun sekaligus menyoroti area-area kritis yang memerlukan intervensi lebih lanjut.
+Tantangan utama yang dihadapi UMKM saat ini meliputi:
+●Kesenjangan Literasi Digital: Hambatan paling fundamental adalah kesulitan dalam mengakses dan menggunakan platform OSS yang sepenuhnya digital. Banyak pelaku UMKM, terutama generasi yang lebih tua atau mereka dengan tingkat pendidikan formal yang terbatas, merasa terintimidasi oleh teknologi.56 Sebuah survei yang dilakukan oleh UKM Center FEB Universitas Indonesia menunjukkan bahwa sekitar 50% responden pelaku UMKM hanya memiliki pendidikan hingga tingkat SMP, yang memperkuat adanya tantangan literasi digital ini.57
+●Minimnya Kesadaran dan Persepsi Kompleksitas: Masih banyak pelaku usaha yang belum sepenuhnya memahami urgensi dan manfaat dari legalitas. Sebagian masih beroperasi dengan pola pikir lama, menganggap bahwa mengurus izin adalah proses yang sulit, mahal, dan memakan waktu—sebuah warisan dari era birokrasi sebelum reformasi.57 Sikap apatis ini seringkali membuat mereka menunda pengurusan legalitas hingga menjadi sebuah keharusan yang mendesak.
+●Kesulitan Memenuhi Standar Teknis: Untuk perizinan sektoral seperti SPP-IRT dan Sertifikasi Halal, tantangan sebenarnya bukan terletak pada proses pendaftaran online, melainkan pada pemenuhan persyaratan substantif di lapangan. Banyak UMKM skala rumahan kesulitan untuk memenuhi standar higienitas dan sanitasi tempat produksi, memastikan penggunaan bahan baku yang terjamin kehalalannya secara konsisten, atau menerapkan proses produksi yang terdokumentasi dengan baik sesuai standar yang ditetapkan.58
+●Kurangnya Pemahaman tentang Kekayaan Intelektual (KI): Kesadaran untuk melindungi aset tak berwujud seperti merek dagang masih sangat rendah di kalangan UMKM. Banyak yang belum mendaftarkan mereknya ke Direktorat Jenderal Kekayaan Intelektual (DJKI), sehingga membuat mereka sangat rentan terhadap peniruan, pemalsuan, dan potensi sengketa hukum yang dapat merugikan bisnis di kemudian hari.59
+Pergeseran tantangan ini mengindikasikan bahwa solusi ke depan tidak bisa lagi hanya berfokus pada penyempurnaan sistem atau "membuat aplikasi yang lebih baik". Fokus pemerintah dan ekosistem pendukung harus beralih secara masif ke arah investasi dalam peningkatan kapasitas sumber daya manusia pelaku UMKM itu sendiri. Tujuannya adalah "menciptakan pengusaha yang lebih siap" untuk beroperasi dalam ekosistem digital dan formal yang baru ini.
+
+Bab 6: Ekosistem Pendukung: Peran Pemerintah dan Lembaga Terkait
+
+Menyadari tantangan kapasitas yang dihadapi UMKM, pemerintah telah mengembangkan berbagai program dan lembaga yang membentuk sebuah ekosistem pendukung. Tujuannya adalah untuk mendampingi, memfasilitasi, dan mengakselerasi proses UMKM dalam memenuhi kewajiban legalitas dan mengembangkan usahanya.
+Elemen-elemen kunci dalam ekosistem pendukung ini adalah:
+●Pendampingan Pembuatan NIB: Kementerian Koperasi dan UKM (KemenkopUKM) secara aktif mendorong percepatan kepemilikan NIB di kalangan UMKM, dengan menargetkan jutaan penerbitan NIB baru setiap tahunnya.60 Untuk mengatasi isu literasi digital dan misinformasi (misalnya, anggapan bahwa NIB berbayar), KemenkopUKM meluncurkan program pendampingan melalui relawan Garda Transformasi Formal Usaha Mikro (Transfumi) yang bertugas mengedukasi dan membantu UMKM mendaftarkan NIB secara gratis langsung di lapangan.31
+●Pusat Layanan Usaha Terpadu (PLUT): Didirikan di berbagai daerah, PLUT berfungsi sebagai "klinik bisnis" atau pusat layanan satu atap bagi UMKM.61 Lembaga ini menjadi garda terdepan pendampingan, menyediakan layanan konsultasi dan fasilitasi gratis dalam berbagai bidang. Salah satu layanan utamanya adalah di bidang kelembagaan, di mana konsultan PLUT membantu UMKM dalam proses pengurusan badan hukum, pendaftaran NIB, pengajuan sertifikasi produk seperti PIRT dan Halal, serta aspek legalitas lainnya.62
+●Program Pengembangan Usaha: Di luar fasilitasi legalitas dasar, pemerintah juga menyediakan program pendampingan yang lebih mendalam bagi wirausaha yang ingin naik kelas. Salah satu contohnya adalah program Entrepreneur Development (Entredev) dari KemenkopUKM, yang memberikan konsultasi bisnis intensif bagi wirausaha yang sudah mapan untuk memperbaiki model bisnis dan meningkatkan omzet.66
+●Kaitan Legalitas dengan Bantuan Finansial: Program bantuan pemerintah, seperti Bantuan Produktif Usaha Mikro (BPUM) yang digulirkan selama masa pandemi, seringkali menjadikan kepemilikan legalitas usaha (seperti IUMK atau Surat Keterangan Usaha) sebagai salah satu syarat utama bagi calon penerima.68 Hal ini secara tidak langsung mendorong UMKM untuk melegalkan usahanya agar dapat mengakses program bantuan finansial.
+Meskipun terdapat beragam program dukungan yang baik dari berbagai kementerian dan lembaga (KemenkopUKM, Kemenag, BPOM, Pemerintah Daerah), dari sudut pandang pelaku UMKM, ekosistem ini dapat terlihat terfragmentasi. Seorang pelaku usaha mungkin bingung harus memulai dari mana, lembaga mana yang harus dihubungi, atau program mana yang paling relevan untuk kebutuhannya. Institusi seperti PLUT dan Garda Transfumi dirancang untuk menjadi jembatan dan solusi bagi masalah "pengiriman layanan di kilometer terakhir" (last-mile delivery). Namun, keberadaan dan efektivitasnya belum merata di seluruh 38 provinsi di Indonesia. Keberhasilan seluruh kebijakan nasional ini pada akhirnya sangat bergantung pada seberapa baik lembaga-lembaga di ujung tombak ini dapat menjangkau dan melayani UMKM secara langsung dan efektif. Oleh karena itu, penguatan kapasitas, anggaran, dan jangkauan PLUT menjadi kunci untuk menerjemahkan kebijakan tingkat nasional menjadi dampak nyata di tingkat akar rumput.
+
+Bab 7: Rekomendasi Strategis dan Proyeksi Masa Depan
+
+Berdasarkan analisis terhadap lanskap regulasi, tantangan yang dihadapi, dan ekosistem pendukung yang ada, laporan ini merumuskan serangkaian rekomendasi strategis bagi pelaku UMKM dan pemerintah. Tujuannya adalah untuk memaksimalkan manfaat dari reformasi perizinan dan mengakselerasi pertumbuhan sektor UMKM yang legal dan berdaya saing.
+
+Rekomendasi bagi Pelaku UMKM
+
+1.Mengambil Langkah Proaktif: Jangan menunda pengurusan legalitas. Segera daftarkan usaha untuk mendapatkan NIB melalui portal OSS. Proses ini cepat, gratis, dan merupakan langkah fundamental yang membuka akses ke perizinan sektoral lainnya, program pemerintah, dan pembiayaan formal.
+2.Memanfaatkan Ekosistem Pendukung: Secara aktif mencari informasi mengenai lokasi PLUT atau posko pendampingan NIB terdekat. Manfaatkan layanan konsultasi gratis yang mereka tawarkan untuk mengatasi kebingungan terkait pemilihan KBLI, persyaratan sertifikasi, atau navigasi sistem online. Bergabunglah dengan asosiasi atau komunitas usaha lokal untuk berbagi pengetahuan dan pengalaman praktis.
+3.Berinvestasi pada Peningkatan Kapasitas: Mengikuti pelatihan dan webinar yang banyak diselenggarakan oleh pemerintah maupun swasta. Prioritaskan peningkatan keterampilan di bidang literasi digital untuk menguasai platform OSS dan pemasaran online, literasi keuangan untuk manajemen bisnis yang lebih baik, serta pemahaman mendalam mengenai standar produksi (seperti Cara Produksi Pangan Olahan yang Baik/CPPOB-IRT dan Sistem Jaminan Produk Halal/SJPH) yang menjadi syarat pemenuhan komitmen perizinan.
+
+Rekomendasi bagi Pemerintah dan Lembaga Terkait
+
+1.Intensifikasi Sosialisasi "Jemput Bola": Upaya sosialisasi tidak cukup hanya dilakukan melalui kanal digital seperti media sosial atau webinar, yang justru sulit diakses oleh target audiens dengan literasi digital rendah. Perlu ada program "jemput bola" yang lebih masif dan terstruktur, dengan menempatkan para pendamping secara rutin di pusat-pusat aktivitas UMKM seperti pasar tradisional, sentra industri kecil, dan acara komunitas.
+2.Penyederhanaan Antarmuka Digital Berkelanjutan: Terus melakukan evaluasi dan perbaikan terhadap User Interface (UI) dan User Experience (UX) dari portal OSS dan SIHALAL. Tujuannya adalah membuat platform tersebut semakin sederhana, intuitif, dan mudah diakses, bahkan bagi pengguna dengan tingkat literasi digital yang terbatas. Pertimbangkan pengembangan fitur panduan interaktif atau chatbot berbahasa Indonesia yang sederhana.
+3.Penguatan Peran dan Kapasitas PLUT: Menjadikan penguatan PLUT sebagai prioritas strategis nasional. Ini mencakup peningkatan anggaran, penambahan jumlah konsultan pendamping yang kompeten, serta perluasan jangkauan layanan untuk memastikan setiap kabupaten/kota memiliki PLUT yang berfungsi secara optimal. PLUT harus diposisikan sebagai pusat informasi dan pendampingan terpadu yang menjadi rujukan utama bagi UMKM di daerah.
+
+Proyeksi Masa Depan
+
+Ke depan, tren dalam sistem perizinan dan legalitas usaha di Indonesia akan bergerak menuju integrasi data yang semakin dalam dan komprehensif. NIB tidak hanya akan berfungsi sebagai izin dasar, tetapi juga akan terhubung secara seamless dengan sistem data lainnya, seperti data perpajakan (untuk kemudahan pelaporan), data perbankan (untuk proses credit scoring yang lebih cepat dan akurat), dan data penerima program bantuan pemerintah.
+Evolusi ini akan menciptakan sebuah "Identitas Tunggal untuk Bisnis" (Single Identity for Business), di mana satu nomor (NIB) menjadi kunci akses untuk semua interaksi antara UMKM dengan pemerintah dan sektor keuangan. Bagi UMKM yang telah formal dan terdata, hal ini akan semakin mempermudah, mempercepat, dan mengefisienkan seluruh aspek operasional dan pengembangan usaha mereka di masa mendatang. Sebaliknya, bagi usaha yang tetap berada di sektor informal, kesenjangan akses dan peluang akan semakin melebar.
+Karya yang dikutip
+1.Peraturan Pemerintah NOMOR 7 TAHUN 2021 TENTANG KEMUDAHAN, PELINDUNGAN, DAN PEMBERDAYAAN KOPERASI DAN USAHA MIKRO, KECIL, DAN MENENGAH - JDIH Kota Tanjungpinang, diakses Agustus 8, 2025, https://jdih.tanjungpinangkota.go.id/cariprodukhukum/2379
+2.optimalisasi peraturan pemerintah nomor 7 tahun 2021 dalam peningkatan perekonomian daerah melalui - Jurnal Pengabdian UMKM - Universitas Bandar Lampung, diakses Agustus 8, 2025, https://jpu.ubl.ac.id/index.php/jpu/article/download/11/11/40
+3.PP No. 7 Tahun 2021 - Peraturan BPK, diakses Agustus 8, 2025, https://peraturan.bpk.go.id/Details/161837/pp-no-7-tahun-2021
+4.Kriteria UMKM Terbaru PP No | PDF | Bisnis - Scribd, diakses Agustus 8, 2025, https://id.scribd.com/document/594668746/Kriteria-UMKM-Terbaru-PP-No
+5.UMKM: Apa Saja Kriteria Usahanya - Infiniti Office, diakses Agustus 8, 2025, https://infiniti.id/blog/bisnis/kriteria-umkm-di-indonesia
+6.Kriteria UMKM Terbaru Berdasarkan Peraturan Pemerintah | kumparan.com, diakses Agustus 8, 2025, https://kumparan.com/dunia-karier/kriteria-umkm-terbaru-berdasarkan-peraturan-pemerintah-25bRUXd3cwy
+7.UMKM, Ini Aturan dan Kriteria UMKM Terbaru 2021 | IREAP POS, diakses Agustus 8, 2025, https://www.ireappos.com/news/id/kriteria-umkm-terbaru-tahun-2021/
+8.SALINAN - Postel.go.id, diakses Agustus 8, 2025, https://www.postel.go.id/downloads/13/20210510153537-Salinan_PP_Nomor_7_Tahun_2021.pdf
+9.Pertumbuhan UMKM Indonesia Semakin Meningkat, UMKM Menjadi Tulang Punggung Ekonomi Nasional - GPTN, diakses Agustus 8, 2025, https://info.gptn.or.id/pertumbuhan-umkm-indonesia-semakin-meningkat-umkm-menjadi-tulang-punggung-ekonomi-nasional/
+10.Perkembangan UMKM sebagai Critical Engine Perekonomian Nasional Terus Mendapatkan Dukungan Pemerintah, diakses Agustus 8, 2025, https://www.ekon.go.id/publikasi/detail/4593/perkembangan-umkm-sebagai-critical-engine-perekonomian-nasional-terus-mendapatkan-dukungan-pemerintah
+11.Jumlah UMKM Indonesia Capai 66 Juta pada 2023 - GoodStats Data, diakses Agustus 8, 2025, https://data.goodstats.id/statistic/jumlah-umkm-indonesia-capai-66-juta-pada-2023-CN6TF
+12.UMKM Indonesia - Kadin Indonesia, diakses Agustus 8, 2025, https://kadin.id/data-dan-statistik/umkm-indonesia/
+13.UMKM HEBAT, PEREKONOMIAN NASIONAL MENINGKAT - DJPb, diakses Agustus 8, 2025, https://djpb.kemenkeu.go.id/kppn/curup/id/data-publikasi/artikel/2885-umkm-hebat,-perekonomian-nasional-meningkat.html
+14.Kontribusi UMKM ke PDB Indonesia Tembus Rp 9.580 Triliun - Bisnis Liputan6.com, diakses Agustus 8, 2025, https://www.liputan6.com/bisnis/read/5665709/kontribusi-umkm-ke-pdb-indonesia-tembus-rp-9580-triliun
+15.DIGITALISASI USAHA MIKRO KECIL DAN MENENGAH 16 - DPR RI, diakses Agustus 8, 2025, https://berkas.dpr.go.id/pusaka/files/info_singkat/Info%20Singkat-XV-24-II-P3DI-Desember-2023-241.pdf
+16.DIGITALISASI UMKM GUNA MENINGKATKAN KETAHANAN EKONOMI NASIONAL”, diakses Agustus 8, 2025, http://lib.lemhannas.go.id/public/media/catalog/0010-092400000000031/swf/7805/017%20-%20Arie%20Rui%20H.pdf
+17.Esensial Legalitas Usaha Terhadap Pelaku Usaha Mikro Kecil dan Menengah (UMKM) di Kota Semarang Carolyn Stephanie Immanuella Br, diakses Agustus 8, 2025, https://jurnal.peneliti.net/index.php/JIWP/article/download/7272/6126/
+18.UMKM Perlu Tahu! Pentingnya Legalitas Usaha Dalam Berbisnis - UKMINDONESIA.ID, diakses Agustus 8, 2025, https://ukmindonesia.id/baca-deskripsi-posts/umkm-perlu-tahu-pentingnya-legalitas-usaha-dalam-berbisnis
+19.Mengenal Manfaat Legalitas Usaha untuk Pengembangan UMKM - RRI, diakses Agustus 8, 2025, https://www.rri.co.id/bisnis/305027/mengenal-manfaat-legalitas-usaha-untuk-pengembangan-umkm
+20.Mengenal Manfaat Legalitas Usaha untuk UMKM dan Cara Membuatnya - detikFinance, diakses Agustus 8, 2025, https://finance.detik.com/solusiukm/d-6319487/mengenal-manfaat-legalitas-usaha-untuk-umkm-dan-cara-membuatnya
+21.Pentingnya Legalitas Usaha Bagi Pelaku UMKM - majoo, diakses Agustus 8, 2025, https://majoo.id/solusi/detail/pentingnya-legalitas-usaha-bagi-pelaku-umkm
+22.Cara Daftar Nomor Induk Berusaha, Mudah Kok! - Indonesia.go.id, diakses Agustus 8, 2025, https://indonesia.go.id/kategori/perdagangan/8205/cara-daftar-nomor-induk-berusaha-mudah-kok?lang=1
+23.Pentingnya Nomor Induk Berusaha (NIB) untuk dan Tahapan Pengurusannya - Klikpajak, diakses Agustus 8, 2025, https://klikpajak.id/blog/pentingnya-nomor-induk-berusaha-nib/
+24.Kebijakan Pemerintah Dalam Penerapan Perizinan Usaha Mikro, Kecil dan Menengah1 Oleh - E-Journal UNSRAT, diakses Agustus 8, 2025, https://ejournal.unsrat.ac.id/v3/index.php/administratum/article/download/55735/46486/135973
+25.KAJIAN YURIDIS PERIZINAN USAHA DI BIDANG UMKM PASCA UNDANG - E-Journal UNSRAT, diakses Agustus 8, 2025, https://ejournal.unsrat.ac.id/v3/index.php/administratum/article/download/55700/46521/136063
+26.Perizinan Berusaha Berbasis Resiko (Koperasi Umkm - Nib, Sertifikat Standar, Izin Koperasi) - DPMPTSP, diakses Agustus 8, 2025, https://dpmptsp.lombokbaratkab.go.id/menu/perizinan-berusaha-berbasis-resiko-koperasi-umkm-nib-sertifikat-standar-izin-koperasi/
+27.Usaha Risiko Rendah: Cukup dengan NIB, Tanpa Izin Tambahan? - Hive Five Sunter, diakses Agustus 8, 2025, https://hivefivesunter.com/usaha-risiko-rendah-nib-tanpa-izin/
+28.Izin Usaha Kafe bagi Pelaku UMKM Melalui OSS RBA - DPMPTSP, diakses Agustus 8, 2025, https://dpmptsp.babelprov.go.id/content/izin-usaha-kafe-bagi-pelaku-umkm-melalui-oss-rba
+29.Peranan Nomor Induk Berusaha (NIB) Sebagai Legalitas Usaha Bagi - Asosiasi Riset Ekonomi dan Akuntansi Indonesia, diakses Agustus 8, 2025, https://journal.areai.or.id/index.php/MENGABDI/article/download/755/1015/4032
+30.UMKM Perlu Mengurus Nomor Induk Berusaha - | Universitas Negeri Yogyakarta, diakses Agustus 8, 2025, https://www.uny.ac.id/id/berita/umkm-perlu-mengurus-nomor-induk-berusaha
+31.KemenKopUKM Dorong UMKM Kantongi NIB, Apa Manfaatnya? - Infobanknews, diakses Agustus 8, 2025, https://infobanknews.com/kemenkopukm-dorong-umkm-kantongi-nib-apa-manfaatnya/
+32.Sai Betik Kota Bandar Lampung • TATA CARA UNTUK MENDAPATKAN NIB MELALUI APLIKASI OSS | Blog, diakses Agustus 8, 2025, https://dpmptsp.bandarlampungkota.go.id/blog/2021/06/tata-cara-untuk-mendapatkan-nib-melalui-aplikasi-oss
+33.Cara Membuat NIB Perorangan secara Online untuk Izin Usaha | kumparan.com, diakses Agustus 8, 2025, https://kumparan.com/berita-hari-ini/cara-membuat-nib-perorangan-secara-online-untuk-izin-usaha-24R1WO01Blt
+34.Cara Daftar Nomor Induk Berusaha (NIB) untuk Orang Perseorangan, Panduan Lengkap dengan Gambar! - UKMINDONESIA.ID, diakses Agustus 8, 2025, https://ukmindonesia.id/baca-deskripsi-posts/cara-daftar-nomor-induk-berusaha-nib-untuk-orang-perseorangan-panduan-lengkap-dengan-gambar
+35.Persyaratan Nomor Induk Berusaha (NIB) : - Website DPMPTSP Kota Langsa, diakses Agustus 8, 2025, https://dpmptsp.langsakota.go.id/halaman/detail/persyaratan-nomor-induk-berusaha-nib-
+36.detail panduan - OSS - Sistem Perizinan Berusaha Terintegrasi Secara Elektronik, diakses Agustus 8, 2025, https://oss.go.id/panduan/63a1f170acc5d4cf2fbdc139
+37.Perizinan UMK Perseorangan melalui Aplikasi OSS Indonesia, diakses Agustus 8, 2025, https://oss.go.id/panduan/635970086345c7d71a814499
+38.diakses Januari 1, 1970, https://oss.go.id/panduan/perizinan-berusaha-umk-risiko-rendah-dan-menengah-rendah-orang-perseorangan
+39.Cara Mengurus Surat Izin Edar dan PIRT - Indonesia.go.id, diakses Agustus 8, 2025, https://indonesia.go.id/kategori/kependudukan/8189/cara-mengurus-surat-izin-edar-dan-pirt?lang=1
+40.Perbedaan BPOM dan PIRT, Mana yang Kita Perlukan? - UKMINDONESIA.ID, diakses Agustus 8, 2025, https://ukmindonesia.id/baca-deskripsi-posts/perbedaan-bpom-dan-pirt-mana-yang-kita-perlukan
+41.Perbedaan Izin Edar BPOM dan PIRT, Pebisnis Kuliner Wajib Tahu! - UMKM, diakses Agustus 8, 2025, https://umkm.kompas.com/read/2024/07/31/191456183/perbedaan-izin-edar-bpom-dan-pirt-pebisnis-kuliner-wajib-tahu
+42.Perbedaan BPOM dan PIRT: Panduan Buat Pelaku Usaha dan Konsumen, diakses Agustus 8, 2025, https://jasauruspirt.github.io/perbedaan-bpom-dan-pirt.html
+43.Kenali Perbedaan Izin Edar BPOM dan SPP-IRT dalam Usaha Pangan Olahan - Prolegal, diakses Agustus 8, 2025, https://prolegal.id/kenali-perbedaan-izin-edar-bpom-dan-spp-irt-dalam-usaha-pangan-olahan/
+44.Bagaimana Alur Penerbitan SPPIRT? | Badan POM | Direktorat Pemberdayaan Masyarakat dan Pelaku Usaha (PMPU), diakses Agustus 8, 2025, https://istanaumkm.pom.go.id/pangan/bagaimana-alur-penerbitan-sppirt
+45.Alur dan Persyaratan Perizinan Produk Pangan P-IRT | Badan POM | Direktorat Pemberdayaan Masyarakat dan Pelaku Usaha (PMPU), diakses Agustus 8, 2025, https://istanaumkm.pom.go.id/artikel-pangan/perizinan-p-irt
+46.Cara Mengurus Izin Produksi Pangan Industri Rumah Tangga (PIRT) – Menjadi Pengaruh, diakses Agustus 8, 2025, https://legal.menjadipengaruh.com/cara-mengurus-izin-produksi-pangan-industri-rumah-tangga-pirt/
+47.Cara Membuat PIRT Online, Ini Panduan Lengkapnya untuk Pelaku Usaha Pangan, diakses Agustus 8, 2025, https://www.liputan6.com/feeds/read/5789324/cara-membuat-pirt-online-ini-panduan-lengkapnya-untuk-pelaku-usaha-pangan
+48.4 Langkah Proses Perizinan P-IRT untuk Bisnis Makanan, Tidak Begitu Rumit!, diakses Agustus 8, 2025, https://alamisharia.co.id/blogs/proses-perizinan-p-irt/
+49.PEMBERLAKUAN KEWAJIBAN SERTIFIKASI HALAL BAGI UMKM 11 - DPR RI, diakses Agustus 8, 2025, https://berkas.dpr.go.id/pusaka/files/info_singkat/Info%20Singkat-XVI-7-I-P3DI-April-2024-195.pdf
+50.Produk UMKM Wajib Sertifikasi Halal, Begini Syarat dan Cara Daftarnya - Pekanbaru.go.id, diakses Agustus 8, 2025, https://www.pekanbaru.go.id/index.php/p/news/produk-umkm-wajib-sertifikasi-halal-begini-syarat-dan-cara-daftarnya
+51.Ini Syarat Daftar Sertifikasi Halal Gratis Kategori "Self Declare", diakses Agustus 8, 2025, https://kemenag.go.id/nasional/ini-syarat-daftar-sertifikasi-halal-gratis-kategori-quotself-declarequot-4b6skv
+52.Kemenag Buka Sertifikasi Halal Gratis bagi 300 Ribuan UMK, Cek Syaratnya, diakses Agustus 8, 2025, https://kemenag.go.id/pers-rilis/kemenag-buka-sertifikasi-halal-gratis-bagi-300-ribuan-umk-cek-syaratnya-wr5yym
+53.Alur Self Declare 2025 - YouTube, diakses Agustus 8, 2025, https://www.youtube.com/watch?v=SU1flv1-How
+54.UMKM Wajib Tahu Sertifikasi Halal Jadi Syarat Utama Jualan Makanan Mulai Oktober 2024 - ANTARA News Jawa Barat, diakses Agustus 8, 2025, https://jabar.antaranews.com/berita/632701/umkm-wajib-tahu-sertifikasi-halal-jadi-syarat-utama-jualan-makanan-mulai-oktober-2024
+55.Dialektika Kesejahteraan Sosial dalam Perizinan Warung Kopi di Indonesia, diakses Agustus 8, 2025, https://journal.pubmedia.id/index.php/lawjustice/article/download/2996/3003/5693
+56.UKM Center UI: Literasi digital jadi tantangan UMKM urus izin usaha - ANTARA News, diakses Agustus 8, 2025, https://www.antaranews.com/berita/3140785/ukm-center-ui-literasi-digital-jadi-tantangan-umkm-urus-izin-usaha
+57.Permasalahan UMKM: Ini Tantangan dan Solusinya - Mebiso, diakses Agustus 8, 2025, https://mebiso.com/wiki/permasalahan-umkm/
+58.Strategi Menghadapi Tantangan Legalitas UMKM di Indonesia - RRI, diakses Agustus 8, 2025, https://www.rri.co.id/daerah/756727/strategi-menghadapi-tantangan-legalitas-umkm-di-indonesia
+59.Tantangan serius UMKM Indonesia: Keterbatasan Pengetahuan Terkait Perizinan Usaha, diakses Agustus 8, 2025, https://www.kompasiana.com/aurelyaputrialzahrah5894/657333afde948f3ffb5a4e02/tantangan-serius-umkm-indonesia-keterbatasan-pengetahuan-terkait-perizinan-usaha
+60.Tahun 2023 Kemenkop UKM Targetkan 10 Juta UMKM Punya NIB - Diskop UKM Dompu, diakses Agustus 8, 2025, https://diskopukm.dompukab.go.id/blog/tahun-2023-kemenkop-ukm-targetkan-10-juta-umkm-punya-nib.html
+61.PERAN PUSAT LAYANAN USAHA TERPADU (PLUT) TERHADAP PENGEMBANGAN DIGITALISASI UMKM MILENIAL PADA DINAS KOPERASI DAN USAHA KECIL ME - UIN - Ar Raniry Repository, diakses Agustus 8, 2025, https://repository.ar-raniry.ac.id/35325/1/M.%20Arif%20Suhanda%2C%20190802101%2C%20FISIP%2C%20IAN.pdf
+62.Peran PLUT - UMKM Dalam Proses Pendampingan dan Kerjasama Permodalan UMKM di Kabupaten Tulungagung | Jurnal Ekuilnomi - Universitas Simalungun, diakses Agustus 8, 2025, https://jurnal.usi.ac.id/index.php/ekuilnomi/article/view/439
+63.Layanan PLUT Untuk UMKM - UKMINDONESIA.ID, diakses Agustus 8, 2025, https://ukmindonesia.id/baca-deskripsi-posts/layanan-plut-untuk-umkm/
+64.PLUT KUMKM Berikan Layanan Konsultasi dan Fasilitasi Pembuatan Legalitas Usaha - Dinas Koperasi UKM dan Perdagangan Kabupaten Purworejo, diakses Agustus 8, 2025, https://dinkukmp.purworejokab.go.id/plut-kumkm-berikan-layanan-konsultasi-dan-fasilitasi-pembuatan-legalitas-usaha-
+65.Pelayanan Pengelola UPT PLUT KUMKM Khususnya Pelaku Koperasi dan UMKM, diakses Agustus 8, 2025, https://dinkukmp.purworejokab.go.id/pelayanan-pengelola-upt-plut-kumkm-khususnya-pelaku-koperasi-dan-umkm
+66.KemenkopUKM kembali adakan pendampingan bisnis bagi para wirausaha, diakses Agustus 8, 2025, https://www.antaranews.com/berita/3951120/kemenkopukm-kembali-adakan-pendampingan-bisnis-bagi-para-wirausaha
+67.Pendampingan Usaha Mikro Mandiri Tanggal - EDUKUMKM- Platform Media Pembelajaran, diakses Agustus 8, 2025, https://edu.kemenkopukm.go.id/amm/detail/368
+68.Cara Daftar BLT UMKM dan Perpanjangan Pendaftaran Online Bantuan Modal UMKM - Desa Panerusan, diakses Agustus 8, 2025, https://panerusan.id/artikel/2020/10/22/cara-daftar-blt-umkm-dan-perpanjangan-pendaftaran-online-bantuan-modal-umkm
+69.Cara Mendapatkan BPUM Gratis 2024 untuk UMKM - Menjadi Pengaruh, diakses Agustus 8, 2025, https://menjadipengaruh.com/cara-mendapatkan-bpum-gratis-2024-untuk-umkm/
+70.Analisis Penyerapan Tenaga Kerja pada Sektor Usaha Kecil dan Menengah (UKM) di Kota Semarang, diakses Agustus 8, 2025, https://journal.unnes.ac.id/nju/jejak/article/download/4663/3875
+71.Cara Daftar PIRT Online: Panduan Lengkap untuk Pelaku Usaha Makanan - Liputan6.com, diakses Agustus 8, 2025, https://www.liputan6.com/feeds/read/5789075/cara-daftar-pirt-online-panduan-lengkap-untuk-pelaku-usaha-makanan
+
+
+
+Panduan Lengkap Rencana Usaha (Business Plan) untuk UMKM Indonesia: Dari Ide Menjadi Aksi
+
+
+Pengantar: Rencana Usaha sebagai Peta Jalan Kesuksesan
+
+Bagi banyak pelaku Usaha Mikro, Kecil, dan Menengah (UMKM) di Indonesia, memulai bisnis seringkali didorong oleh semangat, ide kreatif, dan keberanian. Namun, untuk memastikan usaha tidak hanya berjalan, tetapi juga bertumbuh secara berkelanjutan, diperlukan sebuah fondasi yang kokoh. Fondasi tersebut adalah Rencana Usaha atau yang lebih dikenal dengan istilah Business Plan.
+Rencana usaha adalah sebuah dokumen tertulis yang menguraikan secara rinci tujuan sebuah bisnis serta strategi, langkah-langkah, dan sumber daya yang dibutuhkan untuk mencapai tujuan tersebut.1 Dokumen ini bukan hanya formalitas yang ditujukan bagi investor atau lembaga keuangan, melainkan sebuah peta jalan strategis yang vital bagi pemilik usaha itu sendiri.1 Dengan menyusun rencana usaha, seorang wirausahawan dipaksa untuk berpikir secara terstruktur mengenai setiap aspek bisnisnya, mulai dari siapa pelanggannya, bagaimana produk akan dipasarkan, hingga bagaimana keuangan akan dikelola.3
+Di tengah persaingan yang semakin ketat, memiliki rencana usaha yang matang menjadi pembeda antara bisnis yang hanya bertahan dan bisnis yang mampu berkembang pesat. Rencana ini berfungsi sebagai pedoman untuk pengambilan keputusan sehari-hari, alat ukur kinerja, dan yang terpenting, sebagai instrumen untuk meyakinkan pihak eksternal—seperti bank, investor, atau mitra bisnis—akan potensi dan keseriusan usaha yang dijalankan.1 Laporan ini akan membedah secara praktis dan mendalam bagaimana cara menyusun rencana usaha yang efektif dan relevan bagi konteks UMKM di Indonesia.
+
+Langkah-Langkah Praktis Menyusun Rencana Usaha
+
+Menyusun rencana usaha tidak harus rumit. Bagi UMKM, yang terpenting adalah kejelasan dan realisme. Berikut adalah komponen-komponen esensial yang perlu ada dalam sebuah rencana usaha, disajikan dalam format langkah-demi-langkah yang mudah diikuti.
+
+Langkah 1: Mulai dengan Visi dan Misi yang Jelas
+
+Setiap usaha besar berawal dari sebuah gagasan. Tuangkan gagasan tersebut ke dalam beberapa bagian awal yang menjadi fondasi rencana Anda.
+●Ringkasan Eksekutif: Ini adalah "poster film" dari bisnis Anda. Tulis bagian ini terakhir, namun letakkan di paling depan. Isinya adalah rangkuman singkat dari keseluruhan rencana, menyoroti nama usaha, produk/jasa yang ditawarkan, target pasar, dan potensi keuntungan. Tujuannya adalah untuk menarik minat pembaca dalam satu halaman.3
+●Latar Belakang dan Deskripsi Usaha: Jelaskan mengapa Anda memulai bisnis ini. Apa masalah yang ingin Anda selesaikan? Deskripsikan secara umum bidang usaha Anda, misalnya "kedai kopi kekinian," "produksi fesyen muslim," atau "jasa cuci sepatu." 4
+●Visi dan Misi: Visi adalah tujuan jangka panjang atau mimpi besar yang ingin dicapai. Misi adalah langkah-langkah atau cara yang akan ditempuh untuk mencapai visi tersebut. Visi dan misi memberikan arah yang jelas bagi bisnis Anda.4
+
+Langkah 2: Lakukan Analisis Pasar dan Pesaing
+
+Memahami "medan pertempuran" adalah kunci untuk menang. Anda harus tahu siapa yang akan membeli produk Anda dan siapa saja pemain lain di pasar.
+●Identifikasi Target Pasar: Siapa pelanggan ideal Anda? Jelaskan secara spesifik, misalnya "mahasiswa di sekitar kampus X," "ibu rumah tangga di komplek perumahan Y," atau "penggemar K-Pop usia 15-25 tahun." Semakin spesifik, semakin mudah Anda merancang strategi pemasaran.4
+●Analisis Pesaing: Siapa saja pesaing utama Anda? Apa kelebihan dan kekurangan mereka? Pelajari produk, harga, dan cara mereka berpromosi. Ini akan membantu Anda menemukan celah yang bisa dimanfaatkan.4
+●Analisis SWOT: Ini adalah kerangka sederhana namun sangat kuat untuk memetakan posisi bisnis Anda.
+○Strengths (Kekuatan): Apa keunggulan internal bisnis Anda (misal: resep unik, lokasi strategis, harga lebih murah)?
+○Weaknesses (Kelemahan): Apa kekurangan internal bisnis Anda (misal: modal terbatas, belum punya merek terkenal)?
+○Opportunities (Peluang): Faktor eksternal apa yang bisa dimanfaatkan (misal: tren gaya hidup sehat, adanya event besar di kota Anda)?
+○Threats (Ancaman): Faktor eksternal apa yang bisa menghambat (misal: munculnya banyak pesaing baru, kenaikan harga bahan baku)? 4
+
+Langkah 3: Rancang Strategi Pemasaran dan Penjualan
+
+Setelah tahu siapa target pasar Anda, langkah selanjutnya adalah menentukan cara untuk menjangkau mereka dan meyakinkan mereka untuk membeli.
+●Strategi Produk/Jasa: Jelaskan keunikan produk atau jasa Anda (Unique Selling Proposition). Apa yang membuatnya lebih baik atau berbeda dari milik pesaing? Apakah dari segi kualitas, kemasan, atau layanan? 4
+●Strategi Harga: Bagaimana Anda akan menetapkan harga? Apakah berdasarkan biaya produksi, harga pesaing, atau nilai yang dirasakan pelanggan?
+●Strategi Promosi: Kanal apa yang akan Anda gunakan untuk berpromosi? Apakah melalui media sosial (Instagram, TikTok), bergabung dengan e-commerce (Shopee, Tokopedia), menyebar brosur, atau mengikuti bazar lokal? 7
+●Strategi Distribusi: Bagaimana produk Anda akan sampai ke tangan pelanggan? Apakah dijual langsung di toko fisik, melalui sistem pesan antar, atau dikirim menggunakan jasa kurir? 3
+
+Langkah 4: Buat Proyeksi Keuangan yang Realistis
+
+Bagian ini sering dianggap paling sulit, namun sangat krusial. Angka-angka ini akan menunjukkan apakah ide bisnis Anda layak secara finansial. Anda tidak perlu menjadi akuntan, cukup catat dengan cermat dan logis.4
+●Kebutuhan Modal Awal: Buat daftar semua biaya yang dibutuhkan untuk memulai usaha. Ini mencakup biaya sewa tempat, pembelian peralatan, stok awal bahan baku, hingga biaya izin usaha.
+●Proyeksi Biaya Operasional: Perkirakan semua biaya bulanan yang akan Anda keluarkan untuk menjalankan bisnis, seperti gaji karyawan, tagihan listrik/air, biaya internet, dan biaya pemasaran.
+●Proyeksi Pendapatan (Omzet): Buat estimasi penjualan yang realistis. Misalnya, jika Anda menjual makanan, perkirakan berapa porsi yang bisa terjual setiap hari, lalu kalikan dengan harga jual dan jumlah hari operasional dalam sebulan.
+●Analisis Titik Impas (Break-Even Point): Hitung pada titik penjualan berapa total pendapatan Anda sama dengan total biaya. Ini akan memberi Anda target penjualan minimum yang harus dicapai agar tidak merugi.
+
+Contoh Nyata Penerapan Rencana Usaha di Indonesia
+
+Untuk memberikan gambaran yang lebih konkret, mari kita lihat bagaimana tiga UMKM fiktif dengan model bisnis yang berbeda menerapkan langkah-langkah di atas.
+
+Contoh 1: Kedai Kopi "Kopi Sudut"
+
+●Deskripsi Usaha: Kedai kopi kecil di dekat area perkantoran yang menawarkan kopi berkualitas dengan harga terjangkau dan suasana yang nyaman untuk bekerja atau rapat singkat.
+●Analisis Pasar:
+○Target: Karyawan kantor usia 25-40 tahun di sekitar lokasi.
+○Pesaing: Satu gerai kopi berjaringan internasional dan beberapa warung kopi tradisional.
+○SWOT: Kekuatan (Strength) pada racikan kopi arabika lokal yang unik dan harga lebih kompetitif. Kelemahan (Weakness) pada merek yang belum dikenal. Peluang (Opportunity) pada tren work from cafe. Ancaman (Threat) pada kemungkinan pesaing besar memberikan diskon besar-besaran.
+●Strategi Pemasaran:
+○Promosi: Membuat akun Instagram dengan foto-foto menarik, menawarkan paket "Kopi + Snack" untuk makan siang, dan memberikan diskon khusus bagi karyawan yang menunjukkan kartu identitas kantor.
+●Proyeksi Keuangan:
+○Modal Awal: Rp 50 juta (untuk sewa tempat, mesin kopi, meja-kursi, dan bahan baku awal).
+○Proyeksi Pendapatan: Target penjualan 50 cangkir per hari @ Rp 20.000 = Rp 1.000.000/hari atau Rp 25.000.000/bulan (25 hari kerja).
+
+Contoh 2: Fesyen Muslim "Hijab Cantika"
+
+●Deskripsi Usaha: Merek hijab online yang menjual produk dengan desain eksklusif dan bahan premium melalui media sosial dan e-commerce.
+●Analisis Pasar:
+○Target: Wanita muslimah usia 20-35 tahun yang aktif di media sosial dan mencari produk fesyen yang modis namun tetap syar'i.
+○Pesaing: Banyak merek hijab online lain, baik yang sudah besar maupun sesama UMKM.
+○SWOT: Kekuatan (Strength) pada desain motif yang digambar sendiri (tidak pasaran). Kelemahan (Weakness) pada kapasitas produksi yang masih terbatas. Peluang (Opportunity) pada pasar fesyen muslim yang terus berkembang pesat. Ancaman (Threat) pada perang harga di marketplace.
+●Strategi Pemasaran:
+○Promosi: Fokus pada pemasaran konten di Instagram dan TikTok, berkolaborasi dengan influencer mikro, dan memanfaatkan fitur iklan di Shopee untuk menjangkau audiens yang lebih luas.1
+●Proyeksi Keuangan:
+○Modal Awal: Rp 15 juta (untuk pembelian kain, biaya jahit, dan pemotretan produk).
+○Proyeksi Pendapatan: Target penjualan 100 hijab per bulan @ Rp 150.000 = Rp 15.000.000/bulan.
+
+Contoh 3: Makanan Ringan "Keripik Singkong Juara"
+
+●Deskripsi Usaha: Usaha rumahan yang memproduksi keripik singkong aneka rasa (balado, keju, jagung bakar) dengan kemasan modern.
+●Analisis Pasar:
+○Target: Dijual melalui sistem konsinyasi (titip jual) ke warung, kantin sekolah, dan toko oleh-oleh di sekitar kota. Juga dijual secara online.
+○Pesaing: Produsen keripik singkong lokal lainnya dan merek makanan ringan pabrikan.
+○SWOT: Kekuatan (Strength) pada penggunaan bumbu alami tanpa MSG. Kelemahan (Weakness) pada daya tahan produk yang lebih singkat karena tanpa pengawet. Peluang (Opportunity) pada meningkatnya kesadaran masyarakat akan makanan sehat. Ancaman (Threat) pada fluktuasi harga singkong sebagai bahan baku utama.
+●Strategi Pemasaran:
+○Promosi: Membuat label dan kemasan yang menarik, memberikan sampel gratis ke toko-toko potensial, dan aktif menawarkan produk ke grup komunitas lokal di WhatsApp atau Facebook.
+●Proyeksi Keuangan:
+○Modal Awal: Rp 5 juta (untuk pembelian bahan baku, alat masak sederhana, dan bahan kemasan).
+○Proyeksi Pendapatan: Target produksi 500 bungkus per bulan, dijual ke warung @ Rp 8.000 = Rp 4.000.000/bulan.
+
+Tantangan dan Cara Mengatasinya
+
+Meskipun penting, banyak pelaku UMKM menghadapi kendala saat mencoba menyusun rencana usaha. Berikut adalah beberapa tantangan umum beserta solusinya.
+●Tantangan 1: Merasa Terlalu Rumit dan Tidak Punya Waktu
+Banyak pemilik UMKM yang sudah sibuk dengan operasional harian merasa bahwa membuat rencana usaha adalah pekerjaan yang rumit dan hanya untuk perusahaan besar.1
+○Solusi: Mulailah dari yang sederhana. Jangan berpikir harus membuat dokumen setebal 50 halaman. Cukup jawab pertanyaan-pertanyaan kunci pada setiap langkah yang telah diuraikan di atas dalam beberapa lembar kertas atau file dokumen. Anggap ini sebagai catatan strategis untuk diri sendiri. Alokasikan waktu khusus, misalnya 1-2 jam setiap akhir pekan, untuk fokus menyusun dan merevisinya.
+●Tantangan 2: Kesulitan Melakukan Riset Pasar
+UMKM seringkali tidak memiliki anggaran untuk melakukan riset pasar formal seperti yang dilakukan perusahaan besar.4
+○Solusi: Lakukan riset dengan cara yang praktis dan hemat biaya. Amati langsung pesaing di sekitar Anda. Ajak bicara beberapa calon pelanggan untuk mendapatkan masukan. Manfaatkan alat gratis seperti Google Trends untuk melihat apa yang sedang banyak dicari orang. Jika Anda sudah berjualan online, manfaatkan data analisis yang disediakan oleh platform e-commerce atau media sosial untuk memahami perilaku pelanggan Anda.9
+●Tantangan 3: Bingung Membuat Proyeksi Keuangan yang Akurat
+Memperkirakan angka penjualan dan biaya di masa depan bisa terasa seperti menebak-nebak, terutama bagi usaha yang baru mulai.11
+○Solusi: Kuncinya adalah pencatatan. Mulailah dengan mencatat semua pengeluaran dan pemasukan harian, sekecil apapun.11 Ini akan menjadi dasar untuk membuat proyeksi yang lebih akurat. Untuk proyeksi penjualan, mulailah dengan skenario pesimis (target minimum), realistis, dan optimis. Ini akan membantu Anda mempersiapkan berbagai kemungkinan dan memahami seberapa besar risiko finansial yang dihadapi.
+Dengan mengatasi tantangan-tantangan ini dan mengikuti langkah-langkah yang telah dijabarkan, setiap pelaku UMKM di Indonesia dapat menyusun sebuah rencana usaha yang solid. Rencana ini tidak hanya akan menjadi panduan yang berharga, tetapi juga langkah pertama yang krusial dalam mengubah ide sederhana menjadi sebuah bisnis yang sukses dan berkelanjutan.
+Karya yang dikutip
+1.UMKM Indonesia - Kadin Indonesia, diakses Agustus 8, 2025, https://kadin.id/data-dan-statistik/umkm-indonesia/
+2.PERENCANAAN BISNIS PADA UMKM VEZARA COLLECTION - Lintar, diakses Agustus 8, 2025, https://lintar.untar.ac.id/repository/pengabdian/buktiabdi_10189056_9C140823123328.pdf
+3.PP No. 7 Tahun 2021 - Peraturan BPK, diakses Agustus 8, 2025, https://peraturan.bpk.go.id/Details/161837/pp-no-7-tahun-2021
+4.5 Permasalahan UMKM yang Sering Terjadi dan Solusinya - OnlinePajak, diakses Agustus 8, 2025, https://www.online-pajak.com/seputar-pph-final/permasalahan-umkm
+5.Masalah UMKM dan Solusinya - OY! Indonesia, diakses Agustus 8, 2025, https://www.oyindonesia.com/id/blog/masalah-umkm-dan-solusinya
+6.Pengembangan Umkm Melalui Inovasi Produk Dan Digital Marketing Di Desa Aras Kec. Air Putih Kab. Batubara, diakses Agustus 8, 2025, https://jahe.or.id/index.php/jahe/article/download/264/141/579
+7.Jumlah UMKM Indonesia Capai 66 Juta pada 2023 - GoodStats Data, diakses Agustus 8, 2025, https://data.goodstats.id/statistic/jumlah-umkm-indonesia-capai-66-juta-pada-2023-CN6TF
+8.Kontribusi UMKM ke PDB Indonesia Tembus Rp 9.580 Triliun - Bisnis Liputan6.com, diakses Agustus 8, 2025, https://www.liputan6.com/bisnis/read/5665709/kontribusi-umkm-ke-pdb-indonesia-tembus-rp-9580-triliun
+9.Analisis Masalah dan Solusi Prioritas Pengembangan UMKM - ejournal unira malang, diakses Agustus 8, 2025, https://ejournal.uniramalang.ac.id/jihbiz/article/download/785/538/40484
+10.Peraturan Pemerintah Republik Indonesia No 7 Tahun 2021 - JDIH, diakses Agustus 8, 2025, https://jdih.kemenkoinfra.go.id/id/peraturan-pemerintah-republik-indonesia-no-7-tahun-2021
+11.UMKM HEBAT, PEREKONOMIAN NASIONAL MENINGKAT - DJPb, diakses Agustus 8, 2025, https://djpb.kemenkeu.go.id/kppn/curup/id/data-publikasi/artikel/2885-umkm-hebat,-perekonomian-nasional-meningkat.html
+12.Perkembangan UMKM sebagai Critical Engine Perekonomian Nasional Terus Mendapatkan Dukungan Pemerintah, diakses Agustus 8, 2025, https://www.ekon.go.id/publikasi/detail/4593/perkembangan-umkm-sebagai-critical-engine-perekonomian-nasional-terus-mendapatkan-dukungan-pemerintah
+13.Panduan Lengkap Pendanaan UMKM: Sumber Dana dan Cara Mendapatkannya, diakses Agustus 8, 2025, https://ekonomi.uma.ac.id/2024/07/31/panduan-lengkap-pendanaan-umkm-sumber-dana-dan-cara-mendapatkannya/
+
