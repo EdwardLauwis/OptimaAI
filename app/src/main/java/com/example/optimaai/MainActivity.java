@@ -8,18 +8,16 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -64,10 +62,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         navigationView.setNavigationItemSelectedListener(this);
 
-        ViewCompat.setOnApplyWindowInsetsListener(drawerLayout, (v, insets) -> {
+        final CoordinatorLayout coordinatorLayout = findViewById(R.id.main_coordinator_layout); // Anda perlu menambahkan ID ini di XML
+        ViewCompat.setOnApplyWindowInsetsListener(coordinatorLayout, (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, 0, systemBars.right, 0);
-            toolbar.setPadding(0, systemBars.top, 0, 0);
+
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, v.getPaddingBottom());
+
             return WindowInsetsCompat.CONSUMED;
         });
     }

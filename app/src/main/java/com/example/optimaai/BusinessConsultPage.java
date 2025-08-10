@@ -1,6 +1,7 @@
 package com.example.optimaai;
 
 import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -87,6 +88,22 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
         loadKnowledgeIntoCache();
         handleIntent();
         loadChatHistoryForDrawer();
+
+        final View rootView = findViewById(android.R.id.content);
+        rootView.getViewTreeObserver().addOnGlobalLayoutListener(() -> {
+            Rect r = new Rect();
+            rootView.getWindowVisibleDisplayFrame(r);
+            int screenHeight = rootView.getRootView().getHeight();
+
+            int keypadHeight = screenHeight - r.bottom;
+
+            if (keypadHeight > screenHeight * 0.15) {
+                chatRecyclerView.setPadding(0, 0, 0, keypadHeight);
+                chatRecyclerView.scrollToPosition(chatMessages.size() - 1);
+            } else {
+                chatRecyclerView.setPadding(0, 0, 0, 0);
+            }
+        });
     }
 
     // Inisialisasi Firebase

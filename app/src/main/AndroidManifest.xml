@@ -29,7 +29,7 @@
         <activity
             android:name=".BusinessConsultPage"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".Register_Page"
             android:exported="false" />
