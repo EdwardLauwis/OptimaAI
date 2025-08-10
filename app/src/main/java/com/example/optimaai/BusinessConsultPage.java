@@ -39,6 +39,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -66,13 +67,19 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
     private FirebaseFirestore db;
     private FirebaseAuth mAuth;
     private CollectionReference messagesRef;
-    private final OkHttpClient httpClient = new OkHttpClient();
+//    private final OkHttpClient httpClient = new OkHttpClient();
     private final String proxyUrl = "https://optima-api-proxy.edwardlauwis30.workers.dev/";
 
     // --- State Variables ---
     private String currentChatId = null;
-    private String currentAiTone = "Normal"; // Anda bisa mengintegrasikan ini ke dalam prompt jika perlu
+    private String currentAiTone = "Normal";
     private String knowledgeCache = null;
+
+    private final OkHttpClient httpClient = new OkHttpClient.Builder()
+            .connectTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .writeTimeout(30, TimeUnit.SECONDS)
+            .build();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,21 +141,16 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
             return;
         }
 
-        // Gabungkan prompt pengguna dengan konteks/pengetahuan yang ada
         String finalPrompt = buildFinalPrompt(userPrompt);
 
-        // 1. Tampilkan pesan pengguna di UI
         ChatMessage userMessage = new ChatMessage(userPrompt, true);
         addMessageToUI(userMessage);
         promptEditText.setText("");
         loadingAnimationView.setVisibility(View.VISIBLE);
 
-        // 2. Tentukan apakah ini chat baru atau lanjutan
         if (currentChatId == null) {
-            // Jika chat baru, buat sesi dulu, lalu panggil proxy
             createNewChatSession(userMessage, finalPrompt);
         } else {
-            // Jika chat lanjutan, simpan pesan pengguna, lalu panggil proxy
             saveMessageToFirestore(userMessage);
             callProxy(finalPrompt);
         }
@@ -171,7 +173,6 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
                 .post(body)
                 .build();
 
-        // Lakukan panggilan secara asynchronous agar tidak memblokir UI
         httpClient.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
@@ -198,11 +199,9 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
                     JSONObject jsonObject = new JSONObject(responseData);
                     String aiResponseText = jsonObject.getString("response");
 
-                    // 3. Buat dan simpan pesan AI ke Firestore
                     ChatMessage aiMessage = new ChatMessage(aiResponseText, false);
-                    saveMessageToFirestore(aiMessage); // Sekarang penyimpanan ini akan berhasil karena App Check
+                    saveMessageToFirestore(aiMessage);
 
-                    // 4. Tampilkan pesan AI di UI
                     runOnUiThread(() -> {
                         addMessageToUI(aiMessage);
                         loadingAnimationView.setVisibility(View.GONE);
@@ -215,7 +214,6 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
         });
     }
 
-    // Membuat sesi chat baru di Firestore
     private void createNewChatSession(ChatMessage firstMessage, String finalPrompt) {
         FirebaseUser user = mAuth.getCurrentUser();
         if (user == null) return;
@@ -245,7 +243,6 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
                 });
     }
 
-    // Menyimpan satu pesan (baik dari user maupun AI) ke Firestore
     private void saveMessageToFirestore(ChatMessage message) {
         if (messagesRef == null) {
             Log.e("BusinessConsultPage", "messagesRef belum diinisialisasi, tidak bisa menyimpan pesan.");
@@ -264,7 +261,6 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
         }
     }
 
-    // Menambahkan pesan ke RecyclerView di UI
     private void addMessageToUI(ChatMessage message) {
         if (disclaimerLayout.getVisibility() == View.VISIBLE) {
             hideDisclaimerWithAnimation();
@@ -274,10 +270,8 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
         chatRecyclerView.scrollToPosition(chatMessages.size() - 1);
     }
 
-    // Membangun prompt akhir yang akan dikirim ke AI
     @NonNull
     private String buildFinalPrompt(String userPrompt) {
-        // Logika ini sama seperti sebelumnya, menggabungkan tone dan knowledge
         String personaPrompt = getSecretPromptForTone(currentAiTone);
 
         String finalPrompt;
@@ -294,22 +288,35 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
     }
 
     private String getSecretPromptForTone(String selectedTone) {
-        // Logika ini tidak berubah
         switch (selectedTone) {
             case "Normal":
                 return "Kamu adalah konsultan bisnis profesional yang sangat berpengalaman tapi jawab pertanyaan dengan nada normal";
+
             case "Professional":
-                return "Kamu adalah konsultan bisnis profesional yang sangat berpengalaman...";
-            // ... (kasus lainnya tetap sama)
+                return "Kamu adalah konsultan bisnis profesional yang sangat berpengalaman. Gunakan bahasa yang formal, terstruktur, dan langsung pada intinya.";
+
+            case "Friendly & Casual":
+                return "Kamu adalah seorang teman yang suportif dan juga seorang pengusaha berpengalaman. Berikan jawaban dengan gaya bahasa yang ramah, santai, dan mudah dimengerti, seolah-olah sedang mengobrol di kedai kopi.";
+
+            case "Creative & Inspirational":
+                return "Kamu adalah seorang motivator bisnis yang sangat kreatif dan visioner. Berikan jawaban yang penuh inspirasi, menggunakan analogi, dan mendorong untuk berpikir di luar kotak.";
+
+            case "Analytics & Data":
+                return "Kamu adalah seorang analis data dan ahli strategi bisnis yang sangat terampil. Fokuskan jawabanmu pada data, metrik, dan analisis objektif. Gunakan poin-poin dan, jika memungkinkan, berikan saran berdasarkan logika berbasis data.";
+
+            case "Decisive Business Mentor":
+                return "Kamu adalah seorang mentor bisnis yang berpengalaman, tegas, dan tidak suka basa-basi. Berikan nasihat yang lugas, actionable, dan fokus pada hasil. Berikan langkah-langkah konkret yang harus diambil.";
+
+            case "Confidential Friend in arms":
+                return "Kamu adalah seorang sahabat seperjuangan sesama pemilik UMKM (Usaha Mikro, Kecil, dan Menengah) yang sangat bisa dipercaya. Gunakan nada yang empatik, berikan dukungan, dan bagikan wawasan dari sudut pandang seseorang yang benar-benar memahami tantangan sehari-hari dalam menjalankan bisnis kecil.";
+
             default:
-                return "Jawab pertanyaan ini: ";
+                if (!selectedTone.isEmpty()) {
+                    return selectedTone;
+                }
+                return "Jawab pertanyaan ini dengan jelas dan membantu.";
         }
     }
-
-    // --- METODE-METODE LAINNYA (TIDAK ADA PERUBAHAN) ---
-    // Metode-metode di bawah ini umumnya tidak perlu diubah karena sudah menangani
-    // setup UI, navigasi, dan manajemen data lokal.
-
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

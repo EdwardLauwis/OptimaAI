@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         navigationView.setNavigationItemSelectedListener(this);
 
-        final CoordinatorLayout coordinatorLayout = findViewById(R.id.main_coordinator_layout); // Anda perlu menambahkan ID ini di XML
+        final CoordinatorLayout coordinatorLayout = findViewById(R.id.main_coordinator_layout);
         ViewCompat.setOnApplyWindowInsetsListener(coordinatorLayout, (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
 
