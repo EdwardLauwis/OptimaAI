@@ -7,7 +7,7 @@ plugins {
 
 buildscript {
     dependencies {
-        classpath(libs.firebase.appcheck.debug) // Gunakan versi yang stabil
+        classpath(libs.firebase.appcheck.debug)
     }
 }
 
@@ -38,9 +38,6 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-        // Menghasilkan API_KEY di BuildConfig
-//        buildConfigField("String", "API_KEY", "\"$geminiApiKey\"")
 
         manifestPlaceholders["geminiApiKey"] = geminiApiKey
 
@@ -96,12 +93,6 @@ dependencies {
         exclude(group = "io.grpc")
     }
     implementation("com.google.firebase:firebase-appcheck-debug")
-
-//    implementation(libs.google.cloud.vertexai) {
-//        exclude(group = "com.google.api.grpc", module = "proto-google-common-protos")
-//        exclude(group = "com.google.protobuf", module = "protobuf-java")
-//        exclude(group = "io.grpc")
-//    }
 
     implementation(libs.transition)
     implementation(libs.reactive.streams)
