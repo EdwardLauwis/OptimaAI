@@ -1,5 +1,6 @@
 package com.example.optimaai;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -12,6 +13,8 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.Toast;
+import android.view.Gravity;
+import android.view.inputmethod.InputMethodManager;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
@@ -132,8 +135,6 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
         sendPromptButton.setOnClickListener(v -> sendMessage());
         optionsMenuButton.setOnClickListener(this::showOptionsMenu);
     }
-
-    // Metode ini adalah titik masuk utama saat tombol kirim ditekan
     private void sendMessage() {
         String userPrompt = promptEditText.getText().toString().trim();
         if (userPrompt.isEmpty()) {
@@ -399,8 +400,12 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
     }
 
     private void showOptionsMenu(View v) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+
         PopupMenu popup = new PopupMenu(this, v);
         popup.getMenuInflater().inflate(R.menu.chat_options_menu, popup.getMenu());
+        popup.setGravity(Gravity.TOP);
         popup.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.option_set_tone) {
                 SetToneBottomSheetFragment bottomSheet = SetToneBottomSheetFragment.newInstance(currentAiTone);

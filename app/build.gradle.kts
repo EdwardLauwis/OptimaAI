@@ -92,17 +92,17 @@ dependencies {
         exclude(group = "com.google.protobuf", module = "protobuf-java")
         exclude(group = "io.grpc")
     }
-    implementation("com.google.firebase:firebase-appcheck-debug")
 
+    implementation(libs.google.firebase.appcheck.debug)
     implementation(libs.transition)
     implementation(libs.reactive.streams)
     implementation(libs.lottie)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.firestore)
     implementation(libs.firebase.appcheck.playintegrity)
-
     implementation(libs.firebase.vertexai)
-
     implementation(libs.okhttp)
     implementation(libs.gson)
+    implementation(libs.core.splashscreen)
+
 }

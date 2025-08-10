@@ -1,5 +1,6 @@
 [versions]
 agp = "8.11.1"
+coreSplashscreen = "1.0.1"
 firebaseAppcheckDebug = "19.0.0"
 firebaseBom = "34.0.0"
 firebaseVertexai = "16.5.0"
@@ -24,6 +25,7 @@ transition = "1.6.0"
 firebaseFirestore = "26.0.0"
 
 [libraries]
+core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
 firebase-appcheck-debug = { module = "com.google.firebase:firebase-appcheck-debug", version.ref = "firebaseAppcheckDebug" }
 firebase-appcheck-playintegrity = { module = "com.google.firebase:firebase-appcheck-playintegrity" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
@@ -31,6 +33,7 @@ firebase-firestore = { module = "com.google.firebase:firebase-firestore" }
 firebase-vertexai = { module = "com.google.firebase:firebase-vertexai", version.ref = "firebaseVertexai" }
 generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "generativeai" }
 google-cloud-vertexai = { module = "com.google.cloud:google-cloud-vertexai", version.ref = "googleCloudVertexai" }
+google-firebase-appcheck-debug = { module = "com.google.firebase:firebase-appcheck-debug" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
