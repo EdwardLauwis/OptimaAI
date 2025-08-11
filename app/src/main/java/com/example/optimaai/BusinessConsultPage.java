@@ -70,7 +70,6 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
     private FirebaseFirestore db;
     private FirebaseAuth mAuth;
     private CollectionReference messagesRef;
-//    private final OkHttpClient httpClient = new OkHttpClient();
     private final String proxyUrl = "https://optima-api-proxy.edwardlauwis30.workers.dev/";
 
     // --- State Variables ---
@@ -138,7 +137,7 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
     private void sendMessage() {
         String userPrompt = promptEditText.getText().toString().trim();
         if (userPrompt.isEmpty()) {
-            Toast.makeText(this, "Pertanyaan tidak boleh kosong.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Question cannot be empty!", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -179,7 +178,8 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 Log.e("BusinessConsultPage", "Gagal memanggil proxy", e);
                 runOnUiThread(() -> {
-                    Toast.makeText(BusinessConsultPage.this, "Error: Tidak dapat terhubung ke server.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(BusinessConsultPage.this, "Error: Cannot connect to server.",
+                            Toast.LENGTH_SHORT).show();
                     loadingAnimationView.setVisibility(View.GONE);
                 });
             }

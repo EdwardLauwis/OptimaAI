@@ -218,8 +218,12 @@
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
                 </GridLayout>
+<!--                <Button-->
+<!--                    android:id="@+id/testcrash"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Test Crash"/>-->
             </LinearLayout>
-
         </androidx.core.widget.NestedScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

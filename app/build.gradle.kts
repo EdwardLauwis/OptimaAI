@@ -3,6 +3,9 @@ import java.util.Properties
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.google.gms.google.services)
+    alias(libs.plugins.googleFirebaseCrashlytics)
+    alias(libs.plugins.googleFirebasePerf)
+    alias(libs.plugins.googleFirebaseAppdistribution)
 }
 
 buildscript {
@@ -104,5 +107,11 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.gson)
     implementation(libs.core.splashscreen)
+
+    implementation(libs.firebase.crashlytics)
+    implementation(libs.google.firebase.analytics)
+
+    implementation(libs.firebase.perf)
+
 
 }

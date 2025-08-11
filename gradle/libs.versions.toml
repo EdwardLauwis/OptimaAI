@@ -26,13 +26,18 @@ firebaseFirestore = "26.0.0"
 
 [libraries]
 core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
+firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 firebase-appcheck-debug = { module = "com.google.firebase:firebase-appcheck-debug", version.ref = "firebaseAppcheckDebug" }
 firebase-appcheck-playintegrity = { module = "com.google.firebase:firebase-appcheck-playintegrity" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics" }
+firebase-crashlytics-ndk = { module = "com.google.firebase:firebase-crashlytics-ndk" }
 firebase-firestore = { module = "com.google.firebase:firebase-firestore" }
+firebase-perf = { module = "com.google.firebase:firebase-perf" }
 firebase-vertexai = { module = "com.google.firebase:firebase-vertexai", version.ref = "firebaseVertexai" }
 generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "generativeai" }
 google-cloud-vertexai = { module = "com.google.cloud:google-cloud-vertexai", version.ref = "googleCloudVertexai" }
+google-firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 google-firebase-appcheck-debug = { module = "com.google.firebase:firebase-appcheck-debug" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
@@ -54,4 +59,7 @@ google-firebase-firestore = { group = "com.google.firebase", name = "firebase-fi
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
+googleFirebaseCrashlytics = { id = "com.google.firebase.crashlytics", version = "3.0.6" }
+googleFirebasePerf = { id = "com.google.firebase.firebase-perf", version = "2.0.1" }
+googleFirebaseAppdistribution = { id = "com.google.firebase.appdistribution", version = "5.1.1" }
 

@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -130,7 +132,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int itemId = item.getItemId();
 
         if (itemId == R.id.nav_profile) {
+            Intent intent = new Intent(MainActivity.this, Profile_Page.class);
             Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+            finish();
         } else if (itemId == R.id.nav_settings) {
             Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.nav_logout) {
