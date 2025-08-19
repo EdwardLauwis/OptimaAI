@@ -2,8 +2,11 @@ package com.example.optimaai;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import com.google.firebase.FirebaseApp;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -31,13 +34,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (BuildConfig.DEBUG) {
+            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+                    .detectDiskReads()  // Deteksi baca dari disk
+                    .detectDiskWrites() // Deteksi tulis ke disk
+                    .detectNetwork()    // Deteksi operasi jaringan
+                    .penaltyLog()       // Cetak pelanggaran ke Logcat
+                    .build());
+            StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
+                    .detectLeakedSqlLiteObjects()
+                    .detectLeakedClosableObjects()
+                    .penaltyLog()
+                    .build());
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        initializeFirebaseAsync();
 
         initFirebase();
         initUI();
         updateNavHeader();
         handleBackPress();
+    }
+
+    private void initializeFirebaseAsync() {
+        new Thread(() -> {
+            FirebaseApp.initializeApp(this);
+            Log.d("FirebaseInit", "Firebase is initialized in the background.");
+        }).start();
     }
 
     private void initFirebase() {
@@ -133,7 +159,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(MainActivity.this, Profile_Page.class);
             Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
             startActivity(intent);
-            finish();
         } else if (itemId == R.id.nav_settings) {
             Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.nav_logout) {
@@ -141,7 +166,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(MainActivity.this, Login_Page.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
-            finish();
         }
 
         drawerLayout.closeDrawer(GravityCompat.END);

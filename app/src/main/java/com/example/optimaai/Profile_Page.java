@@ -29,6 +29,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Profile_Page extends AppCompatActivity {
 
@@ -36,9 +37,9 @@ public class Profile_Page extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     private MaterialCardView businessInfoNotificationCard;
-    private MaterialButton skipButton, fillNowButton;
 
-    private TextInputEditText businessNameEditText, businessTypeEditText, businessLocationEditText;
+    private TextInputEditText businessNameEditText, businessTargetEditText,
+            businessIndustryEditText;
     private MaterialButton saveBusinessInfoButton;
 
 
@@ -57,8 +58,13 @@ public class Profile_Page extends AppCompatActivity {
         NestedScrollView scrollView = findViewById(R.id.profile_scroll_view);
 
         businessInfoNotificationCard = findViewById(R.id.businessInfoNotificationCard);
-        skipButton = findViewById(R.id.skipButton);
-        fillNowButton = findViewById(R.id.fillNowButton);
+        MaterialButton skipButton = findViewById(R.id.skipButton);
+        MaterialButton fillNowButton = findViewById(R.id.fillNowButton);
+
+        businessNameEditText = findViewById(R.id.businessNameEditText);
+        businessTargetEditText = findViewById(R.id.targetMarketEditText);
+        businessIndustryEditText = findViewById(R.id.industryEditText);
+        saveBusinessInfoButton = findViewById(R.id.saveBusinessProfileButton);
 
         businessNameEditText = findViewById(R.id.businessNameEditText);
 
@@ -80,9 +86,10 @@ public class Profile_Page extends AppCompatActivity {
             return insets;
         });
 
-        if (isBusinessInfoFilled()) {
-            businessInfoNotificationCard.setVisibility(View.GONE);
-        }
+//        if (isBusinessInfoFilled()) {
+//            businessInfoNotificationCard.setVisibility(View.GONE);
+//        }
+        checkBusinessInfoStatusAsync();
 
         skipButton.setOnClickListener(v -> {
             businessInfoNotificationCard.animate()
@@ -98,11 +105,11 @@ public class Profile_Page extends AppCompatActivity {
     }
 
     private void saveBusinessInfo() {
-        String businessName = businessNameEditText.getText().toString().trim();
-        String businessType = businessTypeEditText.getText().toString().trim();
-        String businessLocation = businessLocationEditText.getText().toString().trim();
+        String businessName = Objects.requireNonNull(businessNameEditText.getText()).toString().trim();
+        String businessIndustry = Objects.requireNonNull(businessIndustryEditText.getText()).toString().trim();
+        String businessTarget = Objects.requireNonNull(businessTargetEditText.getText()).toString().trim();
 
-        if (businessName.isEmpty() || businessType.isEmpty() || businessLocation.isEmpty()) {
+        if (businessName.isEmpty() || businessIndustry.isEmpty() || businessTarget.isEmpty()) {
             Toast.makeText(this, "Harap isi semua informasi bisnis", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -118,8 +125,8 @@ public class Profile_Page extends AppCompatActivity {
 
         Map<String, Object> businessData = new HashMap<>();
         businessData.put("businessName", businessName);
-        businessData.put("businessType", businessType);
-        businessData.put("businessLocation", businessLocation);
+        businessData.put("businessIndustry", businessIndustry);
+        businessData.put("businessTarget", businessTarget);
 
         // Menyimpan data ke sub-node "businessProfile"
         userRef.child("businessProfile").setValue(businessData)
@@ -157,12 +164,14 @@ public class Profile_Page extends AppCompatActivity {
 
                         if (snapshot.hasChild("businessProfile")) {
                             String businessName = snapshot.child("businessProfile/businessName").getValue(String.class);
-                            String businessType = snapshot.child("businessProfile/businessType").getValue(String.class);
-                            String businessLocation = snapshot.child("businessProfile/businessLocation").getValue(String.class);
+                            String businessIndustry =
+                                    snapshot.child("businessProfile/businessIndustry").getValue(String.class);
+                            String businessTarget =
+                                    snapshot.child("businessProfile/businessTarget").getValue(String.class);
 
                             businessNameEditText.setText(businessName);
-                            businessTypeEditText.setText(businessType);
-                            businessLocationEditText.setText(businessLocation);
+                            businessIndustryEditText.setText(businessIndustry);
+                            businessTargetEditText.setText(businessTarget);
                         }
                     } else {
                         Toast.makeText(Profile_Page.this, "Data pengguna tidak ditemukan.", Toast.LENGTH_SHORT).show();
@@ -188,5 +197,18 @@ public class Profile_Page extends AppCompatActivity {
     private boolean isBusinessInfoFilled() {
         SharedPreferences prefs = getSharedPreferences("BusinessProfile", MODE_PRIVATE);
         return prefs.getBoolean("isFilled", false);
+    }
+
+    private void checkBusinessInfoStatusAsync() {
+        new Thread(() -> {
+            final boolean isFilled = isBusinessInfoFilled();
+            runOnUiThread(() -> {
+                if (isFilled) {
+                    businessInfoNotificationCard.setVisibility(View.GONE);
+                } else {
+                    businessInfoNotificationCard.setVisibility(View.VISIBLE);
+                }
+            });
+        }).start();
     }
 }
