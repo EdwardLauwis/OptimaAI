@@ -5,74 +5,76 @@ import android.util.Log;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
+import java.security.SecureRandom;
+import java.util.Arrays;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
 public class EncryptionHelper {
-    private static final String SECRET_KEY_BASE = "YourSuperSecretKeyForOptimaAI123"; // Base key
-    private static final String INIT_VECTOR_BASE = "YourInitVector16"; // Base IV
+    private static final String ALGORITHM = "AES";
+    private static final String TRANSFORMATION = "AES/CBC/PKCS5PADDING";
+    private static final String SECRET_KEY_BASE = "YourSuperSecretKeyForOptimaAI123";
 
-    // Generate 16-byte key and IV using SHA-256 hashing
-    private static byte[] getKey() {
+    private static SecretKeySpec secretKeySpec;
+
+    static {
         try {
             MessageDigest sha = MessageDigest.getInstance("SHA-256");
             byte[] key = sha.digest(SECRET_KEY_BASE.getBytes(StandardCharsets.UTF_8));
-            return java.util.Arrays.copyOf(key, 16); // Use first 16 bytes for AES-128
+            key = Arrays.copyOf(key, 16);
+            secretKeySpec = new SecretKeySpec(key, ALGORITHM);
         } catch (Exception e) {
-            Log.e("EncryptionHelper", "Key generation failed: " + e.getMessage());
-            return null;
-        }
-    }
-
-    private static byte[] getIv() {
-        try {
-            MessageDigest sha = MessageDigest.getInstance("SHA-256");
-            byte[] iv = sha.digest(INIT_VECTOR_BASE.getBytes(StandardCharsets.UTF_8));
-            return java.util.Arrays.copyOf(iv, 16); // Use first 16 bytes
-        } catch (Exception e) {
-            Log.e("EncryptionHelper", "IV generation failed: " + e.getMessage());
-            return null;
+            Log.e("EncryptionHelper", "Failed to initialize SecretKeySpec", e);
         }
     }
 
     public static String encrypt(String value) {
+        if (secretKeySpec == null) {
+            Log.e("EncryptionHelper", "Encryption failed: SecretKeySpec not initialized.");
+            return null;
+        }
         try {
-            byte[] key = getKey();
-            byte[] iv = getIv();
-            if (key == null || iv == null) return null;
+            byte[] iv = new byte[16];
+            new SecureRandom().nextBytes(iv);
+            IvParameterSpec ivParameterSpec = new IvParameterSpec(iv);
 
-            IvParameterSpec ivSpec = new IvParameterSpec(iv);
-            SecretKeySpec skeySpec = new SecretKeySpec(key, "AES");
+            Cipher cipher = Cipher.getInstance(TRANSFORMATION);
+            cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec, ivParameterSpec);
 
-            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
-            cipher.init(Cipher.ENCRYPT_MODE, skeySpec, ivSpec);
+            byte[] encryptedValue = cipher.doFinal(value.getBytes(StandardCharsets.UTF_8));
+            byte[] combined = new byte[iv.length + encryptedValue.length];
+            System.arraycopy(iv, 0, combined, 0, iv.length);
+            System.arraycopy(encryptedValue, 0, combined, iv.length, encryptedValue.length);
 
-            byte[] encrypted = cipher.doFinal(value.getBytes(StandardCharsets.UTF_8));
-            return Base64.encodeToString(encrypted, Base64.DEFAULT);
+            return Base64.encodeToString(combined, Base64.DEFAULT);
+
         } catch (Exception ex) {
-            Log.e("EncryptionHelper", "Encryption failed: " + ex.getMessage());
+            Log.e("EncryptionHelper", "Encryption failed", ex);
             return null;
         }
     }
 
     public static String decrypt(String encrypted) {
+        if (secretKeySpec == null) {
+            Log.e("EncryptionHelper", "Decryption failed: SecretKeySpec not initialized.");
+            return null;
+        }
         try {
-            byte[] key = getKey();
-            byte[] iv = getIv();
-            if (key == null || iv == null) return null;
+            byte[] combined = Base64.decode(encrypted, Base64.DEFAULT);
+            byte[] iv = Arrays.copyOfRange(combined, 0, 16);
+            byte[] encryptedValue = Arrays.copyOfRange(combined, 16, combined.length);
 
-            IvParameterSpec ivSpec = new IvParameterSpec(iv);
-            SecretKeySpec skeySpec = new SecretKeySpec(key, "AES");
+            IvParameterSpec ivParameterSpec = new IvParameterSpec(iv);
+            Cipher cipher = Cipher.getInstance(TRANSFORMATION);
+            cipher.init(Cipher.DECRYPT_MODE, secretKeySpec, ivParameterSpec);
 
-            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
-            cipher.init(Cipher.DECRYPT_MODE, skeySpec, ivSpec);
+            byte[] decryptedValue = cipher.doFinal(encryptedValue);
+            return new String(decryptedValue, StandardCharsets.UTF_8);
 
-            byte[] original = cipher.doFinal(Base64.decode(encrypted, Base64.DEFAULT));
-            return new String(original, StandardCharsets.UTF_8);
         } catch (Exception ex) {
-            Log.e("EncryptionHelper", "Decryption failed: " + ex.getMessage());
+            Log.e("EncryptionHelper", "Decryption Failed", ex);
             return null;
         }
     }

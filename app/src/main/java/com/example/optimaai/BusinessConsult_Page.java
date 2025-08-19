@@ -30,10 +30,13 @@ import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -41,7 +44,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
@@ -52,7 +57,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class BusinessConsultPage extends AppCompatActivity implements SetToneBottomSheetFragment.ToneSelectionListener, ChatHistoryAdapter.ChatHistoryListener {
+public class BusinessConsult_Page extends AppCompatActivity implements SetToneBottomSheetFragment.ToneSelectionListener, ChatHistoryAdapter.ChatHistoryListener {
     // --- UI Elements ---
     private DrawerLayout drawerLayout;
     private RecyclerView chatRecyclerView;
@@ -88,8 +93,8 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_business_consult_page);
 
-        // Panggil semua metode setup
         initializeFirebase();
+        ensureUserDocumentExists();
         initializeViews();
         setupToolbar();
         setupChat();
@@ -115,13 +120,11 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
         });
     }
 
-    // Inisialisasi Firebase
     private void initializeFirebase() {
         db = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
     }
 
-    // Inisialisasi semua komponen UI
     private void initializeViews() {
         drawerLayout = findViewById(R.id.drawer_layout);
         chatRecyclerView = findViewById(R.id.chatRecyclerView);
@@ -134,6 +137,7 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
         sendPromptButton.setOnClickListener(v -> sendMessage());
         optionsMenuButton.setOnClickListener(this::showOptionsMenu);
     }
+
     private void sendMessage() {
         String userPrompt = promptEditText.getText().toString().trim();
         if (userPrompt.isEmpty()) {
@@ -141,29 +145,28 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
             return;
         }
 
-        String finalPrompt = buildFinalPrompt(userPrompt);
-
-        ChatMessage userMessage = new ChatMessage(userPrompt, true);
-        addMessageToUI(userMessage);
+        ChatMessage userMsg = new ChatMessage(userPrompt, true);
+        addMessageToUI(userMsg);
         promptEditText.setText("");
-        loadingAnimationView.setVisibility(View.VISIBLE);
 
-        if (currentChatId == null) {
-            createNewChatSession(userMessage, finalPrompt);
-        } else {
-            saveMessageToFirestore(userMessage);
-            callProxy(finalPrompt);
-        }
+        loadingAnimationView.setVisibility(View.VISIBLE);
+        disclaimerLayout.setVisibility(View.GONE);
+
+        callProxy(userPrompt);
     }
 
-    private void callProxy(String finalPrompt) {
+    private void callProxy(String userPrompt) {
+        Log.d("GeminiDebug", "callProxy is called with a prompt:" + userPrompt);
+
+        String finalPrompt = buildFinalPrompt(userPrompt);
+
         MediaType JSON = MediaType.get("application/json; charset=utf-8");
         JSONObject jsonBody = new JSONObject();
         try {
             jsonBody.put("prompt", finalPrompt);
         } catch (JSONException e) {
-            Log.e("BusinessConsultPage", "Gagal membuat JSON body", e);
-            loadingAnimationView.setVisibility(View.GONE);
+            Log.e("GeminiDebug", "Failed to create JSON body", e);
+            runOnUiThread(() -> loadingAnimationView.setVisibility(View.GONE));
             return;
         }
 
@@ -176,90 +179,195 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
         httpClient.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                Log.e("BusinessConsultPage", "Gagal memanggil proxy", e);
+                Log.e("GeminiDebug", "Entry to  onFailure()", e);
                 runOnUiThread(() -> {
-                    Toast.makeText(BusinessConsultPage.this, "Error: Cannot connect to server.",
-                            Toast.LENGTH_SHORT).show();
+                    Toast.makeText(BusinessConsult_Page.this, "Failed to connect to the server:" + e.getMessage(), Toast.LENGTH_SHORT).show();
                     loadingAnimationView.setVisibility(View.GONE);
                 });
             }
 
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                final String responseData = response.body() != null ? response.body().string() : "";
+                Log.d("GeminiDebug", "Raw response: " + responseData);
+
                 if (!response.isSuccessful()) {
-                    Log.e("BusinessConsultPage", "Proxy error: " + response.body().string());
                     runOnUiThread(() -> {
-                        Toast.makeText(BusinessConsultPage.this, "Terjadi kesalahan pada server.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(BusinessConsult_Page.this, "Server error: " + response.code(), Toast.LENGTH_SHORT).show();
                         loadingAnimationView.setVisibility(View.GONE);
                     });
                     return;
                 }
 
                 try {
-                    String responseData = response.body().string();
                     JSONObject jsonObject = new JSONObject(responseData);
-                    String aiResponseText = jsonObject.getString("response");
+                    String aiResponseText = "";
 
-                    ChatMessage aiMessage = new ChatMessage(aiResponseText, false);
-                    saveMessageToFirestore(aiMessage);
+                    if (jsonObject.has("response")) {
+                        aiResponseText = jsonObject.getString("response");
+                    } else if (jsonObject.has("candidates")) {
+                        JSONArray candidates = jsonObject.getJSONArray("candidates");
+                        if (candidates.length() > 0) {
+                            JSONObject content = candidates.getJSONObject(0).getJSONObject("content");
+                            JSONArray parts = content.getJSONArray("parts");
+                            if (parts.length() > 0) {
+                                aiResponseText = parts.getJSONObject(0).getString("text");
+                            }
+                        }
+                    }
 
+                    if (aiResponseText.isEmpty()) {
+                        throw new JSONException("AI response text is empty after parsing.");
+                    }
+
+                    final String finalAiResponseText = aiResponseText;
                     runOnUiThread(() -> {
-                        addMessageToUI(aiMessage);
+                        handleSuccessfulResponse(userPrompt, finalAiResponseText);
+                    });
+
+                } catch (JSONException e) {
+                    Log.e("GeminiDebug", "Gagal parsing JSON", e);
+                    runOnUiThread(() -> {
+                        Toast.makeText(BusinessConsult_Page.this, "Error parsing AI response.", Toast.LENGTH_SHORT).show();
                         loadingAnimationView.setVisibility(View.GONE);
                     });
-                } catch (JSONException e) {
-                    Log.e("BusinessConsultPage", "Gagal parsing JSON dari proxy", e);
-                    runOnUiThread(() -> loadingAnimationView.setVisibility(View.GONE));
                 }
             }
         });
     }
 
-    private void createNewChatSession(ChatMessage firstMessage, String finalPrompt) {
+    private void handleSuccessfulResponse(String userPrompt, String aiResponse) {
+        ChatMessage userMessage = new ChatMessage(userPrompt, true);
+        ChatMessage aiMessage = new ChatMessage(aiResponse, false);
+
+        if (currentChatId == null) {
+
+            createNewChatSessionAndSaveMessages(userMessage, aiMessage);
+        } else {
+
+            saveMessageToFirestore(userMessage);
+            saveMessageToFirestore(aiMessage);
+        }
+
+        addMessageToUI(aiMessage);
+        loadingAnimationView.setVisibility(View.GONE);
+    }
+
+    private void createNewChatSessionAndSaveMessages(ChatMessage userMessage, ChatMessage aiMessage) {
         FirebaseUser user = mAuth.getCurrentUser();
-        if (user == null) return;
-
-        String originalTitle = firstMessage.getMessage();
-        if (originalTitle.length() > 30) {
-            originalTitle = originalTitle.substring(0, 30) + "...";
+        if (user == null) {
+            Log.e("BusinessConsultPage", "User tidak login, tidak bisa membuat sesi chat.");
+            loadingAnimationView.setVisibility(View.GONE); // Pastikan loading berhenti
+            return;
         }
 
-        String encryptedTitle = EncryptionHelper.encrypt(originalTitle);
+        DocumentReference chatDocRef = db.collection("users")
+                .document(user.getUid())
+                .collection("chats")
+                .document();
+
+        this.currentChatId = chatDocRef.getId();
+
+        String title = userMessage.getMessage().length() > 40 ?
+                userMessage.getMessage().substring(0, 40) + "…" :
+                userMessage.getMessage();
+
+        String encryptedTitle = EncryptionHelper.encrypt(title);
+
         if (encryptedTitle == null) {
-            encryptedTitle = EncryptionHelper.encrypt("New Chat");
+            Log.e("EncryptionError", "FATAL: Failed to encrypt the title when saving. Using the original title as an emergency fallback.");
         }
 
-        ChatSession newSession = new ChatSession(encryptedTitle);
-        db.collection("users").document(user.getUid()).collection("chats")
-                .add(newSession)
-                .addOnSuccessListener(documentReference -> {
-                    currentChatId = documentReference.getId();
-                    setupChatCollectionRef();
-                    saveMessageToFirestore(firstMessage);
-                    // Panggil proxy SETELAH chat ID didapatkan dan pesan pertama disimpan
-                    callProxy(finalPrompt);
-                }).addOnFailureListener(e -> {
-                    Log.e("BusinessConsultPage", "Gagal membuat sesi chat", e);
-                    runOnUiThread(() -> loadingAnimationView.setVisibility(View.GONE));
+
+
+        Map<String, Object> chatMetaData = new HashMap<>();
+        chatMetaData.put("title", encryptedTitle);
+        chatMetaData.put("createdAt", FieldValue.serverTimestamp());
+
+        chatDocRef.set(chatMetaData)
+                .addOnSuccessListener(aVoid -> {
+                    Log.d("BusinessConsultPage", "The new chat session was successfully created:" + currentChatId);
+                    saveMessageToFirestore(userMessage);
+                    saveMessageToFirestore(aiMessage);
+                    loadChatHistoryForDrawer();
+                })
+                .addOnFailureListener(e -> {
+                    Log.e("BusinessConsultPage", "Failed to create a chat session", e);
+                    // Rollback state
+                    this.currentChatId = null;
+                    loadingAnimationView.setVisibility(View.GONE);
+                    Toast.makeText(this, "Failed to start a new chat.", Toast.LENGTH_SHORT).show();
                 });
     }
 
     private void saveMessageToFirestore(ChatMessage message) {
-        if (messagesRef == null) {
-            Log.e("BusinessConsultPage", "messagesRef belum diinisialisasi, tidak bisa menyimpan pesan.");
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user == null) {
+            Log.e("BusinessConsultPage", "User has not login yet; failed to save conversation.");
+            return;
+        }
+        if (currentChatId == null) {
+            Log.e("BusinessConsultPage", "currentChatId null; calling ensureChatSession() old.");
             return;
         }
 
-        ChatMessage messageToSave = new ChatMessage();
-        messageToSave.setUser(message.isUser());
-        messageToSave.setTimestamp(message.getTimestamp());
-
         String encryptedText = EncryptionHelper.encrypt(message.getMessage());
-        if (encryptedText != null) {
-            messageToSave.setMessage(encryptedText);
-            messagesRef.add(messageToSave)
-                    .addOnFailureListener(e -> Log.e("BusinessConsultPage", "Gagal menyimpan pesan", e));
+        if (encryptedText == null) {
+            Log.e("BusinessConsultPage", "Encryption failed; save failed.");
+            return;
         }
+
+        Map<String, Object> payload = new HashMap<>();
+        payload.put("message", encryptedText);
+        payload.put("isUser", message.isUser());
+        payload.put("timestamp", FieldValue.serverTimestamp());
+
+        CollectionReference msgsRef = db.collection("users")
+                .document(user.getUid())
+                .collection("chats")
+                .document(currentChatId)
+                .collection("messages");
+
+        Log.d("BusinessConsultPage",
+                "Save to : users/" + user.getUid() + "/chats/" + currentChatId + "/messages");
+
+        // checking ID and Path in Firestore
+        Log.d("BusinessConsultPage", "UID login: " + user.getUid());
+        Log.d("BusinessConsultPage", "Path Firestore: " + msgsRef.getPath());
+
+
+        msgsRef.add(payload)
+                .addOnSuccessListener(docRef -> Log.d("BusinessConsultPage",
+                        "Conversation Saved: " + docRef.getId()))
+                .addOnFailureListener(e -> Log.e("BusinessConsultPage", "Failed to save " +
+                                "conversation!",
+                        e));
+    }
+
+    private void ensureUserDocumentExists(){
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        if (user == null) return;
+
+        DocumentReference userDoc = db.collection("users").document(user.getUid());
+
+        userDoc.get().addOnSuccessListener(snapshot -> {
+            if (!snapshot.exists()) {
+                Map<String, Object> userData = new HashMap<>();
+                userData.put("email", user.getEmail());
+                userData.put("createdAt", FieldValue.serverTimestamp());
+
+                userDoc.set(userData)
+                        .addOnSuccessListener(aVoid ->
+                                Log.d("BusinessConsultPage",
+                                        "User doc has created with UID: " + user.getUid()))
+                        .addOnFailureListener(e ->
+                                Log.e("BusinessConsultPage", "Failed to create user doc", e));
+            } else {
+                Log.d("BusinessConsultPage", "User doc already exist with UID: " + user.getUid());
+            }
+        });
+
     }
 
     private void addMessageToUI(ChatMessage message) {
@@ -278,12 +386,12 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
         String finalPrompt;
         if (this.knowledgeCache != null && !this.knowledgeCache.isEmpty()) {
             finalPrompt = personaPrompt +
-                    "\n\nBerikut adalah konteks tambahan yang harus kamu gunakan:\n---\n" +
+                    "\n\nHere are the additional contexts you should use:\n---\n" +
                     this.knowledgeCache +
                     "\n---\n\n" +
-                    "Jawab pertanyaan ini: " + userPrompt;
+                    "Answer this question:" + userPrompt;
         } else {
-            finalPrompt = personaPrompt + "\n\nJawab pertanyaan ini: " + userPrompt;
+            finalPrompt = personaPrompt + "\n\nAnswer this question:" + userPrompt;
         }
         return finalPrompt;
     }
@@ -291,31 +399,31 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
     private String getSecretPromptForTone(String selectedTone) {
         switch (selectedTone) {
             case "Normal":
-                return "Kamu adalah konsultan bisnis profesional yang sangat berpengalaman tapi jawab pertanyaan dengan nada normal";
+                return "You are a very experienced professional business consultant but answer questions in a normal tone";
 
             case "Professional":
-                return "Kamu adalah konsultan bisnis profesional yang sangat berpengalaman. Gunakan bahasa yang formal, terstruktur, dan langsung pada intinya.";
+                return "You are a highly experienced professional business consultant. Use formal, structured, and to-the-point language.";
 
             case "Friendly & Casual":
-                return "Kamu adalah seorang teman yang suportif dan juga seorang pengusaha berpengalaman. Berikan jawaban dengan gaya bahasa yang ramah, santai, dan mudah dimengerti, seolah-olah sedang mengobrol di kedai kopi.";
+                return "You are a supportive friend and an experienced entrepreneur. Give answers in a friendly, relaxed, and easy-to-understand style, as if you were chatting in a coffee shop.";
 
             case "Creative & Inspirational":
-                return "Kamu adalah seorang motivator bisnis yang sangat kreatif dan visioner. Berikan jawaban yang penuh inspirasi, menggunakan analogi, dan mendorong untuk berpikir di luar kotak.";
+                return "You are a very creative and visionary business motivator. Give answers that are inspiring, use analogies, and encourage thinking outside the box.";
 
             case "Analytics & Data":
-                return "Kamu adalah seorang analis data dan ahli strategi bisnis yang sangat terampil. Fokuskan jawabanmu pada data, metrik, dan analisis objektif. Gunakan poin-poin dan, jika memungkinkan, berikan saran berdasarkan logika berbasis data.";
+                return "You are a highly skilled data analyst and business strategist. Focus your answers on data, metrics, and objective analysis. Use bullet points and, where possible, make suggestions based on data-driven logic.";
 
             case "Decisive Business Mentor":
-                return "Kamu adalah seorang mentor bisnis yang berpengalaman, tegas, dan tidak suka basa-basi. Berikan nasihat yang lugas, actionable, dan fokus pada hasil. Berikan langkah-langkah konkret yang harus diambil.";
+                return "You are an experienced, decisive and no-nonsense business mentor. Give advice that is straightforward, actionable, and results-focused. Give concrete steps to take.";
 
             case "Confidential Friend in arms":
-                return "Kamu adalah seorang sahabat seperjuangan sesama pemilik UMKM (Usaha Mikro, Kecil, dan Menengah) yang sangat bisa dipercaya. Gunakan nada yang empatik, berikan dukungan, dan bagikan wawasan dari sudut pandang seseorang yang benar-benar memahami tantangan sehari-hari dalam menjalankan bisnis kecil.";
+                return "You are a very trustworthy friend in arms of fellow MSME (Micro, Small and Medium Enterprises) owners. Use an empathetic tone, provide support, and share insights from the perspective of someone who truly understands the day-to-day challenges of running a small business.";
 
             default:
                 if (!selectedTone.isEmpty()) {
                     return selectedTone;
                 }
-                return "Jawab pertanyaan ini dengan jelas dan membantu.";
+                return "Answer this question clearly and helpfully.";
         }
     }
     private void setupToolbar() {
@@ -376,10 +484,10 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
                 stringBuilder.append(line).append("\n");
             }
             this.knowledgeCache = stringBuilder.toString();
-            Log.d("BusinessConsultPage", "Knowledge berhasil dimuat.");
+            Log.d("BusinessConsultPage", "Knowledge successfully loaded.");
         } catch (IOException e) {
-            Log.e("BusinessConsultPage", "Gagal memuat knowledge.", e);
-            Toast.makeText(this, "Gagal memuat knowledge.", Toast.LENGTH_LONG).show();
+            Log.e("BusinessConsultPage", "Fails to contain knowledge.", e);
+            Toast.makeText(this, "Fails to contain knowledge.", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -409,7 +517,7 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
         popup.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.option_set_tone) {
                 SetToneBottomSheetFragment bottomSheet = SetToneBottomSheetFragment.newInstance(currentAiTone);
-                bottomSheet.setToneSelectionListener(BusinessConsultPage.this);
+                bottomSheet.setToneSelectionListener(BusinessConsult_Page.this);
                 bottomSheet.show(getSupportFragmentManager(), "SetToneBottomSheet");
                 return true;
             }
@@ -435,7 +543,7 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
 
     private void startNewChat() {
         drawerLayout.closeDrawer(GravityCompat.END);
-        Intent intent = new Intent(this, BusinessConsultPage.class);
+        Intent intent = new Intent(this, BusinessConsult_Page.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         finish();
@@ -445,6 +553,7 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser == null) return;
 
+        Log.d("DEBUG_UID", currentUser.getUid());
         db.collection("users").document(currentUser.getUid()).collection("chats")
                 .orderBy("createdAt", Query.Direction.DESCENDING)
                 .addSnapshotListener((value, error) -> {
@@ -458,12 +567,20 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
                         for (QueryDocumentSnapshot doc : value) {
                             ChatSession session = doc.toObject(ChatSession.class);
                             session.setId(doc.getId());
+
+                            String titleFromDb = session.getTitle();
+                            if (titleFromDb != null) {
+                                String decryptedTitle = EncryptionHelper.decrypt(titleFromDb);
+                                session.setTitle(decryptedTitle != null ? decryptedTitle : "[Decrypt Failed!]");
+                            } else {
+                                session.setTitle("Title Empty");
+                            }
                             chatSessionList.add(session);
                         }
                         historyAdapter.notifyDataSetChanged();
                     }
                 });
-    }
+        }
 
     private void setupChatCollectionRef() {
         FirebaseUser user = mAuth.getCurrentUser();
@@ -484,11 +601,19 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
                 .get().addOnSuccessListener(queryDocumentSnapshots -> {
                     chatMessages.clear();
                     for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
-                        ChatMessage encryptedMsg = doc.toObject(ChatMessage.class);
-                        String decryptedMessage = EncryptionHelper.decrypt(encryptedMsg.getMessage());
-                        if (decryptedMessage != null) {
-                            encryptedMsg.setMessage(decryptedMessage);
-                            chatMessages.add(encryptedMsg);
+                        String encryptedMessage = doc.getString("message");
+                        Boolean isUser = doc.getBoolean("isUser");
+                        java.util.Date timestamp = doc.getDate("timestamp");
+
+                        String decryptedMessage = EncryptionHelper.decrypt(encryptedMessage);
+
+                        if (decryptedMessage != null && isUser != null) {
+                            ChatMessage message = new ChatMessage();
+                            message.setMessage(decryptedMessage);
+                            message.setUser(isUser);
+                            message.setTimestamp(timestamp);
+
+                            chatMessages.add(message);
                         }
                     }
                     chatAdapter.notifyDataSetChanged();
@@ -500,7 +625,7 @@ public class BusinessConsultPage extends AppCompatActivity implements SetToneBot
                     Log.e("BusinessConsultPage", "Error loading messages", e);
                     checkDisclaimerVisibility();
                 });
-    }
+        }
 
     @Override public void onToneSelected(String tone) { this.currentAiTone = tone; }
     @Override public String getCurrentChatId() { return currentChatId; }

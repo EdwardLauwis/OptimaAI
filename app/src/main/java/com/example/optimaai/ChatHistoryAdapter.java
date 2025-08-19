@@ -1,7 +1,6 @@
 package com.example.optimaai;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,10 +61,8 @@ public class ChatHistoryAdapter extends RecyclerView.Adapter<ChatHistoryAdapter.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ChatSession session = chatSessions.get(position);
-        String encryptedTitle = session.getTitle();
-        String decryptedTitle = EncryptionHelper.decrypt(encryptedTitle);
 
-        holder.title.setText(decryptedTitle != null ? decryptedTitle : "Encrypted Title");
+        holder.title.setText(session.getTitle());
 
         if (session.getCreatedAt() != null) {
             SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy, hh:mm a", Locale.getDefault());
@@ -74,14 +71,13 @@ public class ChatHistoryAdapter extends RecyclerView.Adapter<ChatHistoryAdapter.
             holder.date.setText("Recent");
         }
 
-        // 3. Aksi hapus/rename dipicu dengan tekan lama (long press)
         holder.itemView.setOnLongClickListener(v -> {
             showPopupMenu(v, session);
             return true;
         });
 
         holder.itemView.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), BusinessConsultPage.class);
+            Intent intent = new Intent(v.getContext(), BusinessConsult_Page.class);
             intent.putExtra("CHAT_ID", session.getId());
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             v.getContext().startActivity(intent);

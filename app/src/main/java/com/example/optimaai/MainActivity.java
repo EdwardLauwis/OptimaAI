@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -105,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int viewId = view.getId();
 
         if (viewId == R.id.businessConsultContainer) {
-            startActivity(new Intent(MainActivity.this, BusinessConsultPage.class));
+            startActivity(new Intent(MainActivity.this, BusinessConsult_Page.class));
         } else if (viewId == R.id.ideaGeneratorContainer || viewId == R.id.copyWriterGenerator || viewId == R.id.reportContainer) {
             Toast.makeText(this, "Coming Soon", Toast.LENGTH_SHORT).show();
         }
