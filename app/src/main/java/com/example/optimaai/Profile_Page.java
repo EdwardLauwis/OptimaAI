@@ -33,15 +33,12 @@ import java.util.Objects;
 
 public class Profile_Page extends AppCompatActivity {
 
-    private TextView profileNameTextView, profileEmailTextView, logoutTextView;
+    // Declaration elements
+    private TextView profileNameTextView;
+    private TextView profileEmailTextView;
     private FirebaseAuth mAuth;
-
     private MaterialCardView businessInfoNotificationCard;
-
-    private TextInputEditText businessNameEditText, businessTargetEditText,
-            businessIndustryEditText;
-    private MaterialButton saveBusinessInfoButton;
-
+    private TextInputEditText businessNameEditText, businessTargetEditText, businessIndustryEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +50,7 @@ public class Profile_Page extends AppCompatActivity {
 
         profileNameTextView = findViewById(R.id.profileNameTextView);
         profileEmailTextView = findViewById(R.id.profileEmailTextView);
-        logoutTextView = findViewById(R.id.logoutTextView);
+        TextView logoutTextView = findViewById(R.id.logoutTextView);
         Toolbar toolbar = findViewById(R.id.toolbar);
         NestedScrollView scrollView = findViewById(R.id.profile_scroll_view);
 
@@ -64,7 +61,7 @@ public class Profile_Page extends AppCompatActivity {
         businessNameEditText = findViewById(R.id.businessNameEditText);
         businessTargetEditText = findViewById(R.id.targetMarketEditText);
         businessIndustryEditText = findViewById(R.id.industryEditText);
-        saveBusinessInfoButton = findViewById(R.id.saveBusinessProfileButton);
+        MaterialButton saveBusinessInfoButton = findViewById(R.id.saveBusinessProfileButton);
 
         businessNameEditText = findViewById(R.id.businessNameEditText);
 
@@ -72,7 +69,7 @@ public class Profile_Page extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
-            getSupportActionBar().setTitle("Profil Pengguna");
+            getSupportActionBar().setTitle("User Profile");
         }
         toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
@@ -86,9 +83,6 @@ public class Profile_Page extends AppCompatActivity {
             return insets;
         });
 
-//        if (isBusinessInfoFilled()) {
-//            businessInfoNotificationCard.setVisibility(View.GONE);
-//        }
         checkBusinessInfoStatusAsync();
 
         skipButton.setOnClickListener(v -> {
@@ -110,13 +104,13 @@ public class Profile_Page extends AppCompatActivity {
         String businessTarget = Objects.requireNonNull(businessTargetEditText.getText()).toString().trim();
 
         if (businessName.isEmpty() || businessIndustry.isEmpty() || businessTarget.isEmpty()) {
-            Toast.makeText(this, "Harap isi semua informasi bisnis", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please fill in all business information", Toast.LENGTH_SHORT).show();
             return;
         }
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser == null) {
-            Toast.makeText(this, "Pengguna tidak login", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -128,20 +122,17 @@ public class Profile_Page extends AppCompatActivity {
         businessData.put("businessIndustry", businessIndustry);
         businessData.put("businessTarget", businessTarget);
 
-        // Menyimpan data ke sub-node "businessProfile"
         userRef.child("businessProfile").setValue(businessData)
                 .addOnSuccessListener(aVoid -> {
-                    // Jika berhasil, update SharedPreferences
                     SharedPreferences.Editor editor = getSharedPreferences("BusinessProfile", MODE_PRIVATE).edit();
                     editor.putBoolean("isFilled", true);
                     editor.apply();
 
-                    // Sembunyikan notifikasi dan beri pesan sukses
                     businessInfoNotificationCard.setVisibility(View.GONE);
-                    Toast.makeText(Profile_Page.this, "Informasi bisnis berhasil disimpan!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Profile_Page.this, "Business information saved successfully!", Toast.LENGTH_SHORT).show();
                 })
                 .addOnFailureListener(e -> {
-                    Toast.makeText(Profile_Page.this, "Gagal menyimpan: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Profile_Page.this, "Failed to save: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 });
     }
 
@@ -159,8 +150,8 @@ public class Profile_Page extends AppCompatActivity {
                         String name = snapshot.child("name").getValue(String.class);
                         String email = snapshot.child("email").getValue(String.class);
 
-                        profileNameTextView.setText(name != null ? name : "Nama tidak tersedia");
-                        profileEmailTextView.setText(email != null ? email : "Email tidak tersedia");
+                        profileNameTextView.setText(name != null ? name : "Name not available");
+                        profileEmailTextView.setText(email != null ? email : "Email not available");
 
                         if (snapshot.hasChild("businessProfile")) {
                             String businessName = snapshot.child("businessProfile/businessName").getValue(String.class);
@@ -174,13 +165,13 @@ public class Profile_Page extends AppCompatActivity {
                             businessTargetEditText.setText(businessTarget);
                         }
                     } else {
-                        Toast.makeText(Profile_Page.this, "Data pengguna tidak ditemukan.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Profile_Page.this, "User data not found.", Toast.LENGTH_SHORT).show();
                     }
                 }
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
-                    Toast.makeText(Profile_Page.this, "Gagal memuat data: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Profile_Page.this, "Failed to load data:" + error.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
         }

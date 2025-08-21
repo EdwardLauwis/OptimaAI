@@ -381,14 +381,19 @@ public class BusinessConsult_Page extends AppCompatActivity implements SetToneBo
 
     @NonNull
     private String buildFinalPrompt(String userPrompt) {
+        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+
         String personaPrompt = getSecretPromptForTone(currentAiTone);
+        String defaultLanguage = "English or Indonesia";
+        String username = (firebaseUser != null && firebaseUser.getDisplayName() != null && !firebaseUser.getDisplayName().isEmpty()) ? firebaseUser.getDisplayName() : "User";
+
 
         String finalPrompt;
         if (this.knowledgeCache != null && !this.knowledgeCache.isEmpty()) {
-            finalPrompt = personaPrompt +
+            finalPrompt = "Hai, you are currently talking to user with username: "+ username + ", " + personaPrompt + " and the default language you should use is either " + defaultLanguage + "and" +
                     "\n\nHere are the additional contexts you should use:\n---\n" +
                     this.knowledgeCache +
-                    "\n---\n\n" +
+                    "\n---\n\n" + " And also avoid to use '**text**' for bold, because the result output literally '**text**', just use a clear structure." +
                     "Answer this question:" + userPrompt;
         } else {
             finalPrompt = personaPrompt + "\n\nAnswer this question:" + userPrompt;

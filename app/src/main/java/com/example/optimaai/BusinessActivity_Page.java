@@ -8,22 +8,18 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
 
 public class BusinessActivity_Page extends AppCompatActivity {
 
@@ -67,7 +63,7 @@ public class BusinessActivity_Page extends AppCompatActivity {
     }
 
     private void setupCategoryDropdown() {
-        String[] categories = new String[]{"Kuliner", "Fashion", "Jasa", "Teknologi", "Pendidikan", "Kesehatan", "Lainnya"};
+        String[] categories = new String[]{"Food", "Fashion", "Jasa", "Technology", "Pendidikan", "Health", "Others"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, categories);
         BusinessCategory.setAdapter(adapter);
     }
@@ -116,16 +112,15 @@ public class BusinessActivity_Page extends AppCompatActivity {
         }
 
         String userId = currentUser.getUid();
-        Log.d(TAG, "Current user UID: " + userId); // Pastikan UID ini sesuai dengan yang di Console
+        Log.d(TAG, "Current user UID: " + userId);
 
-        // Buat map dengan fields bisnis langsung (tanpa wrapper)
         Map<String, Object> userUpdate = new HashMap<>();
         userUpdate.put("businessName", businessNameStr);
         userUpdate.put("businessCategory", businessCategoryStr);
         userUpdate.put("businessStartDate", businessStartDateStr);
         userUpdate.put("businessLocation", businessAddressStr);
 
-        Log.d(TAG, "Data to save: " + userUpdate.toString()); // Log data sebelum disimpan
+        Log.d(TAG, "Data to save: " + userUpdate);
         db.collection("users").document(userId)
                 .set(userUpdate, SetOptions.merge())
                 .addOnSuccessListener(aVoid -> {
