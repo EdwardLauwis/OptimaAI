@@ -140,6 +140,14 @@ public class Profile_Page extends AppCompatActivity {
     private void loadUserData() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
+            String name = currentUser.getDisplayName();
+            String email = currentUser.getEmail();
+
+            // 2. Tampilkan di UI
+            profileNameTextView.setText(name != null && !name.isEmpty() ? name : "Nama Belum Diatur");
+            profileEmailTextView.setText(email != null ? email : "Email tidak tersedia");
+
+
             String uid = currentUser.getUid();
             DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("Users").child(uid);
 
