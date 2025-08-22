@@ -1,5 +1,6 @@
 package com.example.optimaai.ui.activities;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Rect;
@@ -643,6 +644,39 @@ public class BusinessConsult_Page extends AppCompatActivity implements SetToneBo
     @Override public String getCurrentChatId() { return currentChatId; }
     @Override public void onCurrentChatDeleted() { startNewChat(); }
     @Override public void onChatSessionClicked(String chatId) { }
-    @Override public void onRenameChat(ChatSession session, int position) { }
+
+    @Override public void onRenameChat(ChatSession session, int position) {
+        EditText input = new EditText(this);
+        input.setText(session.getTitle());
+
+        new AlertDialog.Builder(this)
+                .setTitle("Rename title chat")
+                .setMessage("Input a new title")
+                .setView(input)
+                .setPositiveButton("Save", (dialog, which) -> {
+                    String newTitle = input.getText().toString();
+                    if (newTitle.isEmpty()) {
+                        input.setError("Cannot be empty");
+                        return;
+                    }
+
+                    String encryptedTitle = EncryptionHelper.encrypt(newTitle);
+                    if (encryptedTitle == null) {
+                        Toast.makeText(this, "Encryption failed", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    FirebaseUser currentUser = mAuth.getCurrentUser();
+                    if (currentUser != null) {
+                        db.collection("users").document(currentUser.getUid())
+                                .collection("chats").document(session.getId())
+                                .update("title", encryptedTitle)
+                                .addOnSuccessListener(aVoid -> Toast.makeText(this, "Title successfully changed.", Toast.LENGTH_SHORT).show())
+                                .addOnFailureListener(e -> Toast.makeText(this, "Failed to change the title.", Toast.LENGTH_SHORT).show());
+                    }
+                })
+                .setNegativeButton("Cancel", null)
+                .show();
+    }
     @Override public void onDeleteChat(String chatId, int position) { }
 }

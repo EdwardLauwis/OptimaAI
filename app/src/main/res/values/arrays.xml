@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="idea_inspirations">
+        <item>Mengurangi sampah makanan di perkotaan</item>
+        <item>Meningkatnya tren kerja dari rumah (remote work)</item>
+        <item>Kebutuhan akan hiburan yang tidak melibatkan layar gadget</item>
+        <item>Populasi hewan peliharaan yang semakin dianggap keluarga</item>
+        <item>Kesulitan orang tua baru dalam mengelola waktu</item>
+    </string-array>
+
+    <string-array name="idea_audiences">
+        <item>Mahasiswa universitas yang hemat biaya</item>
+        <item>Para profesional muda yang sibuk</item>
+        <item>Keluarga dengan anak kecil</item>
+        <item>Pensiunan yang ingin tetap aktif</item>
+        <item>Turis lokal dan mancanegara</item>
+    </string-array>
+
+    <string-array name="idea_twists">
+        <item>Dengan model bisnis langganan (subscription)</item>
+        <item>Harus berbasis aplikasi mobile</item>
+        <item>Menggunakan 100% bahan ramah lingkungan</item>
+        <item>Memberdayakan komunitas pengrajin lokal</item>
+        <item>Dengan elemen gamifikasi untuk menjaga pelanggan</item>
+    </string-array>
+</resources>

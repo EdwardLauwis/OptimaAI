@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="24dp"
+                tools:context=".ui.activities.IdeaGenerator_Page">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Idea Alchemist"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"/>
+
+    <ImageView
+        android:id="@+id/cauldronImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/titleTextView"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_cauldron"
+        app:tint="?attr/colorPrimary" />
+
+    <LinearLayout
+        android:id="@+id/ingredientSelectors"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/cauldronImageView"
+        android:layout_marginTop="32dp"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/btn_select_inspiration"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_inspiration_bulb"
+            android:scaleType="centerInside"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/select_inspiration" />
+
+        <ImageButton
+            android:id="@+id/btn_select_audience"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/ic_audience_group"
+            android:scaleType="centerInside"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/select_audience" />
+
+        <ImageButton
+            android:id="@+id/btn_select_twist"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_twist_sparkle"
+            android:scaleType="centerInside"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/select_secret_ingredients" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/selectedIngredientsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/ingredientSelectors"
+        android:layout_marginTop="24dp"
+        android:padding="16dp"
+        android:background="@drawable/rounded_background_stroke">
+
+        <TextView
+            android:id="@+id/tv_selected_inspiration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inspirasi: Belum dipilih"/>
+
+        <TextView
+            android:id="@+id/tv_selected_audience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Audiens: Belum dipilih"/>
+
+        <TextView
+            android:id="@+id/tv_selected_twist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Bumbu Rahasia: Belum dipilih"/>
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_racik_ide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Racik Ide!"
+        android:layout_alignParentBottom="true"
+        android:padding="16dp"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+</RelativeLayout>

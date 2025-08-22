@@ -39,10 +39,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         if (BuildConfig.DEBUG) {
             StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
-                    .detectDiskReads()  // Deteksi baca dari disk
-                    .detectDiskWrites() // Deteksi tulis ke disk
-                    .detectNetwork()    // Deteksi operasi jaringan
-                    .penaltyLog()       // Cetak pelanggaran ke Logcat
+                    .detectDiskReads()
+                    .detectDiskWrites()
+                    .detectNetwork()
+                    .penaltyLog()
                     .build());
             StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
                     .detectLeakedSqlLiteObjects()
@@ -54,12 +54,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initializeFirebaseAsync();
+        initializeFirebaseAndSetupUI();
 
-        initFirebase();
-        initUI();
-        updateNavHeader();
+//        initializeFirebaseAsync();
+//        initFirebase();
+//        initUI();
+//        updateNavHeader();
         handleBackPress();
+    }
+
+    private void initializeFirebaseAndSetupUI() {
+        new Thread(() -> {
+            FirebaseApp.initializeApp(this);
+            mAuth = FirebaseAuth.getInstance();
+            FirebaseUser currentUser = mAuth.getCurrentUser();
+
+            runOnUiThread(() -> {
+                initUI();
+                updateNavHeader(currentUser);
+            });
+        }).start();
     }
 
     private void initializeFirebaseAsync() {
@@ -114,12 +128,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
-    private void updateNavHeader() {
+    private void updateNavHeader(FirebaseUser currentUser) {
         View headerView = navigationView.getHeaderView(0);
         TextView navHeaderName = headerView.findViewById(R.id.nav_header_name);
         TextView navHeaderEmail = headerView.findViewById(R.id.nav_header_email);
 
-        FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
             String displayName = currentUser.getDisplayName();
             navHeaderName.setText(displayName != null && !displayName.isEmpty() ? displayName : "User");
@@ -133,8 +146,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (viewId == R.id.businessConsultContainer) {
             startActivity(new Intent(MainActivity.this, BusinessConsult_Page.class));
-        } else if (viewId == R.id.ideaGeneratorContainer || viewId == R.id.copyWriterGenerator || viewId == R.id.reportContainer) {
+        } else if (viewId == R.id.copyWriterGenerator || viewId == R.id.reportContainer) {
             Toast.makeText(this, "Coming Soon", Toast.LENGTH_SHORT).show();
+        } else if (viewId == R.id.ideaGeneratorContainer){
+            startActivity(new Intent(MainActivity.this, IdeaGenerator_Page.class));
         }
     }
 

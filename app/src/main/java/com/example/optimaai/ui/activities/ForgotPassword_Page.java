@@ -30,7 +30,7 @@ public class ForgotPassword_Page extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar_forgot_password);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
         toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
@@ -66,7 +66,7 @@ public class ForgotPassword_Page extends AppCompatActivity {
                         Toast.LENGTH_LONG).show();
                 finish();
             } else {
-                Toast.makeText(ForgotPassword_Page.this, "Failed to send link. Try again!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(ForgotPassword_Page.this, "Failed to send link. Try again!" + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_LONG).show();
             }
             progressBar.setVisibility(View.GONE);
             sendLinkButton.setEnabled(true);

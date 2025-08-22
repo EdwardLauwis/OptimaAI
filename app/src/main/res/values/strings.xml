@@ -58,4 +58,7 @@
     <string name="save">Save</string>
     <string name="your_business_info_can_be_change_later">Your business info can be change later</string>
     <string name="l_o_g_o_u_t">L o g o u t</string>
+    <string name="select_secret_ingredients">Select secret ingredients</string>
+    <string name="select_audience">Select Audience</string>
+    <string name="select_inspiration">Select Inspiration</string>
 </resources>

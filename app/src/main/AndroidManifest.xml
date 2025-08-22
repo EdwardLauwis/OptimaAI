@@ -15,12 +15,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OptimaAI">
+        <activity
+            android:name=".ui.activities.IdeaGenerator_Page"
+            android:exported="false" />
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
             android:authorities="${applicationId}.firebaseinitprovider"
             android:exported="false"
             tools:node="remove" />
+
         <activity
             android:name=".ui.activities.Profile_Page"
             android:exported="false" />

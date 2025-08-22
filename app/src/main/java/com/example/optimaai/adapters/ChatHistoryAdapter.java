@@ -37,11 +37,9 @@ public class ChatHistoryAdapter extends RecyclerView.Adapter<ChatHistoryAdapter.
         void onChatSessionClicked(String chatId);
         void onRenameChat(ChatSession session, int position);
         void onDeleteChat(String chatId, int position);
-
         String getCurrentChatId();
         void onCurrentChatDeleted();
     }
-
     public ChatHistoryAdapter(List<ChatSession> chatSessions, Context context) {
         this.chatSessions = chatSessions;
         this.context = context;
@@ -76,7 +74,7 @@ public class ChatHistoryAdapter extends RecyclerView.Adapter<ChatHistoryAdapter.
         }
 
         holder.itemView.setOnLongClickListener(v -> {
-            showPopupMenu(v, session);
+            showPopupMenu(v, session, holder);
             return true;
         });
 
@@ -88,12 +86,16 @@ public class ChatHistoryAdapter extends RecyclerView.Adapter<ChatHistoryAdapter.
         });
     }
 
-    private void showPopupMenu(View v, ChatSession session) {
+    private void showPopupMenu(View v, ChatSession session, ViewHolder holder) {
         PopupMenu popup = new PopupMenu(context, v);
         popup.getMenuInflater().inflate(R.menu.chat_history_options_menu, popup.getMenu());
         popup.setOnMenuItemClickListener(item -> {
-            if (item.getItemId() == R.id.action_delete) {
-                showDeleteConfirmationDialog(session.getId());
+            int itemId = item.getItemId();
+            if (itemId == R.id.action_rename) {
+                listener.onRenameChat(session, holder.getAdapterPosition());
+                return true;
+            } else if (itemId == R.id.action_delete) {
+                showDeleteConfirmationDialog(session.getId(), holder.getAdapterPosition());
                 return true;
             }
             return false;
@@ -101,16 +103,15 @@ public class ChatHistoryAdapter extends RecyclerView.Adapter<ChatHistoryAdapter.
         popup.show();
     }
 
-    private void showDeleteConfirmationDialog(String chatId) {
+    private void showDeleteConfirmationDialog(String chatId, int position) {
         new AlertDialog.Builder(context)
                 .setTitle("Hapus Chat")
-                .setMessage("Apakah Anda yakin ingin menghapus chat ini secara permanen?")
-                .setPositiveButton("Hapus", (dialog, which) -> deleteChat(chatId))
-                .setNegativeButton("Batal", null)
+                .setMessage("Are you sure you want to delete this chat permanently?")
+                .setPositiveButton("Delete", (dialog, which) -> deleteChat(chatId))
+                .setNegativeButton("Cancel", null)
                 .show();
     }
 
-    // 4. Logika hapus yang sudah disempurnakan
     private void deleteChat(String chatId) {
         if (currentUser == null) return;
 
@@ -131,20 +132,19 @@ public class ChatHistoryAdapter extends RecyclerView.Adapter<ChatHistoryAdapter.
                                 .collection("chats").document(chatId)
                                 .delete()
                                 .addOnSuccessListener(aVoid -> {
-                                    Toast.makeText(context, "Chat dihapus", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(context, "Chat deleted", Toast.LENGTH_SHORT).show();
 
-                                    // Ini bagian penting untuk pindah halaman
                                     if (chatId.equals(listener.getCurrentChatId())) {
                                         listener.onCurrentChatDeleted();
                                     }
                                 })
-                                .addOnFailureListener(e -> Toast.makeText(context, "Gagal menghapus chat.", Toast.LENGTH_SHORT).show());
+                                .addOnFailureListener(e -> Toast.makeText(context, "Failed to delete chat.", Toast.LENGTH_SHORT).show());
                     } else {
-                        Toast.makeText(context, "Gagal menghapus pesan.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Failed to delete the message.", Toast.LENGTH_SHORT).show();
                     }
                 });
             } else {
-                Toast.makeText(context, "Error menemukan pesan untuk dihapus.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Error finding a message to delete.", Toast.LENGTH_SHORT).show();
             }
         });
     }
