@@ -1,4 +1,4 @@
-package com.example.optimaai;
+package com.example.optimaai.utils;
 
 import android.util.Base64;
 import android.util.Log;

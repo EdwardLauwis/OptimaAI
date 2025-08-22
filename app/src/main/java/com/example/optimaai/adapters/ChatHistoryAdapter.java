@@ -1,4 +1,4 @@
-package com.example.optimaai;
+package com.example.optimaai.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.optimaai.data.models.ChatSession;
+import com.example.optimaai.R;
+import com.example.optimaai.ui.activities.BusinessConsult_Page;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;

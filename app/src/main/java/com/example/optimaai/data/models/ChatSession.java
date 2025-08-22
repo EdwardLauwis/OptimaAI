@@ -1,4 +1,4 @@
-package com.example.optimaai;
+package com.example.optimaai.data.models;
 
 import com.google.firebase.firestore.Exclude;
 import com.google.firebase.firestore.ServerTimestamp;

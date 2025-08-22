@@ -1,4 +1,4 @@
-package com.example.optimaai;
+package com.example.optimaai.ui.fragments;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.example.optimaai.R;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;

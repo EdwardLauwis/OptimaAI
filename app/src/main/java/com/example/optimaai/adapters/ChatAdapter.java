@@ -1,4 +1,4 @@
-package com.example.optimaai;
+package com.example.optimaai.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,11 +6,15 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.optimaai.data.models.ChatMessage;
+import com.example.optimaai.R;
+
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
 
-class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
+public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
 
     private static final int VIEW_TYPE_USER = 1;
     private static final int VIEW_TYPE_AI = 2;

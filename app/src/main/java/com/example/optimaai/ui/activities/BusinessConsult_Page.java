@@ -1,4 +1,4 @@
-package com.example.optimaai;
+package com.example.optimaai.ui.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -26,6 +26,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.example.optimaai.adapters.ChatAdapter;
+import com.example.optimaai.adapters.ChatHistoryAdapter;
+import com.example.optimaai.data.models.ChatMessage;
+import com.example.optimaai.data.models.ChatSession;
+import com.example.optimaai.utils.EncryptionHelper;
+import com.example.optimaai.R;
+import com.example.optimaai.ui.fragments.SetToneBottomSheetFragment;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -226,7 +233,7 @@ public class BusinessConsult_Page extends AppCompatActivity implements SetToneBo
                     });
 
                 } catch (JSONException e) {
-                    Log.e("GeminiDebug", "Gagal parsing JSON", e);
+                    Log.e("GeminiDebug", "JSON parsing failure", e);
                     runOnUiThread(() -> {
                         Toast.makeText(BusinessConsult_Page.this, "Error parsing AI response.", Toast.LENGTH_SHORT).show();
                         loadingAnimationView.setVisibility(View.GONE);
@@ -256,8 +263,8 @@ public class BusinessConsult_Page extends AppCompatActivity implements SetToneBo
     private void createNewChatSessionAndSaveMessages(ChatMessage userMessage, ChatMessage aiMessage) {
         FirebaseUser user = mAuth.getCurrentUser();
         if (user == null) {
-            Log.e("BusinessConsultPage", "User tidak login, tidak bisa membuat sesi chat.");
-            loadingAnimationView.setVisibility(View.GONE); // Pastikan loading berhenti
+            Log.e("BusinessConsultPage", "User is not logged in, cannot create a chat session.");
+            loadingAnimationView.setVisibility(View.GONE);
             return;
         }
 

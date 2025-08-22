@@ -1,4 +1,4 @@
-package com.example.optimaai;
+package com.example.optimaai.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,6 +20,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.optimaai.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -155,7 +156,7 @@ public class Register_Page extends AppCompatActivity implements View.OnClickList
         ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
             public void onClick(@NonNull View widget) {
-                startActivity(new Intent(Register_Page.this, TermsAndConditionsActivity.class));
+                startActivity(new Intent(Register_Page.this, TermsAndConditions_Page.class));
             }
         };
 

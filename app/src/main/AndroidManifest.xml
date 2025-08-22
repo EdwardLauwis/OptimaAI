@@ -22,10 +22,10 @@
             android:exported="false"
             tools:node="remove" />
         <activity
-            android:name=".Profile_Page"
+            android:name=".ui.activities.Profile_Page"
             android:exported="false" />
         <activity
-            android:name=".ForgotPassword"
+            android:name=".ui.activities.ForgotPassword_Page"
             android:exported="false" />
 
         <meta-data
@@ -33,17 +33,17 @@
             android:value="${geminiApiKey}" />
 
         <activity
-            android:name=".TermsAndConditionsActivity"
+            android:name=".ui.activities.TermsAndConditions_Page"
             android:exported="false" />
         <activity
-            android:name=".BusinessConsult_Page"
+            android:name=".ui.activities.BusinessConsult_Page"
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".Register_Page"
+            android:name=".ui.activities.Register_Page"
             android:exported="false" />
         <activity
-            android:name=".Login_Page"
+            android:name=".ui.activities.Login_Page"
             android:exported="true"
             android:theme="@style/Theme.App.Starting">
             <intent-filter>
@@ -53,7 +53,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activities.MainActivity"
             android:exported="false" />
     </application>
 

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:background="?android:colorBackground"
-    tools:context=".Profile_Page">
+    tools:context=".ui.activities.Profile_Page">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -148,57 +148,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Persona Bisnis"
+                android:text="Business Description"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:layout_gravity="center"
                 android:layout_marginBottom="16dp"/>
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Nama Bisnis">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/businessNameEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:hint="Industri (e.g., F&amp;B, Fashion, Jasa)">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/industryEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:hint="Target Pasar (e.g., Mahasiswa, Keluarga)">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/targetMarketEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/saveBusinessProfileButton"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginTop="16dp"
-                android:text="Simpan Info Bisnis"/>
+                android:text="Business info Hasn't been fill yet!"
+                android:textSize="15sp"
+                android:textColor="@color/darkGray"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"/>
 
             <View
                 android:layout_width="match_parent"
@@ -207,28 +170,13 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp"/>
 
-            <TextView
-                android:id="@+id/changePasswordTextView"
+            <Button
+                android:id="@+id/logoutButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Ubah Password"
-                android:paddingVertical="16dp"
-                android:textSize="16sp"
-                android:background="?attr/selectableItemBackground"
-                android:clickable="true"
-                android:focusable="true"/>
-
-            <TextView
-                android:id="@+id/logoutTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Logout"
-                android:paddingVertical="16dp"
-                android:textSize="16sp"
-                android:textColor="@android:color/holo_red_dark"
-                android:background="?attr/selectableItemBackground"
-                android:clickable="true"
-                android:focusable="true"/>
+                android:backgroundTint="@color/red"
+                android:textColor="@color/white"
+                android:text="@string/l_o_g_o_u_t"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

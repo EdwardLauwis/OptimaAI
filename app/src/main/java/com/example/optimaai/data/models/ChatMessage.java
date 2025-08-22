@@ -1,4 +1,4 @@
-package com.example.optimaai;
+package com.example.optimaai.data.models;
 
 import java.util.Date;
 

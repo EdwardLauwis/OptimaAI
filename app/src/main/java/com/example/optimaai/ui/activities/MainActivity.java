@@ -1,4 +1,4 @@
-package com.example.optimaai;
+package com.example.optimaai.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,9 @@ import android.os.StrictMode;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.optimaai.BuildConfig;
+import com.example.optimaai.R;
 import com.google.firebase.FirebaseApp;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -154,7 +157,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();
-
         if (itemId == R.id.nav_profile) {
             Intent intent = new Intent(MainActivity.this, Profile_Page.class);
             Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();

@@ -1,4 +1,4 @@
-package com.example.optimaai;
+package com.example.optimaai.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,10 +15,11 @@ import androidx.core.splashscreen.SplashScreen;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.optimaai.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import androidx.core.splashscreen.SplashScreen;
+
 import java.util.Objects;
 
 public class Login_Page extends AppCompatActivity implements View.OnClickListener {
@@ -107,7 +108,7 @@ public class Login_Page extends AppCompatActivity implements View.OnClickListene
             startActivity(intent);
             finish();
         } else if (view == forgotPasswordTextView) {
-            Intent intent = new Intent(Login_Page.this, ForgotPassword.class);
+            Intent intent = new Intent(Login_Page.this, ForgotPassword_Page.class);
             startActivity(intent);
         }
     }

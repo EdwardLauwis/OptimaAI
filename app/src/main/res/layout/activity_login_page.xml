@@ -7,7 +7,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/white"
                 android:padding="24dp"
-                tools:context=".Login_Page">
+                tools:context=".ui.activities.Login_Page">
 
     <RelativeLayout
         android:paddingStart="20dp"

@@ -1,4 +1,4 @@
-package com.example.optimaai;
+package com.example.optimaai.ui.activities;
 
 import android.os.Bundle;
 import android.util.Patterns;
@@ -10,12 +10,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.optimaai.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Objects;
 
-public class ForgotPassword extends AppCompatActivity {
+public class ForgotPassword_Page extends AppCompatActivity {
 
     private TextInputEditText emailEditText;
     private Button sendLinkButton;
@@ -61,11 +62,11 @@ public class ForgotPassword extends AppCompatActivity {
 
         mAuth.sendPasswordResetEmail(email).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
-                Toast.makeText(ForgotPassword.this, "Succeed sending reset password link!",
+                Toast.makeText(ForgotPassword_Page.this, "Succeed sending reset password link!",
                         Toast.LENGTH_LONG).show();
                 finish();
             } else {
-                Toast.makeText(ForgotPassword.this, "Failed to send link. Try again!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(ForgotPassword_Page.this, "Failed to send link. Try again!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
             }
             progressBar.setVisibility(View.GONE);
             sendLinkButton.setEnabled(true);
