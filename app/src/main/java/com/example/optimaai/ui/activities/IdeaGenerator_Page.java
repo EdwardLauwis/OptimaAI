@@ -1,100 +1,143 @@
 package com.example.optimaai.ui.activities;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
-import android.widget.ImageButton;
+import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.optimaai.R;
+import com.example.optimaai.data.models.IdeaOrbitLayout;
 import com.google.android.material.button.MaterialButton;
+
+import java.util.Random;
 
 public class IdeaGenerator_Page extends AppCompatActivity {
 
-    // 1. VARIABLE DECLARATIONS
-    // Variables to store user selections
-    private String selectedInspiration = null;
-    private String selectedAudience = null;
-    private String selectedTwist = null;
-
-    // Variables for UI components
-    private TextView tvSelectedInspiration, tvSelectedAudience, tvSelectedTwist;
-    private MaterialButton btnBrewIdea;
+    private IdeaOrbitLayout ideaOrbitContainer;
+    private MaterialButton btnAddIdea;
+    private LinearLayout inputContainer;
+    private EditText ideaInput;
+    private MaterialButton btnSubmitIdea;
+    private MaterialButton btnCancelIdea;
+    private Random random = new Random();
+    private static final int MAX_IDEAS = 8;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_idea_generator_page);
 
-        // 2. INITIALIZATION & LISTENER SETUP
-        // Connecting Java variables with components in the XML
-        tvSelectedInspiration = findViewById(R.id.tv_selected_inspiration);
-        tvSelectedAudience = findViewById(R.id.tv_selected_audience);
-        tvSelectedTwist = findViewById(R.id.tv_selected_twist);
-        btnBrewIdea = findViewById(R.id.btn_racik_ide); // Make sure ID in XML is btn_racik_ide
+        // Initialize components
+        ideaOrbitContainer = findViewById(R.id.idea_orbit_container);
+        btnAddIdea = findViewById(R.id.btnAddIdea);
+        inputContainer = findViewById(R.id.input_container);
+        ideaInput = findViewById(R.id.idea_input);
+        btnSubmitIdea = findViewById(R.id.btn_submit_idea);
+        btnCancelIdea = findViewById(R.id.btn_cancel_idea);
 
-        ImageButton btnSelectInspiration = findViewById(R.id.btn_select_inspiration);
-        ImageButton btnSelectAudience = findViewById(R.id.btn_select_audience);
-        ImageButton btnSelectTwist = findViewById(R.id.btn_select_twist);
+        // Set brain icon reference
+        ideaOrbitContainer.setBrainIcon(findViewById(R.id.brain_icon));
 
-        // Setting click listeners for each "ingredient" button
-        btnSelectInspiration.setOnClickListener(v -> showPickerDialog("Select Inspiration", R.array.idea_inspirations));
-        btnSelectAudience.setOnClickListener(v -> showPickerDialog("Select Audience", R.array.idea_audiences));
-        btnSelectTwist.setOnClickListener(v -> showPickerDialog("Select Secret Spice", R.array.idea_twists));
+        // Hide input container by default
+        inputContainer.setVisibility(View.GONE);
 
-        // Listener for the main "Brew Idea" button
-        btnBrewIdea.setOnClickListener(v -> generateIdea());
+        // Set up listeners
+        btnAddIdea.setOnClickListener(v -> showIdeaInputDialog());
+        btnSubmitIdea.setOnClickListener(v -> addNewIdea());
+        btnCancelIdea.setOnClickListener(v -> hideIdeaInputDialog());
+
+        ideaInput.setOnEditorActionListener((v, actionId, event) -> {
+            addNewIdea();
+            return true;
+        });
     }
 
-    // 3. LOGIC TO DISPLAY THE SELECTION DIALOG
-    private void showPickerDialog(String title, int arrayResourceId) {
-        final String[] items = getResources().getStringArray(arrayResourceId);
-
-        new AlertDialog.Builder(this)
-                .setTitle(title)
-                .setItems(items, (dialog, which) -> {
-                    String selectedItem = items[which];
-
-                    // Update the variable and UI text based on the selection
-                    if (arrayResourceId == R.array.idea_inspirations) {
-                        selectedInspiration = selectedItem;
-                        tvSelectedInspiration.setText("Inspiration: " + selectedInspiration);
-                    } else if (arrayResourceId == R.array.idea_audiences) {
-                        selectedAudience = selectedItem;
-                        tvSelectedAudience.setText("Audience: " + selectedAudience);
-                    } else if (arrayResourceId == R.array.idea_twists) {
-                        selectedTwist = selectedItem;
-                        tvSelectedTwist.setText("Secret Spice: " + selectedTwist);
-                    }
-                    checkIfReadyToBrew();
-                })
-                .show();
+    private void showIdeaInputDialog() {
+        inputContainer.setVisibility(View.VISIBLE);
+        btnAddIdea.setVisibility(View.GONE);
+        ideaInput.requestFocus();
     }
 
-    // 4. CHECK IF ALL INGREDIENTS HAVE BEEN SELECTED
-    private void checkIfReadyToBrew() {
-        if (selectedInspiration != null && selectedAudience != null && selectedTwist != null) {
-            btnBrewIdea.setVisibility(View.VISIBLE);
+    private void hideIdeaInputDialog() {
+        inputContainer.setVisibility(View.GONE);
+        btnAddIdea.setVisibility(View.VISIBLE);
+        ideaInput.setText("");
+    }
+
+    private void addNewIdea() {
+        String ideaText = ideaInput.getText().toString().trim();
+        if (!ideaText.isEmpty()) {
+            addIdeaAsNode(ideaText);
+            hideIdeaInputDialog();
+        } else {
+            Toast.makeText(this, "Idea cannot be empty.", Toast.LENGTH_SHORT).show();
         }
     }
 
-    // 5. LOGIC TO CREATE THE PROMPT AND SEND TO THE AI
-    private void generateIdea() {
-        // Assembling the creative prompt for the AI
-        String finalPrompt = "You are a visionary business innovator. Create a unique business concept " +
-                "by combining the following three 'ingredients': a trend/problem which is '" + selectedInspiration +
-                "', a target audience which is '" + selectedAudience +
-                "', and a 'secret spice' which is '" + selectedTwist +
-                "'. Provide a catchy name for the idea, explain the concept in one paragraph, " +
-                "and give a single, concrete first step to start.";
+    private void addIdeaAsNode(String ideaText) {
+        if (ideaOrbitContainer.getChildCount() >= MAX_IDEAS) {
+            ideaOrbitContainer.removeViewAt(0);
+        }
 
-        // For now, we'll display the prompt in a Toast
-        // Later, this is where you will call your callProxy() method like in BusinessConsult_Page
-        Toast.makeText(this, "Prompt Ready to Send:\n" + finalPrompt, Toast.LENGTH_LONG).show();
+        TextView ideaNode = new TextView(this);
+        ideaNode.setText(ideaText);
+        ideaNode.setBackgroundResource(R.drawable.rounded_background_stroke);
+        ideaNode.setTextColor(Color.WHITE);
+        ideaNode.setGravity(Gravity.CENTER);
+        ideaNode.setPadding(32, 16, 32, 16);
+        ideaNode.setElevation(8f);
 
-        // TODO: Call your Gemini API here with the finalPrompt
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+        );
+        params.addRule(RelativeLayout.CENTER_IN_PARENT);
+        ideaOrbitContainer.addView(ideaNode, params);
+
+        ideaNode.post(() -> {
+            int centerX = ideaOrbitContainer.getWidth() / 2;
+            int centerY = ideaOrbitContainer.getHeight() / 2;
+
+            // Initial position at center
+            ideaNode.setX(centerX - ideaNode.getWidth() / 2);
+            ideaNode.setY(centerY - ideaNode.getHeight() / 2);
+
+            // Random target position
+            double angle = random.nextDouble() * 2 * Math.PI;
+            int minRadius = (int) (ideaOrbitContainer.getWidth() * 0.25);
+            int maxRadius = (int) (ideaOrbitContainer.getWidth() * 0.45);
+            int radius = random.nextInt(maxRadius - minRadius) + minRadius;
+
+            float targetX = (float) (centerX + radius * Math.cos(angle));
+            float targetY = (float) (centerY + radius * Math.sin(angle));
+
+            // Animate to new position
+            ObjectAnimator xAnimator = ObjectAnimator.ofFloat(ideaNode, "x", ideaNode.getX(), targetX - ideaNode.getWidth() / 2);
+            ObjectAnimator yAnimator = ObjectAnimator.ofFloat(ideaNode, "y", ideaNode.getY(), targetY - ideaNode.getHeight() / 2);
+
+            xAnimator.setDuration(1000);
+            yAnimator.setDuration(1000);
+            xAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
+            yAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
+
+            AnimatorSet animatorSet = new AnimatorSet();
+            animatorSet.playTogether(xAnimator, yAnimator);
+            animatorSet.start();
+
+            // Add bubble to custom layout for drawing lines
+            ideaOrbitContainer.addIdeaBubble(ideaNode);
+        });
     }
 }

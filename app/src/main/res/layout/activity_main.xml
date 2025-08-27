@@ -13,63 +13,62 @@
         android:id="@+id/main_coordinator_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F5F5F5">
+        android:background="@drawable/gradient_login_background">
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             app:elevation="0dp">
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="#FFFFFF"
-                app:title="Optima AI"
-                app:titleTextColor="#212121"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-        </com.google.android.material.appbar.AppBarLayout>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            app:title="Optima AI"
+            app:titleTextColor="@color/black"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"/>
+    </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:paddingTop="16dp">
+                android:padding="16dp">
+
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="8dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
                     android:layout_marginBottom="24dp"
-                    app:cardBackgroundColor="@color/primaryBlue">
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    app:cardBackgroundColor="#40FFFFFF"> <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+                    <TextView
+                        android:id="@+id/welcome_title"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="20dp">
-                        <TextView
-                            android:id="@+id/welcome_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/welcome"
-                            android:textSize="22sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/white"/>
-                        <TextView
-                            android:id="@+id/welcome_subtitle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/business_ai_assistant"
-                            android:textSize="16sp"
-                            android:textColor="@color/white"
-                            android:alpha="0.8"/>
-                    </LinearLayout>
+                        android:text="@string/welcome"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:id="@+id/welcome_subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/business_ai_assistant"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:alpha="0.9"/>
+                </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
                 <GridLayout
@@ -78,14 +77,15 @@
                     android:columnCount="2"
                     android:alignmentMode="alignMargins"
                     android:columnOrderPreserved="false">
+
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_columnWeight="1"
-                        app:cardElevation="4dp"
-                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:cardCornerRadius="20dp"
                         android:layout_margin="8dp"
-                        app:cardBackgroundColor="@color/white"
+                        app:cardBackgroundColor="#80FFFFFF"
                         android:clickable="true"
                         android:focusable="true">
                         <LinearLayout
@@ -93,21 +93,19 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:padding="16dp"
-                            android:gravity="center"
-                            tools:ignore="UseCompoundDrawables">
+                            android:padding="20dp"
+                            android:gravity="center">
                             <ImageView
-                                android:layout_width="64dp"
-                                android:layout_height="64dp"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
                                 android:contentDescription="@string/container_logo"
-                                android:src="@drawable/business_consult_logo"
-                                app:tint="@color/primaryBlue"/>
+                                android:src="@drawable/business_consult_logo"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/business_consult"
                                 android:layout_marginTop="12dp"
-                                android:textColor="#212121"
+                                android:textColor="@color/white"
                                 android:textStyle="bold"
                                 android:fontFamily="sans-serif-medium"/>
                         </LinearLayout>
@@ -117,10 +115,10 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_columnWeight="1"
-                        app:cardElevation="4dp"
-                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:cardCornerRadius="20dp"
                         android:layout_margin="8dp"
-                        app:cardBackgroundColor="@color/white"
+                        app:cardBackgroundColor="#80FFFFFF"
                         android:clickable="true"
                         android:focusable="true">
                         <LinearLayout
@@ -128,21 +126,19 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:padding="16dp"
-                            android:gravity="center"
-                            tools:ignore="UseCompoundDrawables">
+                            android:padding="20dp"
+                            android:gravity="center">
                             <ImageView
-                                android:layout_width="64dp"
-                                android:layout_height="64dp"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
                                 android:contentDescription="@string/container_logo"
-                                android:src="@drawable/idea_generator_logo"
-                                app:tint="@color/primaryBlue"/>
+                                android:src="@drawable/idea_generator_logo"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/idea_generator"
                                 android:layout_marginTop="12dp"
-                                android:textColor="#212121"
+                                android:textColor="@color/white"
                                 android:textStyle="bold"
                                 android:fontFamily="sans-serif-medium"/>
                         </LinearLayout>
@@ -152,10 +148,10 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_columnWeight="1"
-                        app:cardElevation="4dp"
-                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:cardCornerRadius="20dp"
                         android:layout_margin="8dp"
-                        app:cardBackgroundColor="@color/white"
+                        app:cardBackgroundColor="#80FFFFFF"
                         android:clickable="true"
                         android:focusable="true">
                         <LinearLayout
@@ -163,21 +159,19 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:padding="16dp"
-                            android:gravity="center"
-                            tools:ignore="UseCompoundDrawables">
+                            android:padding="20dp"
+                            android:gravity="center">
                             <ImageView
-                                android:layout_width="64dp"
-                                android:layout_height="64dp"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
                                 android:contentDescription="@string/container_logo"
-                                android:src="@drawable/copywriter_logo"
-                                app:tint="@color/primaryBlue"/>
+                                android:src="@drawable/copywriter_logo"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/copywriter"
                                 android:layout_marginTop="12dp"
-                                android:textColor="#212121"
+                                android:textColor="@color/white"
                                 android:textStyle="bold"
                                 android:fontFamily="sans-serif-medium"/>
                         </LinearLayout>
@@ -187,10 +181,10 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_columnWeight="1"
-                        app:cardElevation="4dp"
-                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:cardCornerRadius="20dp"
                         android:layout_margin="8dp"
-                        app:cardBackgroundColor="@color/white"
+                        app:cardBackgroundColor="#80FFFFFF"
                         android:clickable="true"
                         android:focusable="true">
                         <LinearLayout
@@ -198,21 +192,19 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:padding="16dp"
-                            android:gravity="center"
-                            tools:ignore="UseCompoundDrawables">
+                            android:padding="20dp"
+                            android:gravity="center">
                             <ImageView
-                                android:layout_width="64dp"
-                                android:layout_height="64dp"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
                                 android:contentDescription="@string/container_logo"
-                                android:src="@drawable/ic_report"
-                                app:tint="@color/primaryBlue"/>
+                                android:src="@drawable/ic_report"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/report"
                                 android:layout_marginTop="12dp"
-                                android:textColor="#212121"
+                                android:textColor="@color/white"
                                 android:textStyle="bold"
                                 android:fontFamily="sans-serif-medium"/>
                         </LinearLayout>
@@ -224,9 +216,10 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
-        android:layout_width="250dp"
+        android:layout_width="280dp"
         android:layout_height="match_parent"
         android:layout_gravity="end"
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/nav_menu_main" />
+        app:menu="@menu/nav_menu_main"/>
+
 </androidx.drawerlayout.widget.DrawerLayout>

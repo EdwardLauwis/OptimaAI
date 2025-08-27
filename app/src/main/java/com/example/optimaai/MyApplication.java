@@ -13,18 +13,21 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        FirebaseApp.initializeApp(this);
-        FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.getInstance();
+        new Thread(() -> {
+            FirebaseApp.initializeApp(this);
+            FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.getInstance();
 
-        firebaseAppCheck.getAppCheckToken(true)
-                .addOnSuccessListener(appCheckToken -> {
-                    if (appCheckToken != null && appCheckToken.getToken() != null) {
-                        Log.d(TAG, "Enter this debug token in the Firebase console:\n" + appCheckToken.getToken());
-                    }
-                });
+            firebaseAppCheck.getAppCheckToken(true)
+                    .addOnSuccessListener(appCheckToken -> {
+                        if (appCheckToken != null) {
+                            appCheckToken.getToken();
+                            Log.d(TAG, "Enter this debug token in the Firebase console:\n" + appCheckToken.getToken());
+                        }
+                    });
 
-        firebaseAppCheck.installAppCheckProviderFactory(
-                DebugAppCheckProviderFactory.getInstance()
-        );
+            firebaseAppCheck.installAppCheckProviderFactory(
+                    DebugAppCheckProviderFactory.getInstance()
+            );
+        }).start();
     }
 }
